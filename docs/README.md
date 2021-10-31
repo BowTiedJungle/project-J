@@ -18,3 +18,11 @@ A very unexhaustive list of things needing attention.
     * Requirements definition
     * Wireframing
     * Tech stack definition
+
+## Requirements
+
+* NFT
+    * On-chain good standing yes/no flag
+    * Upgradable
+    * Access control for certain functions (contract admin, good standing revocation)
+    * Avatar is mutable, avatar process lives off chain
