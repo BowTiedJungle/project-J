@@ -19,6 +19,11 @@ contract ProjectJ is ERC721PresetMinterPauserAutoId {
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
+    modifier inGoodStanding() {
+        require(goodStanding[msg.sender] == true,"Account %s is not in good standing.",msg.sender);
+        _;
+    }
+
     // Modify the standing of the target address. Cannot change own standing. Requires moderator role.
     function modifyStanding(address target, bool newStanding) public onlyRole(MODERATOR) {
         require(target != msg.sender,"Moderator cannot modify their own standing.");
