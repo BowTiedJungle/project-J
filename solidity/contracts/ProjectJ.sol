@@ -10,4 +10,20 @@ contract ProjectJ is ERC721PresetMinterPauserAutoId {
     constructor() ERC721("Project J","PRJ",_baseURI) {
     }
 
+    // Declare roles for AccessControl
+    bytes32 public constant MODERATOR = keccak256("MODERATOR");
+
+    // Mapping of good standing to allow moderation of access control
+    mapping(address => bool) goodStanding = true;
+
+    // Modification of standing will emit target address, the new standing, and the address changing the standing
+    event StandingModified(address target, bool newStanding, address changedBy);
+
+    // Modify the standing of the target address. Cannot change own standing. Requires moderator role.
+    function modifyStanding(address target, bool newStanding) public onlyRole(MODERATOR) {
+        require(target != msg.sender,"Moderator cannot modify their own standing.");
+        goodStanding[target] = newStanding;
+        emit StandingModified(target, newStanding, msg.sender);
+    }
+
 }
