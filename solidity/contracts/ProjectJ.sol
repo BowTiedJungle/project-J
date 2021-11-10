@@ -57,13 +57,13 @@ contract ProjectJ is
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
-    modifier inGoodStanding() {
-        require(blacklist[msg.sender] == false,"Account is blacklisted.");
+    modifier inGoodStanding(address _address) {
+        require(blacklist[_address] == false,"Account is blacklisted.");
         _;
     }
 
-    // Modify the standing of the target address. Cannot change own standing. Requires moderator role.
-    function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) public {
+    // Modify the standing of the target address. Cannot change own standing. Requires moderator role. Requires good standing.
+    function modifyStanding(address target, bool newStanding) inGoodStanding(msg.sender) onlyRole(MODERATOR_ROLE) public {
         require(target != msg.sender,"User cannot modify their own standing.");
         blacklist[target] = newStanding;
         emit StandingModified(target, newStanding, msg.sender);
@@ -74,7 +74,8 @@ contract ProjectJ is
         return blacklist[_address];
     }
 
-    function mint(address to) public inGoodStanding {
+    function mint(address to) public inGoodStanding(msg.sender) {
+        require(blacklist[to] == false,"Cannot mint to blacklisted account");
         _safeMint(to, _tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
