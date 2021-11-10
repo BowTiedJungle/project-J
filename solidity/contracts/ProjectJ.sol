@@ -58,13 +58,18 @@ contract ProjectJ is
     event StandingModified(address target, bool newStanding, address changedBy);
 
     // Requires target address to be in good standing
-    modifier inGoodStanding(address _address) {
-        require(blacklist[_address] == false,"Account is blacklisted.");
+    modifier inGoodStanding() {
+        require(blacklist[msg.sender] == false,"Account is blacklisted.");
+        _;
+    }
+
+    modifier onePerWallet() {
+        require(balanceOf(msg.sender) == 0,"One per customer ser");
         _;
     }
 
     // Modify the standing of the target address. Cannot change own standing. Requires moderator role. Requires good standing.
-    function modifyStanding(address target, bool newStanding) inGoodStanding(msg.sender) onlyRole(MODERATOR_ROLE) public {
+    function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) public {
         require(target != msg.sender,"User cannot modify their own standing.");
         blacklist[target] = newStanding;
         emit StandingModified(target, newStanding, msg.sender);
@@ -75,10 +80,9 @@ contract ProjectJ is
         return blacklist[_address];
     }
 
-    // Mint NFT. Requires the sender and the recipient to be in good standing
-    function mint(address to) public inGoodStanding(msg.sender) {
-        require(blacklist[to] == false,"Cannot mint to blacklisted account");
-        _safeMint(to, _tokenIdTracker.current());
+    // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
+    function mint() public inGoodStanding onePerWallet {
+        _safeMint(msg.sender, _tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
 

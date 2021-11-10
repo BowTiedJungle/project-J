@@ -20,16 +20,16 @@ const main = async () => {
     console.log(standing);
 
     let mint;
-    mint = await nftContract.mint(tester1);
+    mint = await nftContract.mint();
     console.log("Minted")
 
     let balanceOf;
     balanceOf = await nftContract.balanceOf(tester1);
     console.log("Balance of %s address is: %d",tester1,balanceOf);
 
-    mint = await nftContract.mint(tester2);
-    console.log("Minted")
-    console.log("Balance of %s address is: %d",tester2,balanceOf);
+    // mint = await nftContract.mint(tester2);
+    // console.log("Minted")
+    // console.log("Balance of %s address is: %d",tester2,balanceOf);
 };
   
 const runMain = async () => {
