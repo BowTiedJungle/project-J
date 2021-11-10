@@ -57,6 +57,7 @@ contract ProjectJ is
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
+    // Requires target address to be in good standing
     modifier inGoodStanding(address _address) {
         require(blacklist[_address] == false,"Account is blacklisted.");
         _;
@@ -74,6 +75,7 @@ contract ProjectJ is
         return blacklist[_address];
     }
 
+    // Mint NFT. Requires the sender and the recipient to be in good standing
     function mint(address to) public inGoodStanding(msg.sender) {
         require(blacklist[to] == false,"Cannot mint to blacklisted account");
         _safeMint(to, _tokenIdTracker.current());
@@ -93,6 +95,7 @@ contract ProjectJ is
         return super.supportsInterface(interfaceId);
     }
 
+    // This hook has to be here for compatability
     function _beforeTokenTransfer(
         address from,
         address to,
