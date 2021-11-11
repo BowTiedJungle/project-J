@@ -1,9 +1,9 @@
 const main = async () => {
     // Hardhat generates a deterministic set of testnet addresses for the local dev chain. Txns default to being sent by first one in this context.
-    const tester1 = "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266";
-    const tester2 = "0x70997970C51812dc3A010C7d01b50e0d17dc79C8";
-    var moderators = [tester1,tester2];
-    var pausers = [tester1,tester2];
+    const [tester1, tester2] = await hre.ethers.getSigners();
+    var moderators = [tester1.address];
+    var pausers = [tester1.address];
+    console.log(moderators);
     const baseURI = "testURI";
 
     const nftContractFactory = await hre.ethers.getContractFactory('ProjectJ');
@@ -14,11 +14,11 @@ const main = async () => {
 
 
     let txn;
-    txn = await nftContract.modifyStanding(tester2,true);
+    txn = await nftContract.modifyStanding(tester2.address,true);
     console.log("Standing modified");
 
     let standing;
-    standing = await nftContract.checkStanding(tester2);
+    standing = await nftContract.checkStanding(tester2.address);
     console.log(standing);
 
     let mint;
@@ -26,14 +26,14 @@ const main = async () => {
     console.log("Minted")
 
     let balanceOf;
-    balanceOf = await nftContract.balanceOf(tester1);
-    console.log("Balance of %s address is: %d",tester1,balanceOf);
+    balanceOf = await nftContract.balanceOf(tester1.address);
+    console.log("Balance of %s address is: %d",tester1.address,balanceOf);
 
     let burn;
     burn = await nftContract.burn(0);
     console.log("Burned");
-    balanceOf = await nftContract.balanceOf(tester1);
-    console.log("Balance of %s address is: %d",tester1,balanceOf);
+    balanceOf = await nftContract.balanceOf(tester1.address);
+    console.log("Balance of %s address is: %d",tester1.address,balanceOf);
 
     // mint = await nftContract.mint(tester2);
     // console.log("Minted")
