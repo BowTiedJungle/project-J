@@ -11,6 +11,8 @@ const main = async () => {
     await nftContract.deployed();
     console.log("Contract deployed to:", nftContract.address);
 
+
+
     let txn;
     txn = await nftContract.modifyStanding(tester2,true);
     console.log("Standing modified");
@@ -18,6 +20,12 @@ const main = async () => {
     let standing;
     standing = await nftContract.checkStanding(tester2);
     console.log(standing);
+
+    let pause;
+    pause = await nftContract.pause()
+    console.log("Paused")
+    pause = await nftContract.unpause()
+    console.log("Unpaused")
 
     let mint;
     mint = await nftContract.mint();
