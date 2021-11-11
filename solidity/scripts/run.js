@@ -21,17 +21,17 @@ const main = async () => {
     standing = await nftContract.checkStanding(tester2);
     console.log(standing);
 
-    let pause;
-    pause = await nftContract.pause()
-    console.log("Paused")
-    pause = await nftContract.unpause()
-    console.log("Unpaused")
-
     let mint;
     mint = await nftContract.mint();
     console.log("Minted")
 
     let balanceOf;
+    balanceOf = await nftContract.balanceOf(tester1);
+    console.log("Balance of %s address is: %d",tester1,balanceOf);
+
+    let burn;
+    burn = await nftContract.burn(0);
+    console.log("Burned");
     balanceOf = await nftContract.balanceOf(tester1);
     console.log("Balance of %s address is: %d",tester1,balanceOf);
 
