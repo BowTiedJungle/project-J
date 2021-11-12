@@ -30,6 +30,8 @@ contract ProjectJ is
 
     address payable public governor;
 
+    uint256 public constant mintPrice = 0.1 ether;
+
     constructor (
         address[] memory _moderators,
         address[] memory _pausers,
@@ -117,7 +119,8 @@ contract ProjectJ is
     }
 
     // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
-    function mint() public inGoodStanding onePerWallet {
+    function mint() public payable inGoodStanding onePerWallet {
+        require(msg.value == mintPrice,"Mint price not correct");
         _safeMint(msg.sender, _tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
