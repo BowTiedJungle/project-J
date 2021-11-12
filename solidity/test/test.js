@@ -85,5 +85,82 @@ describe("ProjectJ", function () {
 
     });
 
+    it("Should pause the contract when called with PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Call function
+        await projectJ.pause();
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(true);
+
+    });
+
+    it("Should NOT pause the contract when called without PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.connect(citizen1).pause()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(false);
+
+    });
+
+    it("Should NOT unpause the contract when called without PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Pause contract
+        await projectJ.pause();
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.connect(citizen1).unpause()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(true);
+
+    });
+
+    it("Should pause and unpause the contract correctly when called with PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Pause contract
+        await projectJ.pause();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(true);
+
+        // Pause contract
+        await projectJ.unpause();
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(false);
+
+    });
+
 
 });
