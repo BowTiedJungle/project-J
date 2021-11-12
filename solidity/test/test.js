@@ -1,0 +1,223 @@
+const { expect } = require("chai");
+const { ethers } = require("hardhat");
+const { waffle } = require("hardhat");
+
+// Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood
+// mod1, mod2: permissioned accounts. citizen1, citizen2, ... :non-permissioned accounts eg. users
+const provider = waffle.provider;
+const [mod1, mod2, citizen1, citizen2] = provider.getWallets();
+var moderators = [mod1.address,mod2.address];   //The .address syntax is used to get addy from the Signer object
+var pausers = [mod1.address,mod2.address];
+const baseURI = "testURI";
+
+describe("ProjectJ", function () {
+
+    it("Should change the blacklist status of an address when modifyStanding is called by a moderator", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+        // Call function
+        const setBlacklist = await projectJ.modifyStanding(citizen1.address,true);
+        await setBlacklist;
+
+        // Check for expected final state
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(true);
+
+    });
+
+    it("Should NOT change the blacklist status of an address when modifyStanding is called without moderator role", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.connect(citizen2).modifyStanding(citizen1.address,true)).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+    });
+
+    it("Should NOT allow a user to change their own blacklist status", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.checkStanding(mod1.address)).to.equal(false);
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.modifyStanding(mod1.address,true)).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.checkStanding(mod1.address)).to.equal(false);
+
+    });
+
+    it("Should NOT allow a blacklisted moderator to change a blacklist status", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.checkStanding(mod2.address)).to.equal(false);
+        // Blacklist the mod2 address
+        await projectJ.modifyStanding(mod2.address,true);
+        // Check that blacklisting was successful
+        expect(await projectJ.checkStanding(mod2.address)).to.equal(true);
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.connect(mod2).modifyStanding(citizen1.address,true)).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+    });
+
+    it("Should pause the contract when called with PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Call function
+        await projectJ.pause();
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(true);
+
+    });
+
+    it("Should NOT pause the contract when called without PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.connect(citizen1).pause()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(false);
+
+    });
+
+    it("Should NOT unpause the contract when called without PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Pause contract
+        await projectJ.pause();
+
+        // Attempt to call, expecting reversion
+        await expect(projectJ.connect(citizen1).unpause()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(true);
+
+    });
+
+    it("Should pause and unpause the contract correctly when called with PAUSER_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(false);
+
+        // Pause contract
+        await projectJ.pause();
+
+        // Check for expected initial state
+        expect(await projectJ.paused()).to.equal(true);
+
+        // Pause contract
+        await projectJ.unpause();
+
+        // Check for expected final state
+        expect(await projectJ.paused()).to.equal(false);
+
+    });
+
+    it("Should mint NFT", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        // Call contract
+        await projectJ.connect(citizen1).mint();
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+    });
+
+    it("Should not mint NFT to blacklisted address", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+        // Blacklist citizen1
+        await projectJ.modifyStanding(citizen1.address,true);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(citizen1).mint()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+    });
+
+    it("Should not allow minting more than 1 NFT", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        // Call contract once to setup
+        await projectJ.connect(citizen1).mint();
+
+        // Call contract expecting reversion
+        await expect(projectJ.connect(citizen1).mint()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+    });
+
+});
