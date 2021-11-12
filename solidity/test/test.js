@@ -5,7 +5,7 @@ const { waffle } = require("hardhat");
 // Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood
 // mod1, mod2: permissioned accounts. citizen1, citizen2, ... :non-permissioned accounts eg. users
 const provider = waffle.provider;
-const [mod1, mod2, citizen1, citizen2] = provider.getWallets();
+const [mod1, mod2, citizen1, citizen2, governor] = provider.getWallets();
 var moderators = [mod1.address,mod2.address];   //The .address syntax is used to get addy from the Signer object
 var pausers = [mod1.address,mod2.address];
 const baseURI = "testURI";
@@ -15,7 +15,7 @@ describe("ProjectJ", function () {
     it("Should change the blacklist status of an address when modifyStanding is called by a moderator", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -33,7 +33,7 @@ describe("ProjectJ", function () {
     it("Should NOT change the blacklist status of an address when modifyStanding is called without moderator role", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -50,7 +50,7 @@ describe("ProjectJ", function () {
     it("Should NOT allow a user to change their own blacklist status", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -67,7 +67,7 @@ describe("ProjectJ", function () {
     it("Should NOT allow a blacklisted moderator to change a blacklist status", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -88,7 +88,7 @@ describe("ProjectJ", function () {
     it("Should pause the contract when called with PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -105,7 +105,7 @@ describe("ProjectJ", function () {
     it("Should NOT pause the contract when called without PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -122,7 +122,7 @@ describe("ProjectJ", function () {
     it("Should NOT unpause the contract when called without PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -142,7 +142,7 @@ describe("ProjectJ", function () {
     it("Should pause and unpause the contract correctly when called with PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -165,7 +165,7 @@ describe("ProjectJ", function () {
     it("Should mint NFT", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -182,7 +182,7 @@ describe("ProjectJ", function () {
     it("Should not mint NFT to blacklisted address", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial states
@@ -203,7 +203,7 @@ describe("ProjectJ", function () {
     it("Should not allow minting more than 1 NFT", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
         await projectJ.deployed();
 
         // Check for expected initial state
