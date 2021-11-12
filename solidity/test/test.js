@@ -162,5 +162,62 @@ describe("ProjectJ", function () {
 
     });
 
+    it("Should mint NFT", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        // Call contract
+        await projectJ.connect(citizen1).mint();
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+    });
+
+    it("Should not mint NFT to blacklisted address", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+        // Blacklist citizen1
+        await projectJ.modifyStanding(citizen1.address,true);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(citizen1).mint()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+    });
+
+    it("Should not allow minting more than 1 NFT", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        // Call contract once to setup
+        await projectJ.connect(citizen1).mint();
+
+        // Call contract expecting reversion
+        await expect(projectJ.connect(citizen1).mint()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+    });
 
 });
