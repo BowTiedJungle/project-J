@@ -274,4 +274,26 @@ describe("ProjectJ", function () {
         expect(initialBal.sub(finalBal)).to.be.above(hre.ethers.utils.parseEther('0.1'));
     });
 
+    it("Should increase the contract ETH balance when NFT is minted", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        await projectJ.deployed();
+
+        // Check inital contract balance
+        expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0'));
+
+        // Mint checking
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        // Call contract
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+        // Check final contract balance
+        expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0.1'));
+
+    });
+
 });
