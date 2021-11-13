@@ -14,7 +14,7 @@ contract ProjectJ is
     ERC721Enumerable,
     ERC721Burnable,
     ERC721Pausable,
-    AccessControlEnumerable 
+    AccessControlEnumerable
 {
 
     using Counters for Counters.Counter;
@@ -24,14 +24,24 @@ contract ProjectJ is
     // Declare roles for AccessControl
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+    bytes32 public constant GOVERNOR_ROLE = keccak256("GOVERNOR_ROLE");
 
     string private _baseTokenURI;
 
-    constructor(
+    address payable public governor;
+
+    uint256 public constant mintPrice = 0.1 ether;
+
+    constructor (
         address[] memory _moderators,
         address[] memory _pausers,
-        string memory baseTokenURI
-    ) ERC721("ProjectJ","PRJ") {
+        string memory baseTokenURI,
+        address payable _governor
+    ) payable ERC721("ProjectJ","PRJ") {
+
+        // Set contract governor
+        governor = _governor;
+        _setupRole(GOVERNOR_ROLE, _governor);
 
         // Set base token URI
         _baseTokenURI = baseTokenURI;
@@ -109,9 +119,16 @@ contract ProjectJ is
     }
 
     // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
-    function mint() public inGoodStanding onePerWallet {
+    function mint() public payable inGoodStanding onePerWallet {
+        require(msg.value == mintPrice,"Mint price not correct");
         _safeMint(msg.sender, _tokenIdTracker.current());
         _tokenIdTracker.increment();
+    }
+
+    // Withdraw contract balance
+    function withdraw() public onlyRole(GOVERNOR_ROLE) {
+        require(msg.sender == governor,"Only contract governor can withdraw funds.");
+        governor.transfer(address(this).balance);
     }
 
     /**
