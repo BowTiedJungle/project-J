@@ -1,6 +1,6 @@
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
-const { waffle } = require("hardhat");
+const { ethers, waffle } = require("hardhat");
+const { solidity } = waffle;
 
 // Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood
 // mod1, mod2: permissioned accounts. citizen1, citizen2, ... :non-permissioned accounts eg. users
@@ -261,17 +261,21 @@ describe("ProjectJ", function () {
         // Check final balance
         const finalBal = await citizen1.getBalance();
 
-        // Verbose log
-        console.log("--- Mint Cost Report ---")
-        console.log("Initial: ",hre.ethers.utils.formatUnits(initialBal,'ether'));
-        console.log("Final: ",hre.ethers.utils.formatUnits(finalBal,'ether'));
-        console.log("Est Gas: ",hre.ethers.utils.formatUnits(gasCost,'ether'))
-        console.log("----");
-        console.log("Initial - Final: ",hre.ethers.utils.formatUnits(initialBal.sub(finalBal),'ether'));
-        console.log("Initial - Final - Gas: ",hre.ethers.utils.formatUnits(initialBal.sub(finalBal).sub(gasCost),'ether'));
-        console.log("Initial - Final - Gas - Mint",hre.ethers.utils.formatUnits(initialBal-finalBal-gasCost-hre.ethers.utils.parseEther('0.1'),'ether'));
+        // // Verbose log
+        // console.log("--- Mint Cost Report ---")
+        // console.log("Initial: ",hre.ethers.utils.formatUnits(initialBal,'ether'));
+        // console.log("Final: ",hre.ethers.utils.formatUnits(finalBal,'ether'));
+        // console.log("Est Gas: ",hre.ethers.utils.formatUnits(gasCost,'ether'))
+        // console.log("----");
+        // console.log("Initial - Final: ",hre.ethers.utils.formatUnits(initialBal.sub(finalBal),'ether'));
+        // console.log("Initial - Final - Gas: ",hre.ethers.utils.formatUnits(initialBal.sub(finalBal).sub(gasCost),'ether'));
+        // console.log("Initial - Final - Gas - Mint",hre.ethers.utils.formatUnits(initialBal-finalBal-gasCost-hre.ethers.utils.parseEther('0.1'),'ether'));
 
         expect(initialBal.sub(finalBal)).to.be.above(hre.ethers.utils.parseEther('0.1'));
+
+        // await expect(await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther("0.1")})).to.changeEtherBalance(citizen1.address,hre.ethers.utils.parseEther('0.1'))
+        // // Check for mint correctly
+        // expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
     });
 
     it("Should increase the contract ETH balance when NFT is minted", async function () {
