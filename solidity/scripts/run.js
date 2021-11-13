@@ -12,16 +12,19 @@ const main = async () => {
     console.log("Contract deployed to:", nftContract.address);
 
     let balance;
-    balance = await tester1.getBalance();
-    console.log("%s has balance of %d wei.",tester1.address,balance);
+    balance = await tester2.getBalance();
+    console.log("%s has balance of %d wei.",tester2.address,balance);
 
     let mint;
-    mint = await nftContract.mint({value: hre.ethers.utils.parseEther('0.1')});
+    mint = await nftContract.connect(tester2).mint({value: hre.ethers.utils.parseEther('0.1')});
     console.log("Minted")
 
     let balanceOf;
-    balanceOf = await nftContract.balanceOf(tester1.address);
-    console.log("Balance of %s address is: %d",tester1.address,balanceOf);
+    balanceOf = await nftContract.balanceOf(tester2.address);
+    console.log("Balance of %s address is: %d",tester2.address,balanceOf);
+
+    balance = await tester2.getBalance();
+    console.log("%s has balance of %d wei.",tester2.address,balance);
 
     // let burn;
     // burn = await nftContract.burn(0);

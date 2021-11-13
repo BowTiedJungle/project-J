@@ -172,7 +172,7 @@ describe("ProjectJ", function () {
         expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
 
         // Call contract
-        await projectJ.connect(citizen1).mint();
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
 
         // Check for expected final state
         expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
@@ -193,7 +193,7 @@ describe("ProjectJ", function () {
         await projectJ.modifyStanding(citizen1.address,true);
 
         // Call contract, expecting reversion
-        await expect(projectJ.connect(citizen1).mint()).to.be.reverted;
+        await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')})).to.be.reverted;
 
         // Check for expected final state
         expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
@@ -210,14 +210,68 @@ describe("ProjectJ", function () {
         expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
 
         // Call contract once to setup
-        await projectJ.connect(citizen1).mint();
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
 
         // Call contract expecting reversion
-        await expect(projectJ.connect(citizen1).mint()).to.be.reverted;
+        await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')})).to.be.reverted;
 
         // Check for expected final state
         expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
 
+    });
+
+    it("Should NOT mint NFT with wrong mint price", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        // Call contract
+        await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.2')})).to.be.revertedWith("Mint price not correct");
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+    });
+
+    it("Should deduct mintPrice on successful mint", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        const initialBal = await citizen1.getBalance();
+
+        // Estimate gas
+        const estGasUnits = await projectJ.estimateGas.mint({value: hre.ethers.utils.parseEther('0.1')});
+        const gasPrice = await provider.getGasPrice();
+        const gasCost = estGasUnits * gasPrice;
+
+        // Call contract
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+
+        // Check for mint correctly
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+        // Check final balance
+        const finalBal = await citizen1.getBalance();
+
+        // Verbose log
+        console.log("--- Mint Cost Report ---")
+        console.log("Initial: ",hre.ethers.utils.formatUnits(initialBal,'ether'));
+        console.log("Final: ",hre.ethers.utils.formatUnits(finalBal,'ether'));
+        console.log("Est Gas: ",hre.ethers.utils.formatUnits(gasCost,'ether'))
+        console.log("----");
+        console.log("Initial - Final: ",hre.ethers.utils.formatUnits(initialBal.sub(finalBal),'ether'));
+        console.log("Initial - Final - Gas: ",hre.ethers.utils.formatUnits(initialBal.sub(finalBal).sub(gasCost),'ether'));
+        console.log("Initial - Final - Gas - Mint",hre.ethers.utils.formatUnits(initialBal-finalBal-gasCost-hre.ethers.utils.parseEther('0.1'),'ether'));
+
+        expect(initialBal.sub(finalBal)).to.be.above(hre.ethers.utils.parseEther('0.1'));
     });
 
 });
