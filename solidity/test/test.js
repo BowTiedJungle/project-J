@@ -296,4 +296,27 @@ describe("ProjectJ", function () {
 
     });
 
+    it("Should withdraw the contract ETH balance when called with GOVERNOR_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        await projectJ.deployed();
+
+        // Check inital contract balance
+        expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0'));
+
+        // Setup
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+
+        // Check for successful setup
+        expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0.1'));
+
+        // Call contract
+        await projectJ.connect(governor).withdraw();
+
+        // Check final contract balance
+        expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0'));
+
+    });
+
 });

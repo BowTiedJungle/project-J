@@ -125,6 +125,12 @@ contract ProjectJ is
         _tokenIdTracker.increment();
     }
 
+    // Withdraw contract balance
+    function withdraw() public onlyRole(GOVERNOR_ROLE) {
+        require(msg.sender == governor,"Only contract governor can withdraw funds.");
+        governor.transfer(address(this).balance);
+    }
+
     /**
      * @dev See {IERC165-supportsInterface}.
      */
