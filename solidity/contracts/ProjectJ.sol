@@ -59,6 +59,9 @@ contract ProjectJ is
         for (i = 0;i < _pausers.length; i++) {
             _setupRole(PAUSER_ROLE,_pausers[i]);
         }
+
+        // Increment counter so first mint starts at token #1
+        _tokenIdTracker.increment();
     }
 
     // Mapping of blacklisted accounts to allow deactivation of NFTs
@@ -76,6 +79,17 @@ contract ProjectJ is
     modifier onePerWallet() {
         require(balanceOf(msg.sender) == 0,"One per customer ser");
         _;
+    }
+
+    /**
+     * Overrides OZ ERC721 _baseURI as per design intent of the library function
+     */
+    function _baseURI() internal view override returns (string memory) {
+        return _baseTokenURI;
+    }
+
+    function updateBaseURI(string memory _newURI) public onlyRole(GOVERNOR_ROLE) {
+        _baseTokenURI = _newURI;
     }
 
     /**
