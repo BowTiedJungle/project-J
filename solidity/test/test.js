@@ -346,4 +346,42 @@ describe("ProjectJ", function () {
 
     });
 
+    it("Should update _baseTokenURI when called with GOVERNOR_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        await projectJ.deployed();
+
+        // Setup
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+
+        // Check initial conditions
+        expect(await projectJ.tokenURI(1)).to.equal(baseURI+'1');
+
+        // Change URI
+        await projectJ.connect(governor).updateBaseURI('xyz/');
+
+        // Check final conditions
+        expect(await projectJ.tokenURI(1)).to.equal('xyz/'+'1');
+    });
+
+    it("Should NOT update _baseTokenURI when called without GOVERNOR_ROLE", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        await projectJ.deployed();
+
+        // Setup
+        await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+
+        // Check initial conditions
+        expect(await projectJ.tokenURI(1)).to.equal(baseURI+'1');
+
+        // Attempt call expecting reversion
+        await expect(projectJ.connect(citizen1).updateBaseURI('xyz/')).to.be.reverted;
+
+        // Check final conditions
+        expect(await projectJ.tokenURI(1)).to.equal(baseURI+'1');
+    });
+
 });

@@ -88,6 +88,10 @@ contract ProjectJ is
         return _baseTokenURI;
     }
 
+    function updateBaseURI(string memory _newURI) public onlyRole(GOVERNOR_ROLE) {
+        _baseTokenURI = _newURI;
+    }
+
     /**
      * @dev Pauses all token transfers.
      *
