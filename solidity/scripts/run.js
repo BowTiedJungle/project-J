@@ -14,8 +14,13 @@ const main = async () => {
     mint = await nftContract.connect(tester2).mint({value: hre.ethers.utils.parseEther('0.1')});
     console.log("Minted")
 
+    mint = await nftContract.mint({value: hre.ethers.utils.parseEther('0.1')});
+    console.log("Minted")
+
     let txn;
     txn = await nftContract.tokenURI(1);
+    console.log("Token URI: ",txn);
+    txn = await nftContract.tokenURI(2);
     console.log("Token URI: ",txn);
 
     // let burn;
@@ -24,9 +29,7 @@ const main = async () => {
     // balanceOf = await nftContract.balanceOf(tester1.address);
     // console.log("Balance of %s address is: %d",tester1.address,balanceOf);
 
-    // mint = await nftContract.mint(tester2);
-    // console.log("Minted")
-    // console.log("Balance of %s address is: %d",tester2,balanceOf);
+
 };
   
 const runMain = async () => {
