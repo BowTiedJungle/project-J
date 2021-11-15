@@ -32,11 +32,14 @@ contract ProjectJ is
 
     uint256 public constant mintPrice = 0.1 ether;
 
+    mapping(address => bool) public degenimals;
+
     constructor (
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
-        address payable _governor
+        address payable _governor,
+        address[] memory _degenimals
     ) payable ERC721("ProjectJ","PRJ") {
 
         // Set contract governor
@@ -58,6 +61,11 @@ contract ProjectJ is
         // Initialize pausers
         for (i = 0;i < _pausers.length; i++) {
             _setupRole(PAUSER_ROLE,_pausers[i]);
+        }
+
+        // Initialize degenimals whitelist
+        for (i = 0;i < _degenimals.length; i++) {
+            degenimals[_degenimals[i]] = true;
         }
 
         // Increment counter so first mint starts at token #1
