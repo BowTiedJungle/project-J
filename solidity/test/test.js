@@ -385,4 +385,83 @@ describe("ProjectJ", function () {
         expect(await projectJ.tokenURI(1)).to.equal(baseURI+'1');
     });
 
+    it("Should allow free mint to eligible address and remove free eligiblity after minting", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+        // Call contract
+        await projectJ.connect(degen1).mintFree();
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(false);
+
+    });
+
+    it("Should NOT allow free mint to ineligible address", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(citizen1.address)).to.equal(false);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(citizen1).mintFree()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(citizen1.address)).to.equal(false);
+
+    });
+
+    it("Should NOT allow free mint if wallet has PRJ balance >0", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        await projectJ.connect(degen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+    });
+
+    it("Should NOT allow free mint to blacklisted address", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        await projectJ.connect(mod1).modifyStanding(degen1.address,true);
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+        expect(await projectJ.checkStanding(degen1.address)).to.equal(true);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+    });
+
 });

@@ -32,14 +32,14 @@ contract ProjectJ is
 
     uint256 public constant mintPrice = 0.1 ether;
 
-    mapping(address => bool) public degenimals;
+    mapping(address => bool) public freeMintEligible;
 
     constructor (
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
         address payable _governor,
-        address[] memory _degenimals
+        address[] memory _freeMintEligible
     ) payable ERC721("ProjectJ","PRJ") {
 
         // Set contract governor
@@ -64,8 +64,8 @@ contract ProjectJ is
         }
 
         // Initialize degenimals whitelist
-        for (i = 0;i < _degenimals.length; i++) {
-            degenimals[_degenimals[i]] = true;
+        for (i = 0;i < _freeMintEligible.length; i++) {
+            freeMintEligible[_freeMintEligible[i]] = true;
         }
 
         // Increment counter so first mint starts at token #1
@@ -86,6 +86,11 @@ contract ProjectJ is
 
     modifier onePerWallet() {
         require(balanceOf(msg.sender) == 0,"One per customer ser");
+        _;
+    }
+
+    modifier eligible() {
+        require(freeMintEligible[msg.sender] == true,"Not eligible for free mint");
         _;
     }
 
@@ -143,6 +148,12 @@ contract ProjectJ is
     // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
     function mint() public payable inGoodStanding onePerWallet {
         require(msg.value == mintPrice,"Mint price not correct");
+        _safeMint(msg.sender, _tokenIdTracker.current());
+        _tokenIdTracker.increment();
+    }
+
+    function mintFree() public inGoodStanding onePerWallet eligible {
+        freeMintEligible[msg.sender] = false;
         _safeMint(msg.sender, _tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
