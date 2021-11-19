@@ -2,19 +2,19 @@
 
 pragma solidity ^0.8.4;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
-import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Pausable.sol";
-import "@openzeppelin/contracts/access/AccessControlEnumerable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721BurnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721PausableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract ProjectJ is 
-    ERC721, 
-    ERC721Enumerable,
-    ERC721Burnable,
-    ERC721Pausable,
-    AccessControlEnumerable
+    ERC721Upgradeable, 
+    ERC721EnumerableUpgradeable,
+    ERC721BurnableUpgradeable,
+    ERC721PausableUpgradeable,
+    AccessControlEnumerableUpgradeable
 {
 
     using Counters for Counters.Counter;
@@ -34,13 +34,15 @@ contract ProjectJ is
 
     mapping(address => bool) public freeMintEligible;
 
-    constructor (
+    function intialize(
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
         address payable _governor,
         address[] memory _freeMintEligible
-    ) payable ERC721("ProjectJ","PRJ") {
+    ) initializer public payable {
+
+        __ERC721_init("ProjectJ","PRJ");
 
         // Set contract governor
         governor = _governor;
@@ -171,7 +173,7 @@ contract ProjectJ is
         public
         view
         virtual
-        override(AccessControlEnumerable, ERC721, ERC721Enumerable)
+        override(AccessControlEnumerableUpgradeable, ERC721Upgradeable, ERC721EnumerableUpgradeable)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
@@ -182,7 +184,7 @@ contract ProjectJ is
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override(ERC721, ERC721Enumerable, ERC721Pausable) {
+    ) internal virtual override(ERC721Upgradeable, ERC721EnumerableUpgradeable, ERC721PausableUpgradeable) {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
