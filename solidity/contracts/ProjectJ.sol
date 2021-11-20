@@ -39,7 +39,7 @@ contract ProjectJ is
         address[] memory _pausers,
         string memory baseTokenURI,
         address payable _governor,
-        address[] memory _freeMintEligible
+        address[] memory _freeMintEligibleList
     ) payable ERC721("ProjectJ","PRJ") {
 
         // Set contract governor
@@ -64,8 +64,8 @@ contract ProjectJ is
         }
 
         // Initialize degenimals whitelist
-        for (i = 0;i < _freeMintEligible.length; i++) {
-            freeMintEligible[_freeMintEligible[i]] = true;
+        for (i = 0;i < _freeMintEligibleList.length; i++) {
+            freeMintEligible[_freeMintEligibleList[i]] = true;
         }
 
         // Increment counter so first mint starts at token #1
@@ -77,6 +77,9 @@ contract ProjectJ is
 
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
+
+    event Minted(address minter, uint256 tokenId);
+    event MintedFree(address minter, uint256 tokenId);
 
     // Requires target address to be in good standing
     modifier inGoodStanding() {
@@ -149,13 +152,16 @@ contract ProjectJ is
     function mint() public payable inGoodStanding onePerWallet {
         require(msg.value == mintPrice,"Mint price not correct");
         _safeMint(msg.sender, _tokenIdTracker.current());
+        emit Minted(msg.sender,_tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
 
     function mintFree() public inGoodStanding onePerWallet eligible {
         freeMintEligible[msg.sender] = false;
         _safeMint(msg.sender, _tokenIdTracker.current());
+        emit MintedFree(msg.sender,_tokenIdTracker.current());
         _tokenIdTracker.increment();
+
     }
 
     // Withdraw contract balance
