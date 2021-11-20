@@ -34,7 +34,7 @@ contract ProjectJ is
 
     mapping(address => bool) public freeMintEligible;
 
-    function intialize(
+    function initialize(
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
