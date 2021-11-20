@@ -1,0 +1,3550 @@
+{
+    "assets": [
+      {
+        "id": 30740264,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607303160971395073",
+        "num_sales": 0,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/h7DgVuhJXR82CRKxGjmBQ6NcwpeAwFzYxgngGjGTbFMwDfjyx0inj7rBAio9lyiKqr0SyBBO-7wbi6pF8T4MwoncyZQjGNmy-JdUzw",
+        "image_preview_url": "https://lh3.googleusercontent.com/h7DgVuhJXR82CRKxGjmBQ6NcwpeAwFzYxgngGjGTbFMwDfjyx0inj7rBAio9lyiKqr0SyBBO-7wbi6pF8T4MwoncyZQjGNmy-JdUzw=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/h7DgVuhJXR82CRKxGjmBQ6NcwpeAwFzYxgngGjGTbFMwDfjyx0inj7rBAio9lyiKqr0SyBBO-7wbi6pF8T4MwoncyZQjGNmy-JdUzw=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedHeifer",
+        "description": "The Official BowTiedHeifer\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedHeifer Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607303160971395073",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Mammal",
+            "value": "Artiodactyla",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 149,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Artiodactyla",
+            "value": "Cow",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 2,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": null,
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30739914,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607302061459767297",
+        "num_sales": 0,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/Y_k35w1mpIyqkHe1G3LGqEYAn0tWzSfgfTGdsSe_q-NwqCKuks4OSIqowH8wWuLgQ5HOWN1i5OphYWpbwF_VULCJcvwInx6_skkkWUU",
+        "image_preview_url": "https://lh3.googleusercontent.com/Y_k35w1mpIyqkHe1G3LGqEYAn0tWzSfgfTGdsSe_q-NwqCKuks4OSIqowH8wWuLgQ5HOWN1i5OphYWpbwF_VULCJcvwInx6_skkkWUU=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/Y_k35w1mpIyqkHe1G3LGqEYAn0tWzSfgfTGdsSe_q-NwqCKuks4OSIqowH8wWuLgQ5HOWN1i5OphYWpbwF_VULCJcvwInx6_skkkWUU=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedFarmer",
+        "description": "The Official BowTiedFarmer\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedFarmer Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607302061459767297",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Mammal",
+            "value": "Primate",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 25,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 148,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Primate",
+            "value": "Human",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": null,
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30739353,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607300961948139521",
+        "num_sales": 0,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/s_yu7XwnXvC7wcMWAnRWUHW2sUuv6IqL0qV5TyRbJK_Y__ogtT3qI_EBnkcuRqnsG_gLvaFFEvggzLwuZ7yVay0aI0vY88hraiRudYg",
+        "image_preview_url": "https://lh3.googleusercontent.com/s_yu7XwnXvC7wcMWAnRWUHW2sUuv6IqL0qV5TyRbJK_Y__ogtT3qI_EBnkcuRqnsG_gLvaFFEvggzLwuZ7yVay0aI0vY88hraiRudYg=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/s_yu7XwnXvC7wcMWAnRWUHW2sUuv6IqL0qV5TyRbJK_Y__ogtT3qI_EBnkcuRqnsG_gLvaFFEvggzLwuZ7yVay0aI0vY88hraiRudYg=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedWestie",
+        "description": "The Official BowTiedWestie\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedWestie Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607300961948139521",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Carnivora",
+            "value": "Dog",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 147,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": null,
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30738722,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607299862436511745",
+        "num_sales": 0,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/JFGwVokND_0XYAUhTWRhwaEYo70qGh8Il5xvsMpdWiUCrfc2FpjczJAtOys8IsMlEOfbToEm5d4DTIB0tGhapF8EC9wWQceU-bAtJg",
+        "image_preview_url": "https://lh3.googleusercontent.com/JFGwVokND_0XYAUhTWRhwaEYo70qGh8Il5xvsMpdWiUCrfc2FpjczJAtOys8IsMlEOfbToEm5d4DTIB0tGhapF8EC9wWQceU-bAtJg=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/JFGwVokND_0XYAUhTWRhwaEYo70qGh8Il5xvsMpdWiUCrfc2FpjczJAtOys8IsMlEOfbToEm5d4DTIB0tGhapF8EC9wWQceU-bAtJg=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedSable",
+        "description": "The Official BowTiedSable\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedSable Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607299862436511745",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Artiodactyla",
+            "value": "Sable",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Artiodactyla",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 146,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": null,
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30738214,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607298762924883969",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/gc2sml2Q1knumimSt175_Gxix4xS6biT-wr23vrc4q2LheDEq_myKpM6uPTVn2AmUQNME45XnyDHvp4d4WlmJi8u_jJ9V7vRRWa5",
+        "image_preview_url": "https://lh3.googleusercontent.com/gc2sml2Q1knumimSt175_Gxix4xS6biT-wr23vrc4q2LheDEq_myKpM6uPTVn2AmUQNME45XnyDHvp4d4WlmJi8u_jJ9V7vRRWa5=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/gc2sml2Q1knumimSt175_Gxix4xS6biT-wr23vrc4q2LheDEq_myKpM6uPTVn2AmUQNME45XnyDHvp4d4WlmJi8u_jJ9V7vRRWa5=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedSnipe",
+        "description": "The Official BowTiedSnipe\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedSnipe Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607298762924883969",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Degenimal ID",
+            "value": 145,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Bird",
+            "value": "Charadriiformes",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Charadriiformes",
+            "value": "Snipe",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Bird",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 11,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607298762924883969",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-07T15:59:08",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0xb2365cc17d9e8ddb9e12f04205462012560c96616598115498f8fda86ed95796",
+            "block_number": "12781271",
+            "from_account": {
+              "user": {
+                "username": null
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/18.png",
+              "address": "0x3d5635c1d78e2706e5698faa6ca32f96f630d4cd",
+              "config": ""
+            },
+            "id": 133666214,
+            "timestamp": "2021-07-07T15:59:08",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x263a57ab6622599d145f510d700158199a9fab9ff9f58a3e1b5d8e5064679e89",
+            "transaction_index": "160"
+          },
+          "created_date": "2021-07-07T15:59:36.427875",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30461484,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607297663413256193",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/Nc3avQxpaB1MC3aI5aOSuCGAHQeCnWkW1w_zyrCVUXoj4XrdW_ilUFSeNRzn5iabCCJ0jllQ5DT0rf_rOvc0z75Ghkf2Rg3i6M13zA",
+        "image_preview_url": "https://lh3.googleusercontent.com/Nc3avQxpaB1MC3aI5aOSuCGAHQeCnWkW1w_zyrCVUXoj4XrdW_ilUFSeNRzn5iabCCJ0jllQ5DT0rf_rOvc0z75Ghkf2Rg3i6M13zA=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/Nc3avQxpaB1MC3aI5aOSuCGAHQeCnWkW1w_zyrCVUXoj4XrdW_ilUFSeNRzn5iabCCJ0jllQ5DT0rf_rOvc0z75Ghkf2Rg3i6M13zA=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedNarwhal",
+        "description": "The Official BowTiedNarwhal\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedNarwhal Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607297663413256193",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Specialty Trait",
+            "value": "Few",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Artiodactyla",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Artiodactyla",
+            "value": "Narwhal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 144,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607297663413256193",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-08T18:54:51",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x268894ac1ee30dc495a91de872feffc6de689ebc9e7303fab205f84451924271",
+            "block_number": "12788447",
+            "from_account": {
+              "user": {
+                "username": "Freddywright"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/30.png",
+              "address": "0x69618d1b6ee95cdfe2d6f57448b533f5e38192a7",
+              "config": ""
+            },
+            "id": 134075157,
+            "timestamp": "2021-07-08T18:54:51",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x8106df531df21eeafddbfabfaa750208043672c6095b995110e419e87ff6125e",
+            "transaction_index": "90"
+          },
+          "created_date": "2021-07-08T18:55:04.356819",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30451811,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607296563901628417",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/hMnWeHc3QlHVdJiCEtU2Oc43rVcOGjNDRLUHDB8Ido2jmGA54CbuAXCsY4a5ncR1O0OVeKKkRJI86Q2LaS1bF0l2EX1klVN-INtp",
+        "image_preview_url": "https://lh3.googleusercontent.com/hMnWeHc3QlHVdJiCEtU2Oc43rVcOGjNDRLUHDB8Ido2jmGA54CbuAXCsY4a5ncR1O0OVeKKkRJI86Q2LaS1bF0l2EX1klVN-INtp=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/hMnWeHc3QlHVdJiCEtU2Oc43rVcOGjNDRLUHDB8Ido2jmGA54CbuAXCsY4a5ncR1O0OVeKKkRJI86Q2LaS1bF0l2EX1klVN-INtp=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedChinchilla",
+        "description": "The Official BowTiedChinchilla\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedChinchil Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607296563901628417",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Rodentia",
+            "value": "Chinchilla",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Rodentia",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 2,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 143,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Specialty Trait",
+            "value": "Few",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607296563901628417",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-06T00:37:59",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x03a453f8ec59be023b593f6e3e3aac972a150a0be00940749ca273918dd19df1",
+            "block_number": "12770763",
+            "from_account": {
+              "user": {
+                "username": "BowTiedChinchilla"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/28.png",
+              "address": "0xc0924369dc9d77be45542a3190889193a0fac8f0",
+              "config": ""
+            },
+            "id": 133053151,
+            "timestamp": "2021-07-06T00:37:59",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xcbd295d6f1064f5f991cd53ff27fc9280e0928d45b5105d0a3dd398952be85e3",
+            "transaction_index": "14"
+          },
+          "created_date": "2021-07-06T00:38:26.408004",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30451258,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607295464390000641",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/b2xX_8jJhlwuAYl3aqFgVyZqs8h77NMBUehRNW44rP7SYjOXOI9qeJBLFdy3ZqptJ7Aka3hLEws3dxyOxSc2nC-a9790Kwn9gFHiCy0",
+        "image_preview_url": "https://lh3.googleusercontent.com/b2xX_8jJhlwuAYl3aqFgVyZqs8h77NMBUehRNW44rP7SYjOXOI9qeJBLFdy3ZqptJ7Aka3hLEws3dxyOxSc2nC-a9790Kwn9gFHiCy0=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/b2xX_8jJhlwuAYl3aqFgVyZqs8h77NMBUehRNW44rP7SYjOXOI9qeJBLFdy3ZqptJ7Aka3hLEws3dxyOxSc2nC-a9790Kwn9gFHiCy0=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedGerenuk",
+        "description": "The Official BowTiedGerenuk\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedGerenuk Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607295464390000641",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Specialty Trait",
+            "value": "Few",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Artiodactyla",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Artiodactyla",
+            "value": "Gerenuk",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 142,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607295464390000641",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-10T14:27:49",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0xd8cfa31659cd1e5ab89d05ea0041890b7d77c8403889b996a224e74215511f8b",
+            "block_number": "12800161",
+            "from_account": {
+              "user": {
+                "username": "krncj21"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/19.png",
+              "address": "0x5124011b654919868f9e78bc04795237c2290861",
+              "config": ""
+            },
+            "id": 134724846,
+            "timestamp": "2021-07-10T14:27:49",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x8c487205c6e397de41b2f9841425dbf8e0a761ca493681e811c0d37e015fc2a6",
+            "transaction_index": "170"
+          },
+          "created_date": "2021-07-10T14:28:38.892549",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30450950,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607294364878372865",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/8h9W_h9KLMf_CxZQJT2fWCA1RXODZzXxeihQ3ErIGdspwXqQK-MgB43yWnqAHd-Q2Jg0crlEgArBGMaB81sryNu1cQxaV1-2z5Sd5A",
+        "image_preview_url": "https://lh3.googleusercontent.com/8h9W_h9KLMf_CxZQJT2fWCA1RXODZzXxeihQ3ErIGdspwXqQK-MgB43yWnqAHd-Q2Jg0crlEgArBGMaB81sryNu1cQxaV1-2z5Sd5A=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/8h9W_h9KLMf_CxZQJT2fWCA1RXODZzXxeihQ3ErIGdspwXqQK-MgB43yWnqAHd-Q2Jg0crlEgArBGMaB81sryNu1cQxaV1-2z5Sd5A=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedTriceratops",
+        "description": "The Official BowTiedTriceratops\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedTricerat Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607294364878372865",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": [
+          {
+            "created_date": "2021-07-14T00:09:09.838721",
+            "closing_date": null,
+            "closing_extendable": false,
+            "expiration_time": 0,
+            "listing_time": 1626221245,
+            "order_hash": "0xeab4fe3d0d4745f7138994be54a0f3b5180bdd26db8b2a3112f1b5329cca0d5a",
+            "metadata": {
+              "asset": {
+                "id": "47475974381565896501680608588151947420114181955589068365149607294364878372865",
+                "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+                "quantity": "1"
+              },
+              "schema": "ERC1155"
+            },
+            "exchange": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+            "maker": {
+              "user": 650291,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/13.png",
+              "address": "0x0bd37c81cb8e146d91184c3ec006305b6e764b5d",
+              "config": ""
+            },
+            "taker": {
+              "user": 1766,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+              "address": "0x0000000000000000000000000000000000000000",
+              "config": ""
+            },
+            "current_price": "420690000000000000000",
+            "current_bounty": "4206900000000000000",
+            "bounty_multiple": "0.01",
+            "maker_relayer_fee": "1050",
+            "taker_relayer_fee": "0",
+            "maker_protocol_fee": "0",
+            "taker_protocol_fee": "0",
+            "maker_referrer_fee": "0",
+            "fee_recipient": {
+              "user": 3585,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/28.png",
+              "address": "0x5b3256965e7c3cf26e11fcaf296dfc8807c01073",
+              "config": "verified"
+            },
+            "fee_method": 1,
+            "side": 1,
+            "sale_kind": 0,
+            "target": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+            "how_to_call": 0,
+            "calldata": "0xf242432a0000000000000000000000000bd37c81cb8e146d91184c3ec006305b6e764b5d000000000000000000000000000000000000000000000000000000000000000068f67301dc1d9a46211eda5c0408de7e44527423000000000000920000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000",
+            "replacement_pattern": "0x000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "static_target": "0x0000000000000000000000000000000000000000",
+            "static_extradata": "0x",
+            "payment_token": "0x0000000000000000000000000000000000000000",
+            "payment_token_contract": {
+              "id": 1,
+              "symbol": "ETH",
+              "address": "0x0000000000000000000000000000000000000000",
+              "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "name": "Ether",
+              "decimals": 18,
+              "eth_price": "1.000000000000000",
+              "usd_price": "4662.199999999999818000"
+            },
+            "base_price": "420690000000000000000",
+            "extra": "0",
+            "quantity": "1",
+            "salt": "5128985278330834188486656008271353871879058507284882008004925396618786133312",
+            "v": 27,
+            "r": "0x2b24b7d8dedfc6975f40434004bbdc10e9db46bbb4da727b9f58067e6297950d",
+            "s": "0x08844ca4cfa8ad9a673995b692a9b211e6d0fdec2ac75f7211b6ed99231974b5",
+            "approved_on_chain": false,
+            "cancelled": false,
+            "finalized": false,
+            "marked_invalid": false,
+            "prefixed_hash": "0xa86c29600007f172d397c55db945fc1390f8613844d29a8b4aa6c6b4ef24ac75"
+          }
+        ],
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Specialty Trait",
+            "value": "Few",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Chordata",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Chordata",
+            "value": "†Ornithischia",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "†Ornithischia",
+            "value": "Triceratops",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 141,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607294364878372865",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-08T17:23:05",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 453,
+            "symbol": "SUSHI",
+            "address": "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2",
+            "image_url": "https://lh3.googleusercontent.com/t79teOUsLousIuIKGYsdKzHGQ9Jb3ghnUYpUf2aABeclxjUgfBnKs_sjf62tPcDu_kwnquKANWcCVhVu4RoHesfk=s120",
+            "name": "SushiToken",
+            "decimals": 18,
+            "eth_price": "0.002394640000000",
+            "usd_price": "11.170000000000000000"
+          },
+          "transaction": {
+            "block_hash": "0xfdcdab9505b197191135a84b8e1debb1acf2f69940e6ff1a7985229a0863eb6e",
+            "block_number": "12788011",
+            "from_account": {
+              "user": {
+                "username": "BowTiedRafiki"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+              "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+              "config": ""
+            },
+            "id": 134050999,
+            "timestamp": "2021-07-08T17:23:05",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xde0e43f4af412c0f64a880fde8f1741c488f8fa8127b945bf594e4f529cf82e9",
+            "transaction_index": "98"
+          },
+          "created_date": "2021-07-08T17:23:25.138627",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30316341,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607293265366745089",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/8qd8YIj2Pv9JmsI4Iw_VUK2R4khXFLLKzXklP5-7YNh8C1LegSRpqyP2BSHquXS0TFwAIAq8a4A1S3SR_IYtNy4OPBxQOLtOWzo0Lg",
+        "image_preview_url": "https://lh3.googleusercontent.com/8qd8YIj2Pv9JmsI4Iw_VUK2R4khXFLLKzXklP5-7YNh8C1LegSRpqyP2BSHquXS0TFwAIAq8a4A1S3SR_IYtNy4OPBxQOLtOWzo0Lg=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/8qd8YIj2Pv9JmsI4Iw_VUK2R4khXFLLKzXklP5-7YNh8C1LegSRpqyP2BSHquXS0TFwAIAq8a4A1S3SR_IYtNy4OPBxQOLtOWzo0Lg=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedJesus",
+        "description": "The Official BowTiedJesus\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedJesus Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607293265366745089",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": [
+          {
+            "created_date": "2021-07-10T04:01:40.128270",
+            "closing_date": null,
+            "closing_extendable": false,
+            "expiration_time": 0,
+            "listing_time": 1625889554,
+            "order_hash": "0x1792009d57ba25df55273204f96620322e5c8c70131de439d3a0cb9d04278733",
+            "metadata": {
+              "asset": {
+                "id": "47475974381565896501680608588151947420114181955589068365149607293265366745089",
+                "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+                "quantity": "1"
+              },
+              "schema": "ERC1155"
+            },
+            "exchange": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+            "maker": {
+              "user": 997667,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/27.png",
+              "address": "0x6b61e3f860e0bec1bf68b76c48d9284cb17e95cf",
+              "config": ""
+            },
+            "taker": {
+              "user": 1766,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+              "address": "0x0000000000000000000000000000000000000000",
+              "config": ""
+            },
+            "current_price": "777000000000000000000",
+            "current_bounty": "7770000000000000000",
+            "bounty_multiple": "0.01",
+            "maker_relayer_fee": "1050",
+            "taker_relayer_fee": "0",
+            "maker_protocol_fee": "0",
+            "taker_protocol_fee": "0",
+            "maker_referrer_fee": "0",
+            "fee_recipient": {
+              "user": 3585,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/28.png",
+              "address": "0x5b3256965e7c3cf26e11fcaf296dfc8807c01073",
+              "config": "verified"
+            },
+            "fee_method": 1,
+            "side": 1,
+            "sale_kind": 0,
+            "target": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+            "how_to_call": 0,
+            "calldata": "0xf242432a0000000000000000000000006b61e3f860e0bec1bf68b76c48d9284cb17e95cf000000000000000000000000000000000000000000000000000000000000000068f67301dc1d9a46211eda5c0408de7e44527423000000000000910000000001000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000000",
+            "replacement_pattern": "0x000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+            "static_target": "0x0000000000000000000000000000000000000000",
+            "static_extradata": "0x",
+            "payment_token": "0x0000000000000000000000000000000000000000",
+            "payment_token_contract": {
+              "id": 1,
+              "symbol": "ETH",
+              "address": "0x0000000000000000000000000000000000000000",
+              "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+              "name": "Ether",
+              "decimals": 18,
+              "eth_price": "1.000000000000000",
+              "usd_price": "4662.199999999999818000"
+            },
+            "base_price": "777000000000000000000",
+            "extra": "0",
+            "quantity": "1",
+            "salt": "15278766599906853585036644240725534923406861465011001562478668130542381335241",
+            "v": 27,
+            "r": "0xc3a97f3ad094a64c2496c9565ef6c52aa8221e7d0fcffec4093be91be310cb8a",
+            "s": "0x4255f12ec5c9ab2dbd72a1d67ab4b8bd5054b077528c604229534e98b809b0d8",
+            "approved_on_chain": false,
+            "cancelled": false,
+            "finalized": false,
+            "marked_invalid": false,
+            "prefixed_hash": "0x6ac8d3ca9609615332a51c4cde38e36cf970581e9224f74bc90773bf6393301a"
+          }
+        ],
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Primate",
+            "value": "Human",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Specialty Trait",
+            "value": "Few",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 140,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Primate",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 25,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607293265366745089",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-08T22:50:05",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0xda532e0fbae642b2a636c462d083fb5ec52641de870378bde3cc2a97b8fed836",
+            "block_number": "12789521",
+            "from_account": {
+              "user": {
+                "username": "WhaledTruth"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/27.png",
+              "address": "0x6b61e3f860e0bec1bf68b76c48d9284cb17e95cf",
+              "config": ""
+            },
+            "id": 134133191,
+            "timestamp": "2021-07-08T22:50:05",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xeda340100943d5f5522ab0c1829d4126c8f62d7cfe32d161b1844b2e2658eaf0",
+            "transaction_index": "372"
+          },
+          "created_date": "2021-07-08T22:51:09.343964",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30315891,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607292165855117313",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/wyL5oLITfdj4c5Hjo8Ws7RstbgV4HCfVZHbQjHb8DRsQxkJ_OzYcTLlAZCxG2h_XcvyOJNu9UhZ3vc9xQ7nNrtCP_hodUfbdJVs6Tw",
+        "image_preview_url": "https://lh3.googleusercontent.com/wyL5oLITfdj4c5Hjo8Ws7RstbgV4HCfVZHbQjHb8DRsQxkJ_OzYcTLlAZCxG2h_XcvyOJNu9UhZ3vc9xQ7nNrtCP_hodUfbdJVs6Tw=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/wyL5oLITfdj4c5Hjo8Ws7RstbgV4HCfVZHbQjHb8DRsQxkJ_OzYcTLlAZCxG2h_XcvyOJNu9UhZ3vc9xQ7nNrtCP_hodUfbdJVs6Tw=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedElf",
+        "description": "The Official BowTiedElf\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedElf Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607292165855117313",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Mammal",
+            "value": "Primate",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 25,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 139,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Primate",
+            "value": "Human",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607292165855117313",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-03T13:29:10",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0xd6f44dd4c84b278f305f48d095e3c7fdc2394a5fb42f08bc669dfb69d19454e5",
+            "block_number": "12754877",
+            "from_account": {
+              "user": {
+                "username": null
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/28.png",
+              "address": "0x1e5b68e77562a63bcd1476a9661773aa9d39cdfa",
+              "config": ""
+            },
+            "id": 132215939,
+            "timestamp": "2021-07-03T13:29:10",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xc4420e22087472fdf8bde90e0ac4799b34e36cbba5ebb10f61d548eca2cff9a5",
+            "transaction_index": "32"
+          },
+          "created_date": "2021-07-03T13:29:28.548580",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30311124,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607291066343489537",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/3m-WMUVBOdxSaKYsggQL2VO93rXeJ9AjAy0iui4ap9NLOFAwBiOHY8AOENzGZw6xPj7auq-6Cp6EgicnMgkVL_8T5tSi6u0y9x3g",
+        "image_preview_url": "https://lh3.googleusercontent.com/3m-WMUVBOdxSaKYsggQL2VO93rXeJ9AjAy0iui4ap9NLOFAwBiOHY8AOENzGZw6xPj7auq-6Cp6EgicnMgkVL_8T5tSi6u0y9x3g=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/3m-WMUVBOdxSaKYsggQL2VO93rXeJ9AjAy0iui4ap9NLOFAwBiOHY8AOENzGZw6xPj7auq-6Cp6EgicnMgkVL_8T5tSi6u0y9x3g=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedFeline",
+        "description": "The Official BowTiedFeline\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedFeline Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607291066343489537",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Degenimal ID",
+            "value": 138,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Specialty Trait",
+            "value": "Few",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Animla Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Carnivora",
+            "value": "Leopard",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607291066343489537",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-02T17:46:25",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x9a47f64afc7c432fd6095851eb055a69bed3ac7908f72364ef27d3c45089b29c",
+            "block_number": "12749663",
+            "from_account": {
+              "user": {
+                "username": "BowTiedFeline"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/18.png",
+              "address": "0xe9ee63bc8836f46a1dc1dc7d4ad118c8d3a58eeb",
+              "config": ""
+            },
+            "id": 131956225,
+            "timestamp": "2021-07-02T17:46:25",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xa4329ee56158ff17bebfd611be71a9c4ebb434e41f81cd6d8743e80f44d46f5f",
+            "transaction_index": "144"
+          },
+          "created_date": "2021-07-02T17:47:23.896492",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30310119,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607289966831861761",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/GJ1XOP_DjnvC1zVSxHpwKqv6PShnJLcHHU7ZB6zz0yhMQCMfdNh06DU-agSMGw08Cwalp-InV2LnvWYYNzeyMGksEDZSyMi7Iw0h4A",
+        "image_preview_url": "https://lh3.googleusercontent.com/GJ1XOP_DjnvC1zVSxHpwKqv6PShnJLcHHU7ZB6zz0yhMQCMfdNh06DU-agSMGw08Cwalp-InV2LnvWYYNzeyMGksEDZSyMi7Iw0h4A=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/GJ1XOP_DjnvC1zVSxHpwKqv6PShnJLcHHU7ZB6zz0yhMQCMfdNh06DU-agSMGw08Cwalp-InV2LnvWYYNzeyMGksEDZSyMi7Iw0h4A=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedTreeFrog",
+        "description": "The Official BowTiedTreeFrog\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedTreeFrog Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607289966831861761",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Animal Group",
+            "value": "Amphibian",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Amphibian",
+            "value": "Anura",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 137,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Anura",
+            "value": "Frog",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 2,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607289966831861761",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-02T17:28:55",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x3427160900eb1a49e9d49b832b8c8b8901a2d27336d01051ed036335ae1fcaf9",
+            "block_number": "12749585",
+            "from_account": {
+              "user": {
+                "username": "BowTiedTreeFrog"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/10.png",
+              "address": "0x8d5c0326e84c0675deb2b0a33758a73f41d61828",
+              "config": ""
+            },
+            "id": 131951647,
+            "timestamp": "2021-07-02T17:28:55",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xe955a6c7d7d3f143e1931f7cfa9347a0c18d88614247df3324c6706cfba3ac5f",
+            "transaction_index": "76"
+          },
+          "created_date": "2021-07-02T17:29:26.819291",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30307489,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607288867320233985",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/XvMnSqxkKOQJEE0BvhVcf5m9P9SXzKKD8UUWcQ_JSKVDQWPX4gRgK_C_KvrrWMtOd870BOqliLdLo14bjd2tflX_TW7Q_l8Oi6WuZA",
+        "image_preview_url": "https://lh3.googleusercontent.com/XvMnSqxkKOQJEE0BvhVcf5m9P9SXzKKD8UUWcQ_JSKVDQWPX4gRgK_C_KvrrWMtOd870BOqliLdLo14bjd2tflX_TW7Q_l8Oi6WuZA=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/XvMnSqxkKOQJEE0BvhVcf5m9P9SXzKKD8UUWcQ_JSKVDQWPX4gRgK_C_KvrrWMtOd870BOqliLdLo14bjd2tflX_TW7Q_l8Oi6WuZA=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedScholar",
+        "description": "The Official BowTiedScholar\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedScholar Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607288867320233985",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Mammal",
+            "value": "Artiodactyla",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 13,
+            "order": null
+          },
+          {
+            "trait_type": "Artiodactyla",
+            "value": "Cow",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 2,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 136,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607288867320233985",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-07T03:40:44",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x0a6c0fd653655077636242c37f507b8fd1ec5902e6f1e4bbb814742ecae97dbe",
+            "block_number": "12777987",
+            "from_account": {
+              "user": {
+                "username": "BowTiedScholar"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/11.png",
+              "address": "0xc1254a5a26b6631ee7358dc728629fc2c1b75e5e",
+              "config": ""
+            },
+            "id": 133486647,
+            "timestamp": "2021-07-07T03:40:44",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xdec5b1905ced0cfbe216d3cab346b1fe24342e242a2fdd5342fcfd5cdd0a8811",
+            "transaction_index": "61"
+          },
+          "created_date": "2021-07-07T03:41:09.990107",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30306632,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607287767808606209",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/3yMeMPN1ch1_tyFDALhJOHFJlG3lwzXnv5KnPUw1HnRSOqEzvLmKcuXlBUaWtcuPIoimVzzHZBNbf4pqP5LqhowuWHrMKKJ23Yum",
+        "image_preview_url": "https://lh3.googleusercontent.com/3yMeMPN1ch1_tyFDALhJOHFJlG3lwzXnv5KnPUw1HnRSOqEzvLmKcuXlBUaWtcuPIoimVzzHZBNbf4pqP5LqhowuWHrMKKJ23Yum=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/3yMeMPN1ch1_tyFDALhJOHFJlG3lwzXnv5KnPUw1HnRSOqEzvLmKcuXlBUaWtcuPIoimVzzHZBNbf4pqP5LqhowuWHrMKKJ23Yum=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedKite",
+        "description": "The Official BowTiedKite\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedKite Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607287767808606209",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Bird",
+            "value": "Accipitriformes",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Accipitriformes",
+            "value": "Kite",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 135,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Bird",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 11,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607287767808606209",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-02T18:57:42",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x73f7387fec662110302d5d85ff7535314f702ef7b2afbbafb3e6988696250b42",
+            "block_number": "12749960",
+            "from_account": {
+              "user": null,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/10.png",
+              "address": "0xbe7f2ae9f218dbc9eeae7bf9f2df0c136fd9e757",
+              "config": ""
+            },
+            "id": 131973179,
+            "timestamp": "2021-07-02T18:57:42",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x12f28a62bc3984f1b0453b7fbae74203e08531770a5df1dfa662676969b7096c",
+            "transaction_index": "158"
+          },
+          "created_date": "2021-07-02T18:58:07.136504",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30306058,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607286668296978433",
+        "num_sales": 0,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/nDAVlS0hfQrYR0WdjjKeHQNfFVT5OKHw_fjO7tcHV-zY6DWkP8WWHTbz3NmccaY6koyiMBnkCNb8E3BJGmeiR5CYndhnV5u--cse",
+        "image_preview_url": "https://lh3.googleusercontent.com/nDAVlS0hfQrYR0WdjjKeHQNfFVT5OKHw_fjO7tcHV-zY6DWkP8WWHTbz3NmccaY6koyiMBnkCNb8E3BJGmeiR5CYndhnV5u--cse=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/nDAVlS0hfQrYR0WdjjKeHQNfFVT5OKHw_fjO7tcHV-zY6DWkP8WWHTbz3NmccaY6koyiMBnkCNb8E3BJGmeiR5CYndhnV5u--cse=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedApache",
+        "description": "The Official BowTiedApache\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedApache Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607286668296978433",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Carnivora",
+            "value": "Human",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 2,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 134,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": null,
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30305889,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607285568785350657",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/n5WiTikJMQuhKua09SCIM1uQGXvN9u5dC7wGL0L-bYLowgarM5DrS2Zg0gFF0RV_o1wSINFHltzE5n_Efrykp4ggsXRk76fwW9bV9w",
+        "image_preview_url": "https://lh3.googleusercontent.com/n5WiTikJMQuhKua09SCIM1uQGXvN9u5dC7wGL0L-bYLowgarM5DrS2Zg0gFF0RV_o1wSINFHltzE5n_Efrykp4ggsXRk76fwW9bV9w=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/n5WiTikJMQuhKua09SCIM1uQGXvN9u5dC7wGL0L-bYLowgarM5DrS2Zg0gFF0RV_o1wSINFHltzE5n_Efrykp4ggsXRk76fwW9bV9w=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedMoonBear",
+        "description": "The Official BowTiedMoonBear\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedMoonBear Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607285568785350657",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Carnivora",
+            "value": "Bear",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 3,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 133,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607285568785350657",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-02T16:50:52",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0xe12868289475136c1620bc6a9e652c9bf9dc057a83ecdae3f21ef9de3f62210a",
+            "block_number": "12749401",
+            "from_account": {
+              "user": {
+                "username": "BowTiedMoonBear"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/17.png",
+              "address": "0xf13dbb412f38774147534c77c8c3d72b44b7bce6",
+              "config": ""
+            },
+            "id": 131941223,
+            "timestamp": "2021-07-02T16:50:52",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0xb31621ae78aaa87e1e164190f54a03daa2cf1197df8e5dd71f59485d0de8514e",
+            "transaction_index": "31"
+          },
+          "created_date": "2021-07-02T16:51:05.122699",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30305419,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607284469273722881",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/BLSIK_m_9ZaeVf4_4nZNeTCSUxIsMyIfdtigXZ2gyGhXjUOtIKMMDIyxUDW-q8HaoQ3wleNb6H2_ieg6ZGv-NQTuFtTvfgl4gtmv6A",
+        "image_preview_url": "https://lh3.googleusercontent.com/BLSIK_m_9ZaeVf4_4nZNeTCSUxIsMyIfdtigXZ2gyGhXjUOtIKMMDIyxUDW-q8HaoQ3wleNb6H2_ieg6ZGv-NQTuFtTvfgl4gtmv6A=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/BLSIK_m_9ZaeVf4_4nZNeTCSUxIsMyIfdtigXZ2gyGhXjUOtIKMMDIyxUDW-q8HaoQ3wleNb6H2_ieg6ZGv-NQTuFtTvfgl4gtmv6A=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedMarder",
+        "description": "The Official BowTiedMarder\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedMarder Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607284469273722881",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Degenimal ID",
+            "value": 132,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Carnivora",
+            "value": "Marten",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607284469273722881",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-02T16:44:22",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x814bb81791c2248c29d197714725b7e4a0cca96e8756d32eef5cf6ed06f3f953",
+            "block_number": "12749370",
+            "from_account": {
+              "user": {
+                "username": null
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/8.png",
+              "address": "0x13b92142373cfef4d4614b65c1fc657d1e980cd5",
+              "config": ""
+            },
+            "id": 131939620,
+            "timestamp": "2021-07-02T16:44:22",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x90604d6667ad9b839aa94da71d5d43fae4ee99a7cd5a4582d6784b7245f45ef4",
+            "transaction_index": "147"
+          },
+          "created_date": "2021-07-02T16:46:07.159907",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30212723,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607283369762095105",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/Mks_5c5XzqHQoeu3Wp_QbDOa0Jymd_vVqv6lCAfJB4E0e4QHlLpz39eTvlPn2x8ES3j0rcGc8Dl4g3PhXjblRDha3SMDus9VsOfT",
+        "image_preview_url": "https://lh3.googleusercontent.com/Mks_5c5XzqHQoeu3Wp_QbDOa0Jymd_vVqv6lCAfJB4E0e4QHlLpz39eTvlPn2x8ES3j0rcGc8Dl4g3PhXjblRDha3SMDus9VsOfT=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/Mks_5c5XzqHQoeu3Wp_QbDOa0Jymd_vVqv6lCAfJB4E0e4QHlLpz39eTvlPn2x8ES3j0rcGc8Dl4g3PhXjblRDha3SMDus9VsOfT=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedManticore",
+        "description": "The Official BowTiedManticore\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedManticore Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607283369762095105",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Carnivora",
+            "value": "Manticore",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 131,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607283369762095105",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-01T20:46:54",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x5dd8ace34c6a1f9a0712758f3be70a9ec670673dd79afd159abd8ad3b25be84e",
+            "block_number": "12743979",
+            "from_account": {
+              "user": {
+                "username": "BowTiedManticore"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/6.png",
+              "address": "0xa35b2b4eccb966fdf1bef8091cca69d45da338b4",
+              "config": ""
+            },
+            "id": 131662982,
+            "timestamp": "2021-07-01T20:46:54",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x51db206f78e34284ba801cf5562464451f3d4185c812ab900c55c7505e704600",
+            "transaction_index": "49"
+          },
+          "created_date": "2021-07-01T20:47:12.646974",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      },
+      {
+        "id": 30211877,
+        "token_id": "47475974381565896501680608588151947420114181955589068365149607282270250467329",
+        "num_sales": 1,
+        "background_color": null,
+        "image_url": "https://lh3.googleusercontent.com/j_m6MajehYXuJkgEb25Cr2qhRQPXocBMAGZWHTIETZ4kGJjhMNg3297MhwIsy8Lrio6dW0U4uIpRGO9DVmaqnHTVxhxEDwyhvPvWS7M",
+        "image_preview_url": "https://lh3.googleusercontent.com/j_m6MajehYXuJkgEb25Cr2qhRQPXocBMAGZWHTIETZ4kGJjhMNg3297MhwIsy8Lrio6dW0U4uIpRGO9DVmaqnHTVxhxEDwyhvPvWS7M=s250",
+        "image_thumbnail_url": "https://lh3.googleusercontent.com/j_m6MajehYXuJkgEb25Cr2qhRQPXocBMAGZWHTIETZ4kGJjhMNg3297MhwIsy8Lrio6dW0U4uIpRGO9DVmaqnHTVxhxEDwyhvPvWS7M=s128",
+        "image_original_url": null,
+        "animation_url": null,
+        "animation_original_url": null,
+        "name": "BowTiedOcelotl",
+        "description": "The Official BowTiedOcelotl\n\nMember of The @BowTiedJungle \n\nOwner of @BowTiedOcelotl Twitter Account\n\nWelcome, anon",
+        "external_link": null,
+        "asset_contract": {
+          "address": "0x495f947276749ce646f68ac8c248420045cb7b5e",
+          "asset_contract_type": "semi-fungible",
+          "created_date": "2020-12-02T17:40:53.232025",
+          "name": "OpenSea Collection",
+          "nft_version": null,
+          "opensea_version": "2.0.0",
+          "owner": 102384,
+          "schema_name": "ERC1155",
+          "symbol": "OPENSTORE",
+          "total_supply": null,
+          "description": "",
+          "external_link": null,
+          "image_url": null,
+          "default_to_fiat": false,
+          "dev_buyer_fee_basis_points": 0,
+          "dev_seller_fee_basis_points": 0,
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": 0,
+          "opensea_seller_fee_basis_points": 250,
+          "buyer_fee_basis_points": 0,
+          "seller_fee_basis_points": 250,
+          "payout_address": null
+        },
+        "permalink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/47475974381565896501680608588151947420114181955589068365149607282270250467329",
+        "collection": {
+          "banner_image_url": "https://lh3.googleusercontent.com/2keCX7dNnAObsnKCi06-4djU4L8W8x_O_OqnRsXJbbP7yQR-lBaSxQTjwBlcPzThBvslU_yf5h0sqNzI55qS1MoKSuTU7IDJJcCS3Q=s2500",
+          "chat_url": null,
+          "created_date": "2021-05-11T19:30:15.242986",
+          "default_to_fiat": false,
+          "description": "The Official BowTiedJungle NFT Collection\n\nClaim & Mint your Official Jungle Avatar. Influenced & Inspired by BowTiedBull.\n\nWelcome, anon",
+          "dev_buyer_fee_basis_points": "0",
+          "dev_seller_fee_basis_points": "800",
+          "discord_url": "https://discord.gg/K6WfHphzBj",
+          "display_data": {
+            "card_display_style": "padded"
+          },
+          "external_url": null,
+          "featured": false,
+          "featured_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "hidden": false,
+          "safelist_request_status": "not_requested",
+          "image_url": "https://lh3.googleusercontent.com/kioJLaD1IOZadm-2zIc-WFZWFLWfdemun5ZTeb3tCAmSn6nBGTw3YEvS1pfoYHvJzHdxi87LQI5yRgAICMioFpMGkoc360p9s-mSfc0=s120",
+          "is_subject_to_whitelist": false,
+          "large_image_url": "https://lh3.googleusercontent.com/1Wj-MOUHtt3KiFXqmVtPY727PTEodWQWjFUCEeMQVYpujbqlsPSSV4E2K0AfnbGLR0gWbadQE5L0sU_maLp0MibI0X9qDW7z7QY2kPQ=s300",
+          "medium_username": null,
+          "name": "Degenimals",
+          "only_proxied_transfers": false,
+          "opensea_buyer_fee_basis_points": "0",
+          "opensea_seller_fee_basis_points": "250",
+          "payout_address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "require_email": false,
+          "short_description": null,
+          "slug": "degenimals",
+          "telegram_url": null,
+          "twitter_username": "https://twitter.com/Degenimals?s=20",
+          "instagram_username": null,
+          "wiki_url": null
+        },
+        "decimals": null,
+        "token_metadata": null,
+        "owner": {
+          "user": {
+            "username": "NullAddress"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/1.png",
+          "address": "0x0000000000000000000000000000000000000000",
+          "config": ""
+        },
+        "sell_orders": null,
+        "creator": {
+          "user": {
+            "username": "BowTiedRafiki"
+          },
+          "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/33.png",
+          "address": "0x68f67301dc1d9a46211eda5c0408de7e44527423",
+          "config": ""
+        },
+        "traits": [
+          {
+            "trait_type": "Carnivora",
+            "value": "Jaguar",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 1,
+            "order": null
+          },
+          {
+            "trait_type": "Mammal",
+            "value": "Carnivora",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 45,
+            "order": null
+          },
+          {
+            "trait_type": "Degenimal ID",
+            "value": 130,
+            "display_type": "number",
+            "max_value": "150",
+            "trait_count": 0,
+            "order": null
+          },
+          {
+            "trait_type": "Animal Group",
+            "value": "Mammal",
+            "display_type": null,
+            "max_value": null,
+            "trait_count": 101,
+            "order": null
+          }
+        ],
+        "last_sale": {
+          "asset": {
+            "token_id": "47475974381565896501680608588151947420114181955589068365149607282270250467329",
+            "decimals": null
+          },
+          "asset_bundle": null,
+          "event_type": "successful",
+          "event_timestamp": "2021-07-01T17:50:56",
+          "auction_type": null,
+          "total_price": "100000000000000000",
+          "payment_token": {
+            "id": 1,
+            "symbol": "ETH",
+            "address": "0x0000000000000000000000000000000000000000",
+            "image_url": "https://storage.opensea.io/files/6f8e2979d428180222796ff4a33ab929.svg",
+            "name": "Ether",
+            "decimals": 18,
+            "eth_price": "1.000000000000000",
+            "usd_price": "4662.199999999999818000"
+          },
+          "transaction": {
+            "block_hash": "0x0c89de6ac5d79c27dff3712774bd059afff60e91350f276eff65449d02b3f0ee",
+            "block_number": "12743234",
+            "from_account": {
+              "user": null,
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/15.png",
+              "address": "0x0360a0cc5d4df464c17ba439da62fb1ea2a5c3ae",
+              "config": ""
+            },
+            "id": 131621609,
+            "timestamp": "2021-07-01T17:50:56",
+            "to_account": {
+              "user": {
+                "username": "OpenSea-Orders"
+              },
+              "profile_img_url": "https://storage.googleapis.com/opensea-static/opensea-profile/22.png",
+              "address": "0x7be8076f4ea4a4ad08075c2508e481d6c946d12b",
+              "config": "verified"
+            },
+            "transaction_hash": "0x3d142d272f4bbf00378e36f79338e496b06c252d696b00488ad887301c1256e6",
+            "transaction_index": "156"
+          },
+          "created_date": "2021-07-01T17:51:27.784629",
+          "quantity": "1"
+        },
+        "top_bid": null,
+        "listing_date": null,
+        "is_presale": true,
+        "transfer_fee_payment_token": null,
+        "transfer_fee": null
+      }
+    ]
+  }

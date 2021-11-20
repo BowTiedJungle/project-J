@@ -32,11 +32,14 @@ contract ProjectJ is
 
     uint256 public constant mintPrice = 0.1 ether;
 
+    mapping(address => bool) public freeMintEligible;
+
     constructor (
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
-        address payable _governor
+        address payable _governor,
+        address[] memory _freeMintEligibleList
     ) payable ERC721("ProjectJ","PRJ") {
 
         // Set contract governor
@@ -60,6 +63,11 @@ contract ProjectJ is
             _setupRole(PAUSER_ROLE,_pausers[i]);
         }
 
+        // Initialize degenimals whitelist
+        for (i = 0;i < _freeMintEligibleList.length; i++) {
+            freeMintEligible[_freeMintEligibleList[i]] = true;
+        }
+
         // Increment counter so first mint starts at token #1
         _tokenIdTracker.increment();
     }
@@ -70,6 +78,9 @@ contract ProjectJ is
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
+    event Minted(address minter, uint256 tokenId);
+    event MintedFree(address minter, uint256 tokenId);
+
     // Requires target address to be in good standing
     modifier inGoodStanding() {
         require(blacklist[msg.sender] == false,"Account is blacklisted.");
@@ -78,6 +89,11 @@ contract ProjectJ is
 
     modifier onePerWallet() {
         require(balanceOf(msg.sender) == 0,"One per customer ser");
+        _;
+    }
+
+    modifier eligible() {
+        require(freeMintEligible[msg.sender] == true,"Not eligible for free mint");
         _;
     }
 
@@ -136,7 +152,16 @@ contract ProjectJ is
     function mint() public payable inGoodStanding onePerWallet {
         require(msg.value == mintPrice,"Mint price not correct");
         _safeMint(msg.sender, _tokenIdTracker.current());
+        emit Minted(msg.sender,_tokenIdTracker.current());
         _tokenIdTracker.increment();
+    }
+
+    function mintFree() public inGoodStanding onePerWallet eligible {
+        freeMintEligible[msg.sender] = false;
+        _safeMint(msg.sender, _tokenIdTracker.current());
+        emit MintedFree(msg.sender,_tokenIdTracker.current());
+        _tokenIdTracker.increment();
+
     }
 
     // Withdraw contract balance

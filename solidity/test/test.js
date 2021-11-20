@@ -5,19 +5,27 @@ const { solidity } = waffle;
 // Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood
 // mod1, mod2: permissioned accounts. citizen1, citizen2, ... :non-permissioned accounts eg. users
 const provider = waffle.provider;
-const [mod1, mod2, citizen1, citizen2, governor] = provider.getWallets();
+const [mod1, mod2, citizen1, citizen2, governor, degen1, degen2] = provider.getWallets();
 var moderators = [mod1.address,mod2.address];   //The .address syntax is used to get addy from the Signer object
 var pausers = [mod1.address,mod2.address];
+var degens = [degen1.address,degen2.address]
 const baseURI = "testURI";
 
 describe("ProjectJ", function () {
 
+    // beforeEach( async function () {
+    //     // Initialize the smart contract
+    //     const ProjectJ = await ethers.getContractFactory("ProjectJ");
+    //     const projectJ = await upgrades.deployProxy(ProjectJ, [moderators,pausers,baseURI,governor.address,degens]);
+    //     await projectJ.deployed();
+    // });
+
     it("Should change the blacklist status of an address when modifyStanding is called by a moderator", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
-
+        
         // Check for expected initial state
         expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
 
@@ -33,7 +41,7 @@ describe("ProjectJ", function () {
     it("Should NOT change the blacklist status of an address when modifyStanding is called without moderator role", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -50,7 +58,7 @@ describe("ProjectJ", function () {
     it("Should NOT allow a user to change their own blacklist status", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -67,7 +75,7 @@ describe("ProjectJ", function () {
     it("Should NOT allow a blacklisted moderator to change a blacklist status", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -88,7 +96,7 @@ describe("ProjectJ", function () {
     it("Should pause the contract when called with PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -105,7 +113,7 @@ describe("ProjectJ", function () {
     it("Should NOT pause the contract when called without PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -122,7 +130,7 @@ describe("ProjectJ", function () {
     it("Should NOT unpause the contract when called without PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -142,7 +150,7 @@ describe("ProjectJ", function () {
     it("Should pause and unpause the contract correctly when called with PAUSER_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -165,7 +173,7 @@ describe("ProjectJ", function () {
     it("Should mint NFT", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -179,10 +187,27 @@ describe("ProjectJ", function () {
 
     });
 
+    it("Should emit Minted on mint", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        // Call contract
+        await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')})).to.emit(projectJ,'Minted').withArgs(citizen1.address,1);
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+    });
+
     it("Should not mint NFT to blacklisted address", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial states
@@ -203,7 +228,7 @@ describe("ProjectJ", function () {
     it("Should not allow minting more than 1 NFT", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -223,7 +248,7 @@ describe("ProjectJ", function () {
     it("Should NOT mint NFT with wrong mint price", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -240,7 +265,7 @@ describe("ProjectJ", function () {
     it("Should deduct mintPrice on successful mint", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check for expected initial state
@@ -281,7 +306,7 @@ describe("ProjectJ", function () {
     it("Should increase the contract ETH balance when NFT is minted", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check inital contract balance
@@ -303,7 +328,7 @@ describe("ProjectJ", function () {
     it("Should withdraw the contract ETH balance when called with GOVERNOR_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check inital contract balance
@@ -326,7 +351,7 @@ describe("ProjectJ", function () {
     it("Should NOT withdraw the contract ETH balance when called without GOVERNOR_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Check inital contract balance
@@ -349,7 +374,7 @@ describe("ProjectJ", function () {
     it("Should update _baseTokenURI when called with GOVERNOR_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Setup
@@ -368,7 +393,7 @@ describe("ProjectJ", function () {
     it("Should NOT update _baseTokenURI when called without GOVERNOR_ROLE", async function () {
         // Initialize the smart contract
         const ProjectJ = await ethers.getContractFactory("ProjectJ");
-        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address);
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
         await projectJ.deployed();
 
         // Setup
@@ -382,6 +407,104 @@ describe("ProjectJ", function () {
 
         // Check final conditions
         expect(await projectJ.tokenURI(1)).to.equal(baseURI+'1');
+    });
+
+    it("Should allow free mint to eligible address and remove free eligiblity after minting", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+        // Call contract
+        await projectJ.connect(degen1).mintFree();
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(false);
+
+    });
+
+    it("Should emit MintedFree after mintFree successfully called", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+        // Call contract
+        await expect(projectJ.connect(degen1).mintFree()).to.emit(projectJ,'MintedFree').withArgs(degen1.address,1);
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(false);
+
+    });
+
+    it("Should NOT allow free mint to ineligible address", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(citizen1.address)).to.equal(false);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(citizen1).mintFree()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(citizen1.address)).to.equal(false);
+
+    });
+
+    it("Should NOT allow free mint if wallet has PRJ balance >0", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        await projectJ.connect(degen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+    });
+
+    it("Should NOT allow free mint to blacklisted address", async function () {
+        // Initialize the smart contract
+        const ProjectJ = await ethers.getContractFactory("ProjectJ");
+        const projectJ = await ProjectJ.deploy(moderators,pausers,baseURI,governor.address,degens);
+        await projectJ.deployed();
+
+        // Check for expected initial states
+        await projectJ.connect(mod1).modifyStanding(degen1.address,true);
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+        expect(await projectJ.checkStanding(degen1.address)).to.equal(true);
+
+        // Call contract, expecting reversion
+        await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+
+        // Check for expected final state
+        expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+        expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
     });
 
 });
