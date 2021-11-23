@@ -80,6 +80,10 @@ contract ProjectJ is
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
+    event Minted(address to, uint256 tokenId);
+
+    event MintedFree(address to, uint256 tokenId);
+
     // Requires target address to be in good standing
     modifier inGoodStanding() {
         require(blacklist[msg.sender] == false,"Account is blacklisted.");
@@ -150,13 +154,17 @@ contract ProjectJ is
     // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
     function mint() public payable inGoodStanding onePerWallet {
         require(msg.value == mintPrice,"Mint price not correct");
-        _safeMint(msg.sender, _tokenIdTracker.current());
+        uint256 currentId = _tokenIdTracker.current();
+        _safeMint(msg.sender, currentId);
+        emit Minted(msg.sender, currentId);
         _tokenIdTracker.increment();
     }
 
     function mintFree() public inGoodStanding onePerWallet eligible {
         freeMintEligible[msg.sender] = false;
-        _safeMint(msg.sender, _tokenIdTracker.current());
+        uint256 currentId = _tokenIdTracker.current();
+        _safeMint(msg.sender, currentId);
+        emit MintedFree(msg.sender, currentId);
         _tokenIdTracker.increment();
     }
 

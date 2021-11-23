@@ -252,6 +252,20 @@ describe("ProjectJ", function () {
             // expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
         });
 
+
+        it("Should emit Minted after mint successfully called", async function () {
+    
+            // Check for expected initial states
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+    
+            // Call contract
+            await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther("0.1")})).to.emit(projectJ,'Minted').withArgs(citizen1.address,1);
+    
+            // Check for expected final state
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+        });
+
     });
 
     describe("Funds Handling", function () {
@@ -425,6 +439,21 @@ describe("ProjectJ", function () {
             // Check for expected final state
             expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
             expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+
+        });
+
+        it("Should emit MintedFree after mintFree successfully called", async function () {
+    
+            // Check for expected initial states
+            expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
+            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+    
+            // Call contract
+            await expect(projectJ.connect(degen1).mintFree()).to.emit(projectJ,'MintedFree').withArgs(degen1.address,1);
+    
+            // Check for expected final state
+            expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
+            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(false);
 
         });
 
