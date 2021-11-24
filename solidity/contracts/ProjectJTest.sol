@@ -9,7 +9,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721Pausab
 import "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract ProjectJ is 
+contract ProjectJTest is 
     ERC721Upgradeable, 
     ERC721EnumerableUpgradeable,
     ERC721BurnableUpgradeable,
@@ -39,7 +39,7 @@ contract ProjectJ is
         address[] memory _pausers,
         string memory baseTokenURI,
         address payable _governor,
-        address[] memory _freeMintEligibleList
+        address[] memory _freeMintEligible
     ) initializer public payable {
 
         __ERC721_init("ProjectJ","PRJ");
@@ -66,8 +66,8 @@ contract ProjectJ is
         }
 
         // Initialize degenimals whitelist
-        for (i = 0;i < _freeMintEligibleList.length; i++) {
-            freeMintEligible[_freeMintEligibleList[i]] = true;
+        for (i = 0;i < _freeMintEligible.length; i++) {
+            freeMintEligible[_freeMintEligible[i]] = true;
         }
 
         // Increment counter so first mint starts at token #1
@@ -79,10 +79,6 @@ contract ProjectJ is
 
     // Modification of standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
-
-    event Minted(address to, uint256 tokenId);
-
-    event MintedFree(address to, uint256 tokenId);
 
     // Requires target address to be in good standing
     modifier inGoodStanding() {
@@ -154,17 +150,13 @@ contract ProjectJ is
     // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
     function mint() public payable inGoodStanding onePerWallet {
         require(msg.value == mintPrice,"Mint price not correct");
-        uint256 currentId = _tokenIdTracker.current();
-        _safeMint(msg.sender, currentId);
-        emit Minted(msg.sender, currentId);
+        _safeMint(msg.sender, _tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
 
     function mintFree() public inGoodStanding onePerWallet eligible {
         freeMintEligible[msg.sender] = false;
-        uint256 currentId = _tokenIdTracker.current();
-        _safeMint(msg.sender, currentId);
-        emit MintedFree(msg.sender, currentId);
+        _safeMint(msg.sender, _tokenIdTracker.current());
         _tokenIdTracker.increment();
     }
 
@@ -194,6 +186,10 @@ contract ProjectJ is
         uint256 tokenId
     ) internal virtual override(ERC721Upgradeable, ERC721EnumerableUpgradeable, ERC721PausableUpgradeable) {
         super._beforeTokenTransfer(from, to, tokenId);
+    }
+
+    function proxyTest() public view returns (uint256) {
+        return 42;
     }
 
 }
