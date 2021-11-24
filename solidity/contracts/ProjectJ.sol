@@ -39,7 +39,7 @@ contract ProjectJ is
         address[] memory _pausers,
         string memory baseTokenURI,
         address payable _governor,
-        address[] memory _freeMintEligible
+        address[] memory _freeMintEligibleList
     ) initializer public payable {
 
         __ERC721_init("ProjectJ","PRJ");
@@ -66,8 +66,8 @@ contract ProjectJ is
         }
 
         // Initialize degenimals whitelist
-        for (i = 0;i < _freeMintEligible.length; i++) {
-            freeMintEligible[_freeMintEligible[i]] = true;
+        for (i = 0;i < _freeMintEligibleList.length; i++) {
+            freeMintEligible[_freeMintEligibleList[i]] = true;
         }
 
         // Increment counter so first mint starts at token #1
