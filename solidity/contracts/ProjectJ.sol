@@ -4,14 +4,12 @@ pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721BurnableUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract ProjectJ is 
-    ERC721Upgradeable, 
-    ERC721EnumerableUpgradeable,
+    ERC721Upgradeable,
     ERC721BurnableUpgradeable,
     ERC721PausableUpgradeable,
     AccessControlEnumerableUpgradeable
@@ -181,7 +179,7 @@ contract ProjectJ is
         public
         view
         virtual
-        override(AccessControlEnumerableUpgradeable, ERC721Upgradeable, ERC721EnumerableUpgradeable)
+        override(AccessControlEnumerableUpgradeable, ERC721Upgradeable)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
@@ -192,7 +190,7 @@ contract ProjectJ is
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override(ERC721Upgradeable, ERC721EnumerableUpgradeable, ERC721PausableUpgradeable) {
+    ) internal virtual override(ERC721Upgradeable, ERC721PausableUpgradeable) {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
