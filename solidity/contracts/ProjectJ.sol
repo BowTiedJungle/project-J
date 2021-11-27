@@ -88,7 +88,11 @@ contract ProjectJ is
     // Mapping of blacklisted accounts
     mapping(address => bool) public blacklist;
 
-    /// @dev Modification of blacklist standing will emit target address, the new standing, and the address changing the standing
+    /** @dev Emit on modification of blacklist standing.
+     * @return target address
+     * @return target's new standing
+     * @return address changing the standing
+    */
     event StandingModified(address target, bool newStanding, address changedBy);
 
     /// @dev Emit on minting
@@ -143,7 +147,7 @@ contract ProjectJ is
      * - the caller must have the `PAUSER_ROLE`.
      */
     function pause() public virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have pauser role to pause");
+        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to pause");
         _pause();
     }
 
@@ -157,7 +161,7 @@ contract ProjectJ is
      * - the caller must have the `PAUSER_ROLE`.
      */
     function unpause() public virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have pauser role to unpause");
+        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to unpause");
         _unpause();
     }
 
