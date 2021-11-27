@@ -249,16 +249,29 @@ describe("ProjectJ", function () {
 
         });
 
-        it("Should NOT mint NFT with wrong mint price", async function () {
+        it("Should NOT mint NFT with low mint price", async function () {
 
             // Check for expected initial state
             expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
 
             // Call contract
-            await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.2')})).to.be.revertedWith("Mint price not correct");
+            await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.05')})).to.be.revertedWith("Mint price not correct");
 
             // Check for expected final state
             expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+        });
+
+        it("Should mint NFT with value higher than mint price", async function () {
+
+            // Check for expected initial state
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+            // Call contract
+            await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.2')});
+
+            // Check for expected final state
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
 
         });
 
