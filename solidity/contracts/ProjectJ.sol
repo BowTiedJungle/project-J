@@ -88,24 +88,28 @@ contract ProjectJ is
     // Mapping of blacklisted accounts
     mapping(address => bool) public blacklist;
 
-    // Modification of blacklist standing will emit target address, the new standing, and the address changing the standing
+    /// @dev Modification of blacklist standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
+    /// @dev Emit on minting
     event Minted(address to, uint256 tokenId);
 
+    /// @dev Emit on free minting
     event MintedFree(address to, uint256 tokenId);
 
-    // Requires target address to be in good standing
+    /// @dev Requires msg.sender to be in good standing
     modifier inGoodStanding() {
         require(blacklist[msg.sender] == false,"Account is blacklisted.");
         _;
     }
 
+    /// @dev Requires msg.sender to have 0 balance of Project J NFTs
     modifier onePerWallet() {
         require(balanceOf(msg.sender) == 0,"One per customer ser");
         _;
     }
 
+    /// @dev Requires msg.sender to map TRUE in freeMintEligible
     modifier onlyEligible() {
         require(freeMintEligible[msg.sender] == true,"Not eligible for free mint");
         _;
@@ -157,38 +161,66 @@ contract ProjectJ is
         _unpause();
     }
 
-    // Modify the standing of the target address. Cannot change own standing. Requires moderator role. Requires good standing.
+    /**
+     * @dev Modify the standing of the target address. 
+     * Requirements:
+     * - Cannot change own standing. 
+     * - Requires MODERATOR_ROLE. 
+     * - Requires good standing.
+     * @param target address to modify the standing of
+     * @param newStanding standing to change to
+     */ 
     function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) public {
         require(target != msg.sender,"User cannot modify their own standing.");
         blacklist[target] = newStanding;
         emit StandingModified(target, newStanding, msg.sender);
     }
 
-    // Return standing of target address.
+    /**
+     * @dev Return standing of target address.
+     * @param _address address to check the standing of
+     * @return true if blacklisted, false if good standing
+     */ 
     function checkStanding(address _address) public view returns (bool) {
         return blacklist[_address];
     }
 
-    // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
+    /**
+     * @dev Mint NFT. 
+     * Requirements:
+     * - Requires good standing
+     * - Requires 0 wallet balance of ProjectJ NFTs
+     * - Requires msg.value >= mintPrice
+     */ 
     function mint() public payable inGoodStanding onePerWallet {
-        require(msg.value == mintPrice,"Mint price not correct");
+        require(msg.value >= mintPrice,"Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
         _safeMint(msg.sender, currentId);
         emit Minted(msg.sender, currentId);
-
     }
 
+    /**
+     * @dev Mint NFT without mint cost. 
+     * Requirements:
+     * - Requires good standing
+     * - Requires 0 wallet balance of ProjectJ NFTs
+     * - Requires msg.sender to be eligible for free mint
+     */ 
     function mintFree() public inGoodStanding onePerWallet onlyEligible {
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
         _safeMint(msg.sender, currentId);
         emit MintedFree(msg.sender, currentId);
-
     }
 
-    // Withdraw contract balance
+    /**
+     * @dev Withdraw contract balance
+     * Requirements:
+     * - Requires GOVERNOR_ROLE
+     * - May only be called by governor address
+     */ 
     function withdraw() public onlyRole(GOVERNOR_ROLE) {
         require(msg.sender == governor,"Only contract governor can withdraw funds.");
         governor.transfer(address(this).balance);
@@ -207,7 +239,7 @@ contract ProjectJ is
         return super.supportsInterface(interfaceId);
     }
 
-    // This hook has to be here for compatability
+    /// @dev Hook required for standards compatability
     function _beforeTokenTransfer(
         address from,
         address to,
