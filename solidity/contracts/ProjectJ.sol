@@ -153,17 +153,19 @@ contract ProjectJ is
     function mint() public payable inGoodStanding onePerWallet {
         require(msg.value == mintPrice,"Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
+        _tokenIdTracker.increment();
         _safeMint(msg.sender, currentId);
         emit Minted(msg.sender, currentId);
-        _tokenIdTracker.increment();
+
     }
 
     function mintFree() public inGoodStanding onePerWallet onlyEligible {
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
+        _tokenIdTracker.increment();
         _safeMint(msg.sender, currentId);
         emit MintedFree(msg.sender, currentId);
-        _tokenIdTracker.increment();
+
     }
 
     // Withdraw contract balance
