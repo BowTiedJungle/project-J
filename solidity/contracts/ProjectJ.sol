@@ -93,7 +93,7 @@ contract ProjectJ is
         _;
     }
 
-    modifier eligible() {
+    modifier onlyEligible() {
         require(freeMintEligible[msg.sender] == true,"Not eligible for free mint");
         _;
     }
@@ -158,7 +158,7 @@ contract ProjectJ is
         _tokenIdTracker.increment();
     }
 
-    function mintFree() public inGoodStanding onePerWallet eligible {
+    function mintFree() public inGoodStanding onePerWallet onlyEligible {
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
         _safeMint(msg.sender, currentId);

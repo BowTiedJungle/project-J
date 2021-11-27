@@ -128,6 +128,40 @@ describe("ProjectJ", function () {
 
         });
 
+        it("Should NOT allow mint while contract is paused", async function () {
+
+            // Check for expected initial state
+            expect(await projectJ.paused()).to.equal(false);
+
+            // Pause contract
+            await projectJ.pause();
+            expect(await projectJ.paused()).to.equal(true);
+
+            // Attempt to call, expecting reversion
+            await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')})).to.be.reverted;
+
+            // Check for expected final state
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(0)
+
+        });
+
+        it("Should NOT allow free mint while contract is paused", async function () {
+
+            // Check for expected initial state
+            expect(await projectJ.paused()).to.equal(false);
+
+            // Pause contract
+            await projectJ.pause();
+            expect(await projectJ.paused()).to.equal(true);
+
+            // Attempt to call, expecting reversion
+            await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+
+            // Check for expected final state
+            expect(await projectJ.balanceOf(degen1.address)).to.equal(0)
+
+        });
+
         it("Should pause and unpause the contract correctly when called with PAUSER_ROLE", async function () {
 
             // Check for expected initial state
