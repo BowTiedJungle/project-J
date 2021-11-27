@@ -24,14 +24,27 @@ contract ProjectJ is
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant GOVERNOR_ROLE = keccak256("GOVERNOR_ROLE");
 
+    // Base string used in token URI generation
     string private _baseTokenURI;
 
+    // Contract governor address
     address payable public governor;
 
+    // Mint price for paid mint
     uint256 public constant mintPrice = 0.1 ether;
 
+    // Maps address to the ability to mint for free
     mapping(address => bool) public freeMintEligible;
 
+    /**
+     * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern
+     * @dev Initializes msg.sender as DEFAULT_ROLE_ADMIN
+     * @param _moderators array of addresses to give MODERATOR_ROLE
+     * @param _pausers array of addresses to give PAUSER_ROLE
+     * @param baseTokenURI string to use as base URI for URI autogeneration
+     * @param _governor address to give GOVERNOR_ROLE
+     * @param _freeMintEligibleList array of addresses to map TRUE in freeMintEligible mapping
+     */
     function initialize(
         address[] memory _moderators,
         address[] memory _pausers,
@@ -63,7 +76,7 @@ contract ProjectJ is
             _setupRole(PAUSER_ROLE,_pausers[i]);
         }
 
-        // Initialize degenimals whitelist
+        // Initialize free mint eligible addresses
         for (i = 0;i < _freeMintEligibleList.length; i++) {
             freeMintEligible[_freeMintEligibleList[i]] = true;
         }
@@ -72,10 +85,10 @@ contract ProjectJ is
         _tokenIdTracker.increment();
     }
 
-    // Mapping of blacklisted accounts to allow deactivation of NFTs
+    // Mapping of blacklisted accounts
     mapping(address => bool) public blacklist;
 
-    // Modification of standing will emit target address, the new standing, and the address changing the standing
+    // Modification of blacklist standing will emit target address, the new standing, and the address changing the standing
     event StandingModified(address target, bool newStanding, address changedBy);
 
     event Minted(address to, uint256 tokenId);
@@ -99,12 +112,19 @@ contract ProjectJ is
     }
 
     /**
-     * Overrides OZ ERC721 _baseURI as per design intent of the library function
+     * @dev Overrides OZ ERC721 _baseURI as per design intent of the library function
+     * @return _baseTokenURI the base string used in autogeneration of token URIs
      */
     function _baseURI() internal view override returns (string memory) {
         return _baseTokenURI;
     }
 
+    /**
+     * @dev Updates the base URI string
+     * @param _newURI string to use as the new _baseTokenURI
+     * Requirements: 
+     * - the caller must have the 'GOVERNOR_ROLE'
+     */
     function updateBaseURI(string memory _newURI) public onlyRole(GOVERNOR_ROLE) {
         _baseTokenURI = _newURI;
     }

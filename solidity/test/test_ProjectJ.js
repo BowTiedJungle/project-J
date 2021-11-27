@@ -77,6 +77,19 @@ describe("ProjectJ", function () {
 
         });
 
+        it("Should emit StandingModified when modifyStanding() is successfully called", async function () {
+
+            // Check for expected initial state
+            expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
+
+            // Attempt to call, expecting event emission
+            await expect(projectJ.connect(mod1).modifyStanding(citizen1.address,true)).to.emit(projectJ,'StandingModified').withArgs(citizen1.address,true,mod1.address)
+
+            // Check for expected final state
+            expect(await projectJ.checkStanding(citizen1.address)).to.equal(true);
+
+        });
+
     });
 
     describe("Pausing", function () {
