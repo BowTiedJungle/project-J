@@ -37,7 +37,7 @@ contract ProjectJ is
     mapping(address => bool) public freeMintEligible;
 
     /**
-     * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern
+     * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern. 
      * @dev Initializes msg.sender as DEFAULT_ROLE_ADMIN
      * @param _moderators array of addresses to give MODERATOR_ROLE
      * @param _pausers array of addresses to give PAUSER_ROLE

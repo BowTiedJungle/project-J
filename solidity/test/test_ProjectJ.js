@@ -5,13 +5,82 @@ const { solidity } = waffle;
 // Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood
 // mod1, mod2: permissioned accounts. citizen1, citizen2, ... :non-permissioned accounts eg. users
 const provider = waffle.provider;
-const [mod1, mod2, citizen1, citizen2, governor, degen1, degen2] = provider.getWallets();
+const [dev, mod1, mod2, citizen1, citizen2, governor, degen1, degen2, pauser1, pauser2] = provider.getWallets();
 var moderators = [mod1.address,mod2.address];   //The .address syntax is used to get addy from the Signer object
-var pausers = [mod1.address,mod2.address];
+var pausers = [pauser1.address,pauser2.address];
 var degens = [degen1.address,degen2.address]
 const baseURI = "testURI";
 
 describe("ProjectJ", function () {
+
+    describe("Initialization", function () {
+
+        beforeEach(async function () {
+            ProjectJ = await ethers.getContractFactory("ProjectJ");
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+        });
+
+        it("Should grant MODERATOR_ROLE to all members of the moderators argument", async function () {
+            moderatorRole = hre.ethers.utils.id("MODERATOR_ROLE");
+            // Check for correct deployment state
+            expect(await projectJ.hasRole(moderatorRole,moderators[0])).to.equal(true);
+            expect(await projectJ.hasRole(moderatorRole,moderators[1])).to.equal(true);
+
+        });
+
+        it("Should grant PAUSER_ROLE to all members of the pausers argument", async function () {
+            pauserRole = hre.ethers.utils.id("PAUSER_ROLE");
+            // Check for correct deployment state
+            expect(await projectJ.hasRole(pauserRole,pausers[0])).to.equal(true);
+            expect(await projectJ.hasRole(pauserRole,pausers[1])).to.equal(true);
+
+        });
+
+        it("Should grant DEFAULT_ADMIN_ROLE to the deploying address", async function () {
+            defaultAdminRole = hre.ethers.utils.formatBytes32String('');
+            // Check for correct deployment state
+            expect(await projectJ.hasRole(defaultAdminRole,dev.address)).to.equal(true);
+
+        });
+
+        it("Should grant GOVERNOR_ROLE to the governor address argument", async function () {
+            governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
+            // Check for correct deployment state
+            expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
+
+        });
+
+        it("Should start tokenId as 1", async function () {
+
+            // Check for expected initial state
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
+
+            // Call contract
+            await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+
+            // Check for expected final state
+            expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
+
+            // Check that token ID is as expected
+            expect(await projectJ.ownerOf(1)).to.equal(citizen1.address);
+
+        });
+
+        it("Should set free mint eligiblity to TRUE for members of _freeMintEligibleList", async function () {
+
+            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true)
+            expect(await projectJ.freeMintEligible(degen2.address)).to.equal(true)
+
+        });
+
+        it("Should NOT set free mint eligiblity to TRUE for other addresses", async function () {
+
+            expect(await projectJ.freeMintEligible(mod1.address)).to.equal(false)
+            expect(await projectJ.freeMintEligible(pauser1.address)).to.equal(false)
+
+        });
+
+    });
 
     describe("Blacklisting", function () {
 
@@ -26,8 +95,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
 
             // Call function
-            const setBlacklist = await projectJ.modifyStanding(citizen1.address,true);
-            await setBlacklist;
+            await projectJ.connect(mod1).modifyStanding(citizen1.address,true);
 
             // Check for expected final state
             expect(await projectJ.checkStanding(citizen1.address)).to.equal(true);
@@ -53,7 +121,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.checkStanding(mod1.address)).to.equal(false);
 
             // Attempt to call, expecting reversion
-            await expect(projectJ.modifyStanding(mod1.address,true)).to.be.reverted;
+            await expect(projectJ.connect(mod1).modifyStanding(mod1.address,true)).to.be.reverted;
 
             // Check for expected final state
             expect(await projectJ.checkStanding(mod1.address)).to.equal(false);
@@ -65,7 +133,7 @@ describe("ProjectJ", function () {
             // Check for expected initial state
             expect(await projectJ.checkStanding(mod2.address)).to.equal(false);
             // Blacklist the mod2 address
-            await projectJ.modifyStanding(mod2.address,true);
+            await projectJ.connect(mod1).modifyStanding(mod2.address,true);
             // Check that blacklisting was successful
             expect(await projectJ.checkStanding(mod2.address)).to.equal(true);
 
@@ -105,7 +173,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(false);
 
             // Call function
-            await projectJ.pause();
+            await projectJ.connect(pauser1).pause();
 
             // Check for expected final state
             expect(await projectJ.paused()).to.equal(true);
@@ -131,7 +199,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(false);
 
             // Pause contract
-            await projectJ.pause();
+            await projectJ.connect(pauser1).pause();
 
             // Attempt to call, expecting reversion
             await expect(projectJ.connect(citizen1).unpause()).to.be.reverted;
@@ -147,7 +215,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(false);
 
             // Pause contract
-            await projectJ.pause();
+            await projectJ.connect(pauser1).pause();
             expect(await projectJ.paused()).to.equal(true);
 
             // Attempt to call, expecting reversion
@@ -164,7 +232,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(false);
 
             // Pause contract
-            await projectJ.pause();
+            await projectJ.connect(pauser1).pause();
             expect(await projectJ.paused()).to.equal(true);
 
             // Attempt to call, expecting reversion
@@ -181,13 +249,13 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(false);
 
             // Pause contract
-            await projectJ.pause();
+            await projectJ.connect(pauser1).pause();
 
             // Check for expected initial state
             expect(await projectJ.paused()).to.equal(true);
 
             // Pause contract
-            await projectJ.unpause();
+            await projectJ.connect(pauser1).unpause();
 
             // Check for expected final state
             expect(await projectJ.paused()).to.equal(false);
@@ -223,7 +291,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.checkStanding(citizen1.address)).to.equal(false);
 
             // Blacklist citizen1
-            await projectJ.modifyStanding(citizen1.address,true);
+            await projectJ.connect(mod1).modifyStanding(citizen1.address,true);
 
             // Call contract, expecting reversion
             await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')})).to.be.reverted;
