@@ -1,0 +1,649 @@
+digraph G {
+  graph [ ratio = "auto", page = "100", compound =true, bgcolor = "#2e3e56" ];
+  node [ style = "filled", fillcolor = "#edad56", color = "#edad56", penwidth =3 ];
+  edge [ color = "#fcfcfc", penwidth =2, fontname = "helvetica Neue Ultra Light" ];
+subgraph "clusterProjectJ" {
+  graph [ label = "ProjectJ", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "ProjectJ.initialize" [ label = "initialize", color = "brown", fillcolor = "#FF9797" ];
+  "ProjectJ.inGoodStanding" [ label = "inGoodStanding", color = "#1bc6a6", shape =doubleoctagon ];
+  "ProjectJ.onePerWallet" [ label = "onePerWallet", color = "#1bc6a6", shape =doubleoctagon ];
+  "ProjectJ.onlyEligible" [ label = "onlyEligible", color = "#1bc6a6", shape =doubleoctagon ];
+  "ProjectJ._baseURI" [ label = "_baseURI", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ProjectJ.updateBaseURI" [ label = "updateBaseURI", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.pause" [ label = "pause", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.unpause" [ label = "unpause", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.modifyStanding" [ label = "modifyStanding", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.checkStanding" [ label = "checkStanding", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.mint" [ label = "mint", color = "brown", fillcolor = "#FF9797" ];
+  "ProjectJ.mintFree" [ label = "mintFree", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.withdraw" [ label = "withdraw", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ProjectJ._beforeTokenTransfer" [ label = "_beforeTokenTransfer", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ProjectJ.__ERC721_init" [ label = "__ERC721_init" ];
+  "ProjectJ._setupRole" [ label = "_setupRole" ];
+  "ProjectJ.balanceOf" [ label = "balanceOf" ];
+  "ProjectJ.hasRole" [ label = "hasRole" ];
+  "ProjectJ._msgSender" [ label = "_msgSender" ];
+  "ProjectJ._pause" [ label = "_pause" ];
+  "ProjectJ._unpause" [ label = "_unpause" ];
+  "ProjectJ._safeMint" [ label = "_safeMint" ];
+}
+
+subgraph "clusterAccessControlEnumerableUpgradeable" {
+  graph [ label = "AccessControlEnumerableUpgradeable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "AccessControlEnumerableUpgradeable.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerableUpgradeable._beforeTokenTransfer" [ label = "_beforeTokenTransfer" ];
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init" [ label = "__AccessControlEnumerable_init", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init_unchained" [ label = "__AccessControlEnumerable_init_unchained" ];
+  "AccessControlEnumerableUpgradeable.getRoleMember" [ label = "getRoleMember", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerableUpgradeable.getRoleMemberCount" [ label = "getRoleMemberCount", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerableUpgradeable.grantRole" [ label = "grantRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerableUpgradeable.revokeRole" [ label = "revokeRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerableUpgradeable.renounceRole" [ label = "renounceRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerableUpgradeable._setupRole" [ label = "_setupRole", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControlEnumerableUpgradeable.__Context_init_unchained" [ label = "__Context_init_unchained" ];
+  "AccessControlEnumerableUpgradeable.__ERC165_init_unchained" [ label = "__ERC165_init_unchained" ];
+  "AccessControlEnumerableUpgradeable.__AccessControl_init_unchained" [ label = "__AccessControl_init_unchained" ];
+  "AccessControlEnumerableUpgradeable.type" [ label = "type" ];
+}
+
+subgraph "clusterIAccessControlEnumerableUpgradeable" {
+  graph [ label = "IAccessControlEnumerableUpgradeable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IAccessControlEnumerableUpgradeable.getRoleMember" [ label = "getRoleMember", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControlEnumerableUpgradeable.getRoleMemberCount" [ label = "getRoleMemberCount", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIAccessControlUpgradeable" {
+  graph [ label = "IAccessControlUpgradeable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IAccessControlUpgradeable.hasRole" [ label = "hasRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControlUpgradeable.getRoleAdmin" [ label = "getRoleAdmin", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControlUpgradeable.grantRole" [ label = "grantRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControlUpgradeable.revokeRole" [ label = "revokeRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControlUpgradeable.renounceRole" [ label = "renounceRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterAccessControlUpgradeable" {
+  graph [ label = "AccessControlUpgradeable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "AccessControlUpgradeable.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlUpgradeable.grantRole" [ label = "grantRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlUpgradeable.revokeRole" [ label = "revokeRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlUpgradeable.renounceRole" [ label = "renounceRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlUpgradeable._setupRole" [ label = "_setupRole", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControlUpgradeable.__AccessControl_init" [ label = "__AccessControl_init", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControlUpgradeable.__AccessControl_init_unchained" [ label = "__AccessControl_init_unchained" ];
+  "AccessControlUpgradeable.onlyRole" [ label = "onlyRole", color = "#1bc6a6", shape =doubleoctagon ];
+  "AccessControlUpgradeable.hasRole" [ label = "hasRole" ];
+  "AccessControlUpgradeable._checkRole" [ label = "_checkRole" ];
+  "AccessControlUpgradeable.getRoleAdmin" [ label = "getRoleAdmin" ];
+  "AccessControlUpgradeable._setRoleAdmin" [ label = "_setRoleAdmin", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControlUpgradeable._grantRole" [ label = "_grantRole" ];
+  "AccessControlUpgradeable._revokeRole" [ label = "_revokeRole" ];
+  "AccessControlUpgradeable.__Context_init_unchained" [ label = "__Context_init_unchained" ];
+  "AccessControlUpgradeable.__ERC165_init_unchained" [ label = "__ERC165_init_unchained" ];
+  "AccessControlUpgradeable._msgSender" [ label = "_msgSender" ];
+  "AccessControlUpgradeable.type" [ label = "type" ];
+}
+
+subgraph "clusterContextUpgradeable" {
+  graph [ label = "ContextUpgradeable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "ContextUpgradeable.__Context_init" [ label = "__Context_init", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ContextUpgradeable.__Context_init_unchained" [ label = "__Context_init_unchained" ];
+  "ContextUpgradeable._msgSender" [ label = "_msgSender", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ContextUpgradeable._msgData" [ label = "_msgData", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterInitializable" {
+  graph [ label = "Initializable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "Initializable.initializer" [ label = "initializer", color = "#1bc6a6", shape =doubleoctagon ];
+}
+
+subgraph "clusterStringsUpgradeable" {
+  graph [ label = "StringsUpgradeable  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "StringsUpgradeable.toHexString" [ label = "toHexString", color = "#f2c383", fillcolor = "#f2c383" ];
+  "StringsUpgradeable.toString" [ label = "toString", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterERC165Upgradeable" {
+  graph [ label = "ERC165Upgradeable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "ERC165Upgradeable.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC165Upgradeable.__ERC165_init" [ label = "__ERC165_init", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ERC165Upgradeable.__ERC165_init_unchained" [ label = "__ERC165_init_unchained" ];
+  "ERC165Upgradeable.type" [ label = "type" ];
+}
+
+subgraph "clusterIERC165Upgradeable" {
+  graph [ label = "IERC165Upgradeable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IERC165Upgradeable.supportsInterface" [ label = "supportsInterface", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterEnumerableSetUpgradeable" {
+  graph [ label = "EnumerableSetUpgradeable  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "EnumerableSetUpgradeable._add" [ label = "_add", color = "#edad56", fillcolor = "#edad56" ];
+  "EnumerableSetUpgradeable._remove" [ label = "_remove" ];
+  "EnumerableSetUpgradeable._contains" [ label = "_contains" ];
+  "EnumerableSetUpgradeable._length" [ label = "_length" ];
+  "EnumerableSetUpgradeable._at" [ label = "_at" ];
+  "EnumerableSetUpgradeable._values" [ label = "_values" ];
+  "EnumerableSetUpgradeable.add" [ label = "add", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSetUpgradeable.remove" [ label = "remove", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSetUpgradeable.contains" [ label = "contains", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSetUpgradeable.length" [ label = "length", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSetUpgradeable.at" [ label = "at", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSetUpgradeable.values" [ label = "values", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterAccessControlEnumerable" {
+  graph [ label = "AccessControlEnumerable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "AccessControlEnumerable.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerable.getRoleMember" [ label = "getRoleMember", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerable.getRoleMemberCount" [ label = "getRoleMemberCount", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerable.grantRole" [ label = "grantRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerable.revokeRole" [ label = "revokeRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerable.renounceRole" [ label = "renounceRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControlEnumerable._setupRole" [ label = "_setupRole", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControlEnumerable.type" [ label = "type" ];
+}
+
+subgraph "clusterIAccessControlEnumerable" {
+  graph [ label = "IAccessControlEnumerable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IAccessControlEnumerable.getRoleMember" [ label = "getRoleMember", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControlEnumerable.getRoleMemberCount" [ label = "getRoleMemberCount", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIAccessControl" {
+  graph [ label = "IAccessControl  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IAccessControl.hasRole" [ label = "hasRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControl.getRoleAdmin" [ label = "getRoleAdmin", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControl.grantRole" [ label = "grantRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControl.revokeRole" [ label = "revokeRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IAccessControl.renounceRole" [ label = "renounceRole", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterAccessControl" {
+  graph [ label = "AccessControl", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "AccessControl.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControl.grantRole" [ label = "grantRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControl.revokeRole" [ label = "revokeRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControl.renounceRole" [ label = "renounceRole", color = "#FF9797", fillcolor = "#FF9797" ];
+  "AccessControl._setupRole" [ label = "_setupRole", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControl.onlyRole" [ label = "onlyRole", color = "#1bc6a6", shape =doubleoctagon ];
+  "AccessControl.hasRole" [ label = "hasRole" ];
+  "AccessControl._checkRole" [ label = "_checkRole" ];
+  "AccessControl.getRoleAdmin" [ label = "getRoleAdmin" ];
+  "AccessControl._setRoleAdmin" [ label = "_setRoleAdmin", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AccessControl._grantRole" [ label = "_grantRole" ];
+  "AccessControl._revokeRole" [ label = "_revokeRole" ];
+  "AccessControl._msgSender" [ label = "_msgSender" ];
+  "AccessControl.type" [ label = "type" ];
+}
+
+subgraph "clusterContext" {
+  graph [ label = "Context", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "Context._msgSender" [ label = "_msgSender", color = "#f2c383", fillcolor = "#f2c383" ];
+  "Context._msgData" [ label = "_msgData", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterStrings" {
+  graph [ label = "Strings  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "Strings.toHexString" [ label = "toHexString", color = "#f2c383", fillcolor = "#f2c383" ];
+  "Strings.toString" [ label = "toString", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterERC165" {
+  graph [ label = "ERC165", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "ERC165.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC165.type" [ label = "type" ];
+}
+
+subgraph "clusterIERC165" {
+  graph [ label = "IERC165  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IERC165.supportsInterface" [ label = "supportsInterface", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterEnumerableSet" {
+  graph [ label = "EnumerableSet  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "EnumerableSet._add" [ label = "_add", color = "#edad56", fillcolor = "#edad56" ];
+  "EnumerableSet._remove" [ label = "_remove" ];
+  "EnumerableSet._contains" [ label = "_contains" ];
+  "EnumerableSet._length" [ label = "_length" ];
+  "EnumerableSet._at" [ label = "_at" ];
+  "EnumerableSet._values" [ label = "_values" ];
+  "EnumerableSet.add" [ label = "add", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSet.remove" [ label = "remove", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSet.contains" [ label = "contains", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSet.length" [ label = "length", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSet.at" [ label = "at", color = "#f2c383", fillcolor = "#f2c383" ];
+  "EnumerableSet.values" [ label = "values", color = "#f2c383", fillcolor = "#f2c383" ];
+}
+
+subgraph "clusterERC721Upgradeable" {
+  graph [ label = "ERC721Upgradeable", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "ERC721Upgradeable.__ERC721_init" [ label = "__ERC721_init", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ERC721Upgradeable.__ERC721_init_unchained" [ label = "__ERC721_init_unchained" ];
+  "ERC165Upgradeable.supportsInterface" [ label = "supportsInterface", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.balanceOf" [ label = "balanceOf", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.ownerOf" [ label = "ownerOf" ];
+  "ERC721Upgradeable.name" [ label = "name", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.symbol" [ label = "symbol", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.tokenURI" [ label = "tokenURI", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable._baseURI" [ label = "_baseURI" ];
+  "ERC721Upgradeable.approve" [ label = "approve", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.getApproved" [ label = "getApproved", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.setApprovalForAll" [ label = "setApprovalForAll", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.isApprovedForAll" [ label = "isApprovedForAll" ];
+  "ERC721Upgradeable.transferFrom" [ label = "transferFrom", color = "#FF9797", fillcolor = "#FF9797" ];
+  "ERC721Upgradeable.safeTransferFrom" [ label = "safeTransferFrom" ];
+  "ERC721Upgradeable._safeTransfer" [ label = "_safeTransfer" ];
+  "ERC721Upgradeable._exists" [ label = "_exists" ];
+  "ERC721Upgradeable._isApprovedOrOwner" [ label = "_isApprovedOrOwner" ];
+  "ERC721Upgradeable._safeMint" [ label = "_safeMint" ];
+  "ERC721Upgradeable._mint" [ label = "_mint" ];
+  "ERC721Upgradeable._burn" [ label = "_burn", color = "#f2c383", fillcolor = "#f2c383" ];
+  "ERC721Upgradeable._transfer" [ label = "_transfer" ];
+  "ERC721Upgradeable._approve" [ label = "_approve" ];
+  "ERC721Upgradeable._checkOnERC721Received" [ label = "_checkOnERC721Received" ];
+  "ERC721Upgradeable._beforeTokenTransfer" [ label = "_beforeTokenTransfer" ];
+  "ERC721Upgradeable._msgSender" [ label = "_msgSender" ];
+}
+
+subgraph "clusterIERC721Upgradeable" {
+  graph [ label = "IERC721Upgradeable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IERC721Upgradeable.balanceOf" [ label = "balanceOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.ownerOf" [ label = "ownerOf", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.safeTransferFrom" [ label = "safeTransferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.transferFrom" [ label = "transferFrom", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.approve" [ label = "approve", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.getApproved" [ label = "getApproved", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.setApprovalForAll" [ label = "setApprovalForAll", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721Upgradeable.isApprovedForAll" [ label = "isApprovedForAll", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIERC721ReceiverUpgradeable" {
+  graph [ label = "IERC721ReceiverUpgradeable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IERC721ReceiverUpgradeable.onERC721Received" [ label = "onERC721Received", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterIERC721MetadataUpgradeable" {
+  graph [ label = "IERC721MetadataUpgradeable  (iface)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "IERC721MetadataUpgradeable.supportsInterface" [ label = "supportsInterface" ];
+  "IERC721MetadataUpgradeable.name" [ label = "name", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721MetadataUpgradeable.symbol" [ label = "symbol", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+  "IERC721MetadataUpgradeable.tokenURI" [ label = "tokenURI", color = "#ffbdb9", fillcolor = "#ffbdb9" ];
+}
+
+subgraph "clusterAddressUpgradeable" {
+  graph [ label = "AddressUpgradeable  (lib)", color = "#445773", fontcolor = "#f0f0f0", style = "rounded", bgcolor = "#445773" ];
+  "AddressUpgradeable.isContract" [ label = "isContract" ];
+  "AddressUpgradeable.sendValue" [ label = "sendValue", color = "#f2c383", fillcolor = "#f2c383" ];
+  "AddressUpgradeable.functionCall" [ label = "functionCall" ];
+  "AddressUpgradeable.functionCallWithValue" [ label = "functionCallWithValue" ];
+  "AddressUpgradeable.functionStaticCall" [ label = "functionStaticCall" ];
+  "AddressUpgradeable.verifyCallResult" [ label = "verifyCallResult" ];
+}
+
+subgraph "clusterCounters.Counter" {
+  graph [ label = "Counters.Counter", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "Counters.Counter.increment" [ label = "increment" ];
+  "Counters.Counter.current" [ label = "current" ];
+}
+
+subgraph "clustergovernor" {
+  graph [ label = "governor", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "governor.transfer" [ label = "transfer" ];
+}
+
+subgraph "clustertokenId" {
+  graph [ label = "tokenId", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "tokenId.toString" [ label = "toString" ];
+}
+
+subgraph "clusterto" {
+  graph [ label = "to", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "to.isContract" [ label = "isContract" ];
+}
+
+subgraph "clustertarget" {
+  graph [ label = "target", color = "#e8726d", fontcolor = "#f0f0f0", style = "rounded,dashed", bgcolor = "#3b4b63" ];
+  "target.staticcall" [ label = "staticcall" ];
+}
+
+  "ProjectJ.initialize";
+  "ProjectJ.__ERC721_init";
+  "ProjectJ._setupRole";
+  "Counters.Counter.increment";
+  "ProjectJ.onePerWallet";
+  "ProjectJ.balanceOf";
+  "ProjectJ.pause";
+  "ProjectJ.hasRole";
+  "ProjectJ._msgSender";
+  "ProjectJ._pause";
+  "ProjectJ.unpause";
+  "ProjectJ._unpause";
+  "ProjectJ.mint";
+  "Counters.Counter.current";
+  "ProjectJ._safeMint";
+  "ProjectJ.mintFree";
+  "ProjectJ.withdraw";
+  "governor.transfer";
+  "ProjectJ.supportsInterface";
+  "AccessControlEnumerableUpgradeable.supportsInterface";
+  "ProjectJ._beforeTokenTransfer";
+  "AccessControlEnumerableUpgradeable._beforeTokenTransfer";
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init";
+  "AccessControlEnumerableUpgradeable.__Context_init_unchained";
+  "AccessControlEnumerableUpgradeable.__ERC165_init_unchained";
+  "AccessControlEnumerableUpgradeable.__AccessControl_init_unchained";
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init_unchained";
+  "AccessControlEnumerableUpgradeable.type";
+  "AccessControlUpgradeable.supportsInterface";
+  "AccessControlEnumerableUpgradeable.grantRole";
+  "AccessControlUpgradeable.grantRole";
+  "AccessControlEnumerableUpgradeable.revokeRole";
+  "AccessControlUpgradeable.revokeRole";
+  "AccessControlEnumerableUpgradeable.renounceRole";
+  "AccessControlUpgradeable.renounceRole";
+  "AccessControlEnumerableUpgradeable._setupRole";
+  "AccessControlUpgradeable._setupRole";
+  "AccessControlUpgradeable.__AccessControl_init";
+  "AccessControlUpgradeable.__Context_init_unchained";
+  "AccessControlUpgradeable.__ERC165_init_unchained";
+  "AccessControlUpgradeable.__AccessControl_init_unchained";
+  "AccessControlUpgradeable.onlyRole";
+  "AccessControlUpgradeable._checkRole";
+  "AccessControlUpgradeable._msgSender";
+  "AccessControlUpgradeable.type";
+  "ERC165Upgradeable.supportsInterface";
+  "AccessControlUpgradeable.hasRole";
+  "StringsUpgradeable.toHexString";
+  "AccessControlUpgradeable._grantRole";
+  "AccessControlUpgradeable.getRoleAdmin";
+  "AccessControlUpgradeable._revokeRole";
+  "AccessControlUpgradeable._setRoleAdmin";
+  "ContextUpgradeable.__Context_init";
+  "ContextUpgradeable.__Context_init_unchained";
+  "ERC165Upgradeable.__ERC165_init";
+  "ERC165Upgradeable.__ERC165_init_unchained";
+  "ERC165Upgradeable.type";
+  "EnumerableSetUpgradeable._add";
+  "EnumerableSetUpgradeable._contains";
+  "EnumerableSetUpgradeable.add";
+  "EnumerableSetUpgradeable.remove";
+  "EnumerableSetUpgradeable._remove";
+  "EnumerableSetUpgradeable.contains";
+  "EnumerableSetUpgradeable.length";
+  "EnumerableSetUpgradeable._length";
+  "EnumerableSetUpgradeable.at";
+  "EnumerableSetUpgradeable._at";
+  "EnumerableSetUpgradeable.values";
+  "EnumerableSetUpgradeable._values";
+  "AccessControlEnumerable.supportsInterface";
+  "AccessControlEnumerable.type";
+  "AccessControl.supportsInterface";
+  "AccessControlEnumerable.grantRole";
+  "AccessControl.grantRole";
+  "AccessControlEnumerable.revokeRole";
+  "AccessControl.revokeRole";
+  "AccessControlEnumerable.renounceRole";
+  "AccessControl.renounceRole";
+  "AccessControlEnumerable._setupRole";
+  "AccessControl._setupRole";
+  "AccessControl.onlyRole";
+  "AccessControl._checkRole";
+  "AccessControl._msgSender";
+  "AccessControl.type";
+  "ERC165.supportsInterface";
+  "AccessControl.hasRole";
+  "Strings.toHexString";
+  "AccessControl._grantRole";
+  "AccessControl.getRoleAdmin";
+  "AccessControl._revokeRole";
+  "AccessControl._setRoleAdmin";
+  "ERC165.type";
+  "EnumerableSet._add";
+  "EnumerableSet._contains";
+  "EnumerableSet.add";
+  "EnumerableSet.remove";
+  "EnumerableSet._remove";
+  "EnumerableSet.contains";
+  "EnumerableSet.length";
+  "EnumerableSet._length";
+  "EnumerableSet.at";
+  "EnumerableSet._at";
+  "EnumerableSet.values";
+  "EnumerableSet._values";
+  "ERC721Upgradeable.__ERC721_init";
+  "ERC721Upgradeable.__ERC721_init_unchained";
+  "IERC721MetadataUpgradeable.supportsInterface";
+  "ERC721Upgradeable.tokenURI";
+  "ERC721Upgradeable._exists";
+  "ERC721Upgradeable._baseURI";
+  "tokenId.toString";
+  "ERC721Upgradeable.approve";
+  "ERC721Upgradeable.ownerOf";
+  "ERC721Upgradeable._msgSender";
+  "ERC721Upgradeable.isApprovedForAll";
+  "ERC721Upgradeable._approve";
+  "ERC721Upgradeable.getApproved";
+  "ERC721Upgradeable.setApprovalForAll";
+  "ERC721Upgradeable.transferFrom";
+  "ERC721Upgradeable._isApprovedOrOwner";
+  "ERC721Upgradeable._transfer";
+  "ERC721Upgradeable.safeTransferFrom";
+  "ERC721Upgradeable._safeTransfer";
+  "ERC721Upgradeable._checkOnERC721Received";
+  "ERC721Upgradeable._safeMint";
+  "ERC721Upgradeable._mint";
+  "ERC721Upgradeable._beforeTokenTransfer";
+  "ERC721Upgradeable._burn";
+  "to.isContract";
+  "AddressUpgradeable.functionCall";
+  "AddressUpgradeable.functionCallWithValue";
+  "AddressUpgradeable.isContract";
+  "AddressUpgradeable.verifyCallResult";
+  "AddressUpgradeable.functionStaticCall";
+  "target.staticcall";
+  "ProjectJ.initialize" -> "ProjectJ.__ERC721_init" [ color = "#1bc6a6" ];
+  "ProjectJ.initialize" -> "ProjectJ._setupRole" [ color = "#1bc6a6" ];
+  "ProjectJ.initialize" -> "ProjectJ._setupRole" [ color = "#1bc6a6" ];
+  "ProjectJ.initialize" -> "ProjectJ._setupRole" [ color = "#1bc6a6" ];
+  "ProjectJ.initialize" -> "ProjectJ._setupRole" [ color = "#1bc6a6" ];
+  "ProjectJ.initialize" -> "Counters.Counter.increment" [ color = "white" ];
+  "ProjectJ.onePerWallet" -> "ProjectJ.balanceOf" [ color = "#1bc6a6" ];
+  "ProjectJ.pause" -> "ProjectJ.hasRole" [ color = "#1bc6a6" ];
+  "ProjectJ.pause" -> "ProjectJ._msgSender" [ color = "#1bc6a6" ];
+  "ProjectJ.pause" -> "ProjectJ._pause" [ color = "#1bc6a6" ];
+  "ProjectJ.unpause" -> "ProjectJ.hasRole" [ color = "#1bc6a6" ];
+  "ProjectJ.unpause" -> "ProjectJ._msgSender" [ color = "#1bc6a6" ];
+  "ProjectJ.unpause" -> "ProjectJ._unpause" [ color = "#1bc6a6" ];
+  "ProjectJ.mint" -> "Counters.Counter.current" [ color = "white" ];
+  "ProjectJ.mint" -> "Counters.Counter.increment" [ color = "white" ];
+  "ProjectJ.mint" -> "ProjectJ._safeMint" [ color = "#1bc6a6" ];
+  "ProjectJ.mintFree" -> "Counters.Counter.current" [ color = "white" ];
+  "ProjectJ.mintFree" -> "Counters.Counter.increment" [ color = "white" ];
+  "ProjectJ.mintFree" -> "ProjectJ._safeMint" [ color = "#1bc6a6" ];
+  "ProjectJ.withdraw" -> "governor.transfer" [ color = "white" ];
+  "ProjectJ.supportsInterface" -> "AccessControlEnumerableUpgradeable.supportsInterface" [ color = "white" ];
+  "ProjectJ._beforeTokenTransfer" -> "AccessControlEnumerableUpgradeable._beforeTokenTransfer" [ color = "white" ];
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init" -> "AccessControlEnumerableUpgradeable.__Context_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init" -> "AccessControlEnumerableUpgradeable.__ERC165_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init" -> "AccessControlEnumerableUpgradeable.__AccessControl_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init" -> "AccessControlEnumerableUpgradeable.__AccessControlEnumerable_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlEnumerableUpgradeable.supportsInterface" -> "AccessControlEnumerableUpgradeable.type" [ color = "#1bc6a6" ];
+  "AccessControlEnumerableUpgradeable.supportsInterface" -> "AccessControlUpgradeable.supportsInterface" [ color = "white" ];
+  "AccessControlEnumerableUpgradeable.grantRole" -> "AccessControlUpgradeable.grantRole" [ color = "white" ];
+  "AccessControlEnumerableUpgradeable.revokeRole" -> "AccessControlUpgradeable.revokeRole" [ color = "white" ];
+  "AccessControlEnumerableUpgradeable.renounceRole" -> "AccessControlUpgradeable.renounceRole" [ color = "white" ];
+  "AccessControlEnumerableUpgradeable._setupRole" -> "AccessControlUpgradeable._setupRole" [ color = "white" ];
+  "AccessControlUpgradeable.__AccessControl_init" -> "AccessControlUpgradeable.__Context_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.__AccessControl_init" -> "AccessControlUpgradeable.__ERC165_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.__AccessControl_init" -> "AccessControlUpgradeable.__AccessControl_init_unchained" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.onlyRole" -> "AccessControlUpgradeable._checkRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.onlyRole" -> "AccessControlUpgradeable._msgSender" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.supportsInterface" -> "AccessControlUpgradeable.type" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.supportsInterface" -> "ERC165Upgradeable.supportsInterface" [ color = "white" ];
+  "AccessControlUpgradeable._checkRole" -> "AccessControlUpgradeable.hasRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._checkRole" -> "StringsUpgradeable.toHexString" [ color = "white" ];
+  "AccessControlUpgradeable._checkRole" -> "StringsUpgradeable.toHexString" [ color = "white" ];
+  "AccessControlUpgradeable.grantRole" -> "AccessControlUpgradeable._grantRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.grantRole" -> "AccessControlUpgradeable.getRoleAdmin" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.revokeRole" -> "AccessControlUpgradeable._revokeRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.revokeRole" -> "AccessControlUpgradeable.getRoleAdmin" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.renounceRole" -> "AccessControlUpgradeable._msgSender" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable.renounceRole" -> "AccessControlUpgradeable._revokeRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._setupRole" -> "AccessControlUpgradeable._grantRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._setRoleAdmin" -> "AccessControlUpgradeable.getRoleAdmin" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._grantRole" -> "AccessControlUpgradeable.hasRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._grantRole" -> "AccessControlUpgradeable._msgSender" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._revokeRole" -> "AccessControlUpgradeable.hasRole" [ color = "#1bc6a6" ];
+  "AccessControlUpgradeable._revokeRole" -> "AccessControlUpgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ContextUpgradeable.__Context_init" -> "ContextUpgradeable.__Context_init_unchained" [ color = "#1bc6a6" ];
+  "StringsUpgradeable.toHexString" -> "StringsUpgradeable.toHexString" [ color = "#1bc6a6" ];
+  "ERC165Upgradeable.__ERC165_init" -> "ERC165Upgradeable.__ERC165_init_unchained" [ color = "#1bc6a6" ];
+  "ERC165Upgradeable.supportsInterface" -> "ERC165Upgradeable.type" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable._add" -> "EnumerableSetUpgradeable._contains" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.add" -> "EnumerableSetUpgradeable._add" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.remove" -> "EnumerableSetUpgradeable._remove" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.contains" -> "EnumerableSetUpgradeable._contains" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.length" -> "EnumerableSetUpgradeable._length" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.at" -> "EnumerableSetUpgradeable._at" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.values" -> "EnumerableSetUpgradeable._values" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.add" -> "EnumerableSetUpgradeable._add" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.remove" -> "EnumerableSetUpgradeable._remove" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.contains" -> "EnumerableSetUpgradeable._contains" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.length" -> "EnumerableSetUpgradeable._length" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.at" -> "EnumerableSetUpgradeable._at" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.values" -> "EnumerableSetUpgradeable._values" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.add" -> "EnumerableSetUpgradeable._add" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.remove" -> "EnumerableSetUpgradeable._remove" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.contains" -> "EnumerableSetUpgradeable._contains" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.length" -> "EnumerableSetUpgradeable._length" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.at" -> "EnumerableSetUpgradeable._at" [ color = "#1bc6a6" ];
+  "EnumerableSetUpgradeable.values" -> "EnumerableSetUpgradeable._values" [ color = "#1bc6a6" ];
+  "AccessControlEnumerable.supportsInterface" -> "AccessControlEnumerable.type" [ color = "#1bc6a6" ];
+  "AccessControlEnumerable.supportsInterface" -> "AccessControl.supportsInterface" [ color = "white" ];
+  "AccessControlEnumerable.grantRole" -> "AccessControl.grantRole" [ color = "white" ];
+  "AccessControlEnumerable.revokeRole" -> "AccessControl.revokeRole" [ color = "white" ];
+  "AccessControlEnumerable.renounceRole" -> "AccessControl.renounceRole" [ color = "white" ];
+  "AccessControlEnumerable._setupRole" -> "AccessControl._setupRole" [ color = "white" ];
+  "AccessControl.onlyRole" -> "AccessControl._checkRole" [ color = "#1bc6a6" ];
+  "AccessControl.onlyRole" -> "AccessControl._msgSender" [ color = "#1bc6a6" ];
+  "AccessControl.supportsInterface" -> "AccessControl.type" [ color = "#1bc6a6" ];
+  "AccessControl.supportsInterface" -> "ERC165.supportsInterface" [ color = "white" ];
+  "AccessControl._checkRole" -> "AccessControl.hasRole" [ color = "#1bc6a6" ];
+  "AccessControl._checkRole" -> "Strings.toHexString" [ color = "white" ];
+  "AccessControl._checkRole" -> "Strings.toHexString" [ color = "white" ];
+  "AccessControl.grantRole" -> "AccessControl._grantRole" [ color = "#1bc6a6" ];
+  "AccessControl.grantRole" -> "AccessControl.getRoleAdmin" [ color = "#1bc6a6" ];
+  "AccessControl.revokeRole" -> "AccessControl._revokeRole" [ color = "#1bc6a6" ];
+  "AccessControl.revokeRole" -> "AccessControl.getRoleAdmin" [ color = "#1bc6a6" ];
+  "AccessControl.renounceRole" -> "AccessControl._msgSender" [ color = "#1bc6a6" ];
+  "AccessControl.renounceRole" -> "AccessControl._revokeRole" [ color = "#1bc6a6" ];
+  "AccessControl._setupRole" -> "AccessControl._grantRole" [ color = "#1bc6a6" ];
+  "AccessControl._setRoleAdmin" -> "AccessControl.getRoleAdmin" [ color = "#1bc6a6" ];
+  "AccessControl._grantRole" -> "AccessControl.hasRole" [ color = "#1bc6a6" ];
+  "AccessControl._grantRole" -> "AccessControl._msgSender" [ color = "#1bc6a6" ];
+  "AccessControl._revokeRole" -> "AccessControl.hasRole" [ color = "#1bc6a6" ];
+  "AccessControl._revokeRole" -> "AccessControl._msgSender" [ color = "#1bc6a6" ];
+  "Strings.toHexString" -> "Strings.toHexString" [ color = "#1bc6a6" ];
+  "ERC165.supportsInterface" -> "ERC165.type" [ color = "#1bc6a6" ];
+  "EnumerableSet._add" -> "EnumerableSet._contains" [ color = "#1bc6a6" ];
+  "EnumerableSet.add" -> "EnumerableSet._add" [ color = "#1bc6a6" ];
+  "EnumerableSet.remove" -> "EnumerableSet._remove" [ color = "#1bc6a6" ];
+  "EnumerableSet.contains" -> "EnumerableSet._contains" [ color = "#1bc6a6" ];
+  "EnumerableSet.length" -> "EnumerableSet._length" [ color = "#1bc6a6" ];
+  "EnumerableSet.at" -> "EnumerableSet._at" [ color = "#1bc6a6" ];
+  "EnumerableSet.values" -> "EnumerableSet._values" [ color = "#1bc6a6" ];
+  "EnumerableSet.add" -> "EnumerableSet._add" [ color = "#1bc6a6" ];
+  "EnumerableSet.remove" -> "EnumerableSet._remove" [ color = "#1bc6a6" ];
+  "EnumerableSet.contains" -> "EnumerableSet._contains" [ color = "#1bc6a6" ];
+  "EnumerableSet.length" -> "EnumerableSet._length" [ color = "#1bc6a6" ];
+  "EnumerableSet.at" -> "EnumerableSet._at" [ color = "#1bc6a6" ];
+  "EnumerableSet.values" -> "EnumerableSet._values" [ color = "#1bc6a6" ];
+  "EnumerableSet.add" -> "EnumerableSet._add" [ color = "#1bc6a6" ];
+  "EnumerableSet.remove" -> "EnumerableSet._remove" [ color = "#1bc6a6" ];
+  "EnumerableSet.contains" -> "EnumerableSet._contains" [ color = "#1bc6a6" ];
+  "EnumerableSet.length" -> "EnumerableSet._length" [ color = "#1bc6a6" ];
+  "EnumerableSet.at" -> "EnumerableSet._at" [ color = "#1bc6a6" ];
+  "EnumerableSet.values" -> "EnumerableSet._values" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.__ERC721_init" -> "ContextUpgradeable.__Context_init_unchained" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.__ERC721_init" -> "ERC165Upgradeable.__ERC165_init_unchained" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.__ERC721_init" -> "ERC721Upgradeable.__ERC721_init_unchained" [ color = "#1bc6a6" ];
+  "ERC165Upgradeable.supportsInterface" -> "ERC165Upgradeable.type" [ color = "#1bc6a6" ];
+  "ERC165Upgradeable.supportsInterface" -> "ERC165Upgradeable.type" [ color = "#1bc6a6" ];
+  "ERC165Upgradeable.supportsInterface" -> "IERC721MetadataUpgradeable.supportsInterface" [ color = "white" ];
+  "ERC721Upgradeable.tokenURI" -> "ERC721Upgradeable._exists" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.tokenURI" -> "ERC721Upgradeable._baseURI" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.tokenURI" -> "tokenId.toString" [ color = "white" ];
+  "ERC721Upgradeable.approve" -> "ERC721Upgradeable.ownerOf" [ color = "white" ];
+  "ERC721Upgradeable.approve" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.approve" -> "ERC721Upgradeable.isApprovedForAll" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.approve" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.approve" -> "ERC721Upgradeable._approve" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.getApproved" -> "ERC721Upgradeable._exists" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.setApprovalForAll" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.setApprovalForAll" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.setApprovalForAll" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.transferFrom" -> "ERC721Upgradeable._isApprovedOrOwner" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.transferFrom" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.transferFrom" -> "ERC721Upgradeable._transfer" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.safeTransferFrom" -> "ERC721Upgradeable.safeTransferFrom" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.safeTransferFrom" -> "ERC721Upgradeable._isApprovedOrOwner" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.safeTransferFrom" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable.safeTransferFrom" -> "ERC721Upgradeable._safeTransfer" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._safeTransfer" -> "ERC721Upgradeable._transfer" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._safeTransfer" -> "ERC721Upgradeable._checkOnERC721Received" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._isApprovedOrOwner" -> "ERC721Upgradeable._exists" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._isApprovedOrOwner" -> "ERC721Upgradeable.ownerOf" [ color = "white" ];
+  "ERC721Upgradeable._isApprovedOrOwner" -> "ERC721Upgradeable.getApproved" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._isApprovedOrOwner" -> "ERC721Upgradeable.isApprovedForAll" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._safeMint" -> "ERC721Upgradeable._safeMint" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._safeMint" -> "ERC721Upgradeable._mint" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._safeMint" -> "ERC721Upgradeable._checkOnERC721Received" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._mint" -> "ERC721Upgradeable._exists" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._mint" -> "ERC721Upgradeable._beforeTokenTransfer" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._burn" -> "ERC721Upgradeable.ownerOf" [ color = "white" ];
+  "ERC721Upgradeable._burn" -> "ERC721Upgradeable._beforeTokenTransfer" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._burn" -> "ERC721Upgradeable._approve" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._transfer" -> "ERC721Upgradeable.ownerOf" [ color = "white" ];
+  "ERC721Upgradeable._transfer" -> "ERC721Upgradeable._beforeTokenTransfer" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._transfer" -> "ERC721Upgradeable._approve" [ color = "#1bc6a6" ];
+  "ERC721Upgradeable._approve" -> "ERC721Upgradeable.ownerOf" [ color = "white" ];
+  "ERC721Upgradeable._checkOnERC721Received" -> "to.isContract" [ color = "white" ];
+  "ERC721Upgradeable._checkOnERC721Received" -> "ERC721Upgradeable._msgSender" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionCall" -> "AddressUpgradeable.functionCall" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionCall" -> "AddressUpgradeable.functionCallWithValue" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionCallWithValue" -> "AddressUpgradeable.functionCallWithValue" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionCallWithValue" -> "AddressUpgradeable.isContract" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionCallWithValue" -> "AddressUpgradeable.verifyCallResult" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionStaticCall" -> "AddressUpgradeable.functionStaticCall" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionStaticCall" -> "AddressUpgradeable.isContract" [ color = "#1bc6a6" ];
+  "AddressUpgradeable.functionStaticCall" -> "target.staticcall" [ color = "white" ];
+  "AddressUpgradeable.functionStaticCall" -> "AddressUpgradeable.verifyCallResult" [ color = "#1bc6a6" ];
+
+
+rankdir=LR
+node [shape=plaintext]
+subgraph cluster_01 { 
+label = "Legend";
+key [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td align="right" port="i1">Internal Call</td></tr>
+  <tr><td align="right" port="i2">External Call</td></tr>
+  <tr><td align="right" port="i3">Defined Contract</td></tr>
+  <tr><td align="right" port="i4">Undefined Contract</td></tr>
+  </table>>]
+key2 [label=<<table border="0" cellpadding="2" cellspacing="0" cellborder="0">
+  <tr><td port="i1">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i2">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i3" bgcolor="#445773">&nbsp;&nbsp;&nbsp;</td></tr>
+  <tr><td port="i4">
+    <table border="1" cellborder="0" cellspacing="0" cellpadding="7" color="#e8726d">
+      <tr>
+       <td></td>
+      </tr>
+     </table>
+  </td></tr>
+  </table>>]
+key:i1:e -> key2:i1:w [color="#1bc6a6"]
+key:i2:e -> key2:i2:w [color="white"]
+}
+}

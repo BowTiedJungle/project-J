@@ -261,6 +261,29 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(false);
 
         });
+
+        it("Should allow withdrawal while contract is paused", async function () {
+
+            // Check for expected initial state
+            expect(await projectJ.paused()).to.equal(false);
+
+            // Fund contract
+            await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
+
+            // Check initial contract balance
+            expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0.1'));
+
+            // Pause contract
+            await projectJ.connect(pauser1).pause();
+            expect(await projectJ.paused()).to.equal(true);
+
+            // Attempt to call, expecting success
+            await projectJ.connect(governor).withdraw();
+
+            // Check final contract balance
+            expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0'));
+
+        });
     
     });
 
