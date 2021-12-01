@@ -56,6 +56,7 @@ contract ProjectJ is
         __ERC721_init("ProjectJ","PRJ");
 
         // Set contract governor
+        require(_governor != address(0),'ProjectJ: Cannot set admin to zero address');
         governor = _governor;
         _setupRole(GOVERNOR_ROLE, _governor);
 

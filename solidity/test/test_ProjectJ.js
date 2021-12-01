@@ -3,15 +3,28 @@ const { ethers, waffle } = require("hardhat");
 const { solidity } = waffle;
 
 // Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood
-// mod1, mod2: permissioned accounts. citizen1, citizen2, ... :non-permissioned accounts eg. users
+// dev: deployer address granted DEFAULT_ADMIN_ROLE
+// mod1, mod2: permissioned accounts granted MODERATOR_ROLE 
+// citizen1, citizen2: non-permissioned accounts eg. users
+// pauser1, pauser2: permissioned accounts granted PAUSER_ROLE
+// governor: contract administrator account granted GOVERNOR_ROLE
+// free1, free2: free mint eligible accounts
 const provider = waffle.provider;
-const [dev, mod1, mod2, citizen1, citizen2, governor, degen1, degen2, pauser1, pauser2] = provider.getWallets();
+const [dev, mod1, mod2, citizen1, citizen2, governor, free1, free2, pauser1, pauser2] = provider.getWallets();
 var moderators = [mod1.address,mod2.address];   //The .address syntax is used to get addy from the Signer object
 var pausers = [pauser1.address,pauser2.address];
-var degens = [degen1.address,degen2.address]
+var degens = [free1.address,free2.address]
 const baseURI = "testURI";
 
 describe("ProjectJ", function () {
+
+    describe("Checks w/ Special Initialization", function () {
+
+        it("Should NOT initialize if governor is set to zero address.", async function () {
+            ProjectJ = await ethers.getContractFactory("ProjectJ");
+            await expect(upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,hre.ethers.constants.AddressZero,degens])).to.be.revertedWith("ProjectJ: Cannot set admin to zero address");
+        });
+    });
 
     describe("Initialization", function () {
 
@@ -68,8 +81,8 @@ describe("ProjectJ", function () {
 
         it("Should set free mint eligiblity to TRUE for members of _freeMintEligibleList", async function () {
 
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true)
-            expect(await projectJ.freeMintEligible(degen2.address)).to.equal(true)
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true)
+            expect(await projectJ.freeMintEligible(free2.address)).to.equal(true)
 
         });
 
@@ -236,10 +249,10 @@ describe("ProjectJ", function () {
             expect(await projectJ.paused()).to.equal(true);
 
             // Attempt to call, expecting reversion
-            await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+            await expect(projectJ.connect(free1).mintFree()).to.be.reverted;
 
             // Check for expected final state
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(0)
+            expect(await projectJ.balanceOf(free1.address)).to.equal(0)
 
         });
 
@@ -533,15 +546,15 @@ describe("ProjectJ", function () {
         it("Should allow free mint to eligible address and remove free eligiblity after minting", async function () {
 
             // Check for expected initial states
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(0);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
 
             // Call contract
-            await projectJ.connect(degen1).mintFree();
+            await projectJ.connect(free1).mintFree();
 
             // Check for expected final state
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(false);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(1);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(false);
 
         });
 
@@ -563,48 +576,48 @@ describe("ProjectJ", function () {
         it("Should NOT allow free mint if wallet has PRJ balance >0", async function () {
 
             // Check for expected initial states
-            await projectJ.connect(degen1).mint({value: hre.ethers.utils.parseEther('0.1')});
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+            await projectJ.connect(free1).mint({value: hre.ethers.utils.parseEther('0.1')});
+            expect(await projectJ.balanceOf(free1.address)).to.equal(1);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
 
             // Call contract, expecting reversion
-            await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+            await expect(projectJ.connect(free1).mintFree()).to.be.reverted;
 
             // Check for expected final state
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(1);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
 
         });
 
         it("Should NOT allow free mint to blacklisted address", async function () {
 
             // Check for expected initial states
-            await projectJ.connect(mod1).modifyStanding(degen1.address,true);
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
-            expect(await projectJ.checkStanding(degen1.address)).to.equal(true);
+            await projectJ.connect(mod1).modifyStanding(free1.address,true);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(0);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
+            expect(await projectJ.checkStanding(free1.address)).to.equal(true);
 
             // Call contract, expecting reversion
-            await expect(projectJ.connect(degen1).mintFree()).to.be.reverted;
+            await expect(projectJ.connect(free1).mintFree()).to.be.reverted;
 
             // Check for expected final state
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(0);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
 
         });
 
         it("Should emit MintedFree after mintFree successfully called", async function () {
     
             // Check for expected initial states
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(0);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(true);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(0);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
     
             // Call contract
-            await expect(projectJ.connect(degen1).mintFree()).to.emit(projectJ,'MintedFree').withArgs(degen1.address,1);
+            await expect(projectJ.connect(free1).mintFree()).to.emit(projectJ,'MintedFree').withArgs(free1.address,1);
     
             // Check for expected final state
-            expect(await projectJ.balanceOf(degen1.address)).to.equal(1);
-            expect(await projectJ.freeMintEligible(degen1.address)).to.equal(false);
+            expect(await projectJ.balanceOf(free1.address)).to.equal(1);
+            expect(await projectJ.freeMintEligible(free1.address)).to.equal(false);
 
         });
 
