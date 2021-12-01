@@ -134,7 +134,7 @@ contract ProjectJ is
      * Requirements: 
      * - the caller must have the 'GOVERNOR_ROLE'
      */
-    function updateBaseURI(string memory _newURI) public onlyRole(GOVERNOR_ROLE) {
+    function updateBaseURI(string memory _newURI) external onlyRole(GOVERNOR_ROLE) {
         _baseTokenURI = _newURI;
     }
 
@@ -147,7 +147,7 @@ contract ProjectJ is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function pause() public virtual {
+    function pause() external virtual {
         require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to pause");
         _pause();
     }
@@ -161,7 +161,7 @@ contract ProjectJ is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function unpause() public virtual {
+    function unpause() external virtual {
         require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to unpause");
         _unpause();
     }
@@ -175,7 +175,7 @@ contract ProjectJ is
      * @param target address to modify the standing of
      * @param newStanding standing to change to
      */ 
-    function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) public {
+    function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) external {
         require(target != msg.sender,"User cannot modify their own standing.");
         blacklist[target] = newStanding;
         emit StandingModified(target, newStanding, msg.sender);
@@ -186,7 +186,7 @@ contract ProjectJ is
      * @param _address address to check the standing of
      * @return true if blacklisted, false if good standing
      */ 
-    function checkStanding(address _address) public view returns (bool) {
+    function checkStanding(address _address) external view returns (bool) {
         return blacklist[_address];
     }
 
@@ -197,7 +197,7 @@ contract ProjectJ is
      * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires msg.value >= mintPrice
      */ 
-    function mint() public payable inGoodStanding onePerWallet {
+    function mint() external payable inGoodStanding onePerWallet {
         require(msg.value >= mintPrice,"Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
@@ -212,7 +212,7 @@ contract ProjectJ is
      * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires msg.sender to be eligible for free mint
      */ 
-    function mintFree() public inGoodStanding onePerWallet onlyEligible {
+    function mintFree() external inGoodStanding onePerWallet onlyEligible {
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
@@ -226,7 +226,7 @@ contract ProjectJ is
      * - Requires GOVERNOR_ROLE
      * - May only be called by governor address
      */ 
-    function withdraw() public onlyRole(GOVERNOR_ROLE) {
+    function withdraw() external onlyRole(GOVERNOR_ROLE) {
         require(msg.sender == governor,"Only contract governor can withdraw funds.");
         governor.transfer(address(this).balance);
     }
