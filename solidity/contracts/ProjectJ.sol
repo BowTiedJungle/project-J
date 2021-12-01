@@ -201,8 +201,8 @@ contract ProjectJ is
         require(msg.value >= mintPrice,"Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
-        _safeMint(msg.sender, currentId);
         emit Minted(msg.sender, currentId);
+        _safeMint(msg.sender, currentId);
     }
 
     /**
@@ -216,8 +216,8 @@ contract ProjectJ is
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
-        _safeMint(msg.sender, currentId);
         emit MintedFree(msg.sender, currentId);
+        _safeMint(msg.sender, currentId);
     }
 
     /**
