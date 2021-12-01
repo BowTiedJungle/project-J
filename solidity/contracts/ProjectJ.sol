@@ -104,7 +104,7 @@ contract ProjectJ is
 
     /// @dev Requires msg.sender to be in good standing
     modifier inGoodStanding() {
-        require(blacklist[msg.sender] == false,"Account is blacklisted.");
+        require(!blacklist[msg.sender],"Account is blacklisted.");
         _;
     }
 
@@ -116,7 +116,7 @@ contract ProjectJ is
 
     /// @dev Requires msg.sender to map TRUE in freeMintEligible
     modifier onlyEligible() {
-        require(freeMintEligible[msg.sender] == true,"Not eligible for free mint");
+        require(freeMintEligible[msg.sender],"Not eligible for free mint");
         _;
     }
 
