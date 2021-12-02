@@ -19,6 +19,18 @@ Running unit tests:
 Running local dev node:
 `npx hardhat node` then start a second terminal, and run scripts from that one. This can be used to verify correct performance of the upgradeable infrastructure for instance.
 
+### Running Slither security analysis tool
+Thanks to @BowTiedFireFox for help with this part. Install docker, then:
+```
+docker pull trailofbits/eth-security-toolbox
+cd project-J/solidity
+docker run -it -v ${PWD}:/share trailofbits/eth-security-toolbox
+cd /share
+slither contracts/ProjectJ.sol  --solc-remaps @openzeppelin=node_modules/@openzeppelin
+```
+
+There are many printer options available via slither also for other analysis.
+
 ## To-do
 A very unexhaustive list of things needing attention.
 
