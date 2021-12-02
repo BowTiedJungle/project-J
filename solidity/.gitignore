@@ -12,3 +12,6 @@ artifacts
 
 # Sensitive files
 hardhat.config.js
+
+# Upgrades plugin contract deployment schemes - dev artifacts
+.openzeppelin/unknown-*.json
