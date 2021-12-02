@@ -1,17 +1,15 @@
-//SPDX-License-Identifier: UNLICENSED
+//SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721BurnableUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract ProjectJ is 
-    ERC721Upgradeable, 
-    ERC721EnumerableUpgradeable,
+    ERC721Upgradeable,
     ERC721BurnableUpgradeable,
     ERC721PausableUpgradeable,
     AccessControlEnumerableUpgradeable
@@ -26,14 +24,27 @@ contract ProjectJ is
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
     bytes32 public constant GOVERNOR_ROLE = keccak256("GOVERNOR_ROLE");
 
+    // Base string used in token URI generation
     string private _baseTokenURI;
 
+    // Contract governor address
     address payable public governor;
 
+    // Mint price for paid mint
     uint256 public constant mintPrice = 0.1 ether;
 
+    // Maps address to the ability to mint for free
     mapping(address => bool) public freeMintEligible;
 
+    /**
+     * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern. 
+     * @dev Initializes msg.sender as DEFAULT_ROLE_ADMIN
+     * @param _moderators array of addresses to give MODERATOR_ROLE
+     * @param _pausers array of addresses to give PAUSER_ROLE
+     * @param baseTokenURI string to use as base URI for URI autogeneration
+     * @param _governor address to give GOVERNOR_ROLE
+     * @param _freeMintEligibleList array of addresses to map TRUE in freeMintEligible mapping
+     */
     function initialize(
         address[] memory _moderators,
         address[] memory _pausers,
@@ -45,6 +56,7 @@ contract ProjectJ is
         __ERC721_init("ProjectJ","PRJ");
 
         // Set contract governor
+        require(_governor != address(0),'ProjectJ: Cannot set admin to zero address');
         governor = _governor;
         _setupRole(GOVERNOR_ROLE, _governor);
 
@@ -65,7 +77,7 @@ contract ProjectJ is
             _setupRole(PAUSER_ROLE,_pausers[i]);
         }
 
-        // Initialize degenimals whitelist
+        // Initialize free mint eligible addresses
         for (i = 0;i < _freeMintEligibleList.length; i++) {
             freeMintEligible[_freeMintEligibleList[i]] = true;
         }
@@ -74,40 +86,55 @@ contract ProjectJ is
         _tokenIdTracker.increment();
     }
 
-    // Mapping of blacklisted accounts to allow deactivation of NFTs
+    // Mapping of blacklisted accounts
     mapping(address => bool) public blacklist;
 
-    // Modification of standing will emit target address, the new standing, and the address changing the standing
+    /** @dev Emit on modification of blacklist standing.
+     * @return target address
+     * @return target's new standing
+     * @return address changing the standing
+    */
     event StandingModified(address target, bool newStanding, address changedBy);
 
+    /// @dev Emit on minting
     event Minted(address to, uint256 tokenId);
 
+    /// @dev Emit on free minting
     event MintedFree(address to, uint256 tokenId);
 
-    // Requires target address to be in good standing
+    /// @dev Requires msg.sender to be in good standing
     modifier inGoodStanding() {
-        require(blacklist[msg.sender] == false,"Account is blacklisted.");
+        require(!blacklist[msg.sender],"Account is blacklisted.");
         _;
     }
 
+    /// @dev Requires msg.sender to have 0 balance of Project J NFTs
     modifier onePerWallet() {
         require(balanceOf(msg.sender) == 0,"One per customer ser");
         _;
     }
 
-    modifier eligible() {
-        require(freeMintEligible[msg.sender] == true,"Not eligible for free mint");
+    /// @dev Requires msg.sender to map TRUE in freeMintEligible
+    modifier onlyEligible() {
+        require(freeMintEligible[msg.sender],"Not eligible for free mint");
         _;
     }
 
     /**
-     * Overrides OZ ERC721 _baseURI as per design intent of the library function
+     * @dev Overrides OZ ERC721 _baseURI as per design intent of the library function
+     * @return _baseTokenURI the base string used in autogeneration of token URIs
      */
     function _baseURI() internal view override returns (string memory) {
         return _baseTokenURI;
     }
 
-    function updateBaseURI(string memory _newURI) public onlyRole(GOVERNOR_ROLE) {
+    /**
+     * @dev Updates the base URI string
+     * @param _newURI string to use as the new _baseTokenURI
+     * Requirements: 
+     * - the caller must have the 'GOVERNOR_ROLE'
+     */
+    function updateBaseURI(string memory _newURI) external onlyRole(GOVERNOR_ROLE) {
         _baseTokenURI = _newURI;
     }
 
@@ -120,8 +147,8 @@ contract ProjectJ is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function pause() public virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have pauser role to pause");
+    function pause() external virtual {
+        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to pause");
         _pause();
     }
 
@@ -134,42 +161,72 @@ contract ProjectJ is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function unpause() public virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "ERC721PresetMinterPauserAutoId: must have pauser role to unpause");
+    function unpause() external virtual {
+        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to unpause");
         _unpause();
     }
 
-    // Modify the standing of the target address. Cannot change own standing. Requires moderator role. Requires good standing.
-    function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) public {
+    /**
+     * @dev Modify the standing of the target address. 
+     * Requirements:
+     * - Cannot change own standing. 
+     * - Requires MODERATOR_ROLE. 
+     * - Requires good standing.
+     * @param target address to modify the standing of
+     * @param newStanding standing to change to
+     */ 
+    function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) external {
         require(target != msg.sender,"User cannot modify their own standing.");
         blacklist[target] = newStanding;
         emit StandingModified(target, newStanding, msg.sender);
     }
 
-    // Return standing of target address.
-    function checkStanding(address _address) public view returns (bool) {
+    /**
+     * @dev Return standing of target address.
+     * @param _address address to check the standing of
+     * @return true if blacklisted, false if good standing
+     */ 
+    function checkStanding(address _address) external view returns (bool) {
         return blacklist[_address];
     }
 
-    // Mint NFT. Requires the sender to be in good standing and not possess a pass already.
-    function mint() public payable inGoodStanding onePerWallet {
-        require(msg.value == mintPrice,"Mint price not correct");
+    /**
+     * @dev Mint NFT. 
+     * Requirements:
+     * - Requires good standing
+     * - Requires 0 wallet balance of ProjectJ NFTs
+     * - Requires msg.value >= mintPrice
+     */ 
+    function mint() external payable inGoodStanding onePerWallet {
+        require(msg.value >= mintPrice,"Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
-        _safeMint(msg.sender, currentId);
-        emit Minted(msg.sender, currentId);
         _tokenIdTracker.increment();
+        emit Minted(msg.sender, currentId);
+        _safeMint(msg.sender, currentId);
     }
 
-    function mintFree() public inGoodStanding onePerWallet eligible {
+    /**
+     * @dev Mint NFT without mint cost. 
+     * Requirements:
+     * - Requires good standing
+     * - Requires 0 wallet balance of ProjectJ NFTs
+     * - Requires msg.sender to be eligible for free mint
+     */ 
+    function mintFree() external inGoodStanding onePerWallet onlyEligible {
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
-        _safeMint(msg.sender, currentId);
-        emit MintedFree(msg.sender, currentId);
         _tokenIdTracker.increment();
+        emit MintedFree(msg.sender, currentId);
+        _safeMint(msg.sender, currentId);
     }
 
-    // Withdraw contract balance
-    function withdraw() public onlyRole(GOVERNOR_ROLE) {
+    /**
+     * @dev Withdraw contract balance
+     * Requirements:
+     * - Requires GOVERNOR_ROLE
+     * - May only be called by governor address
+     */ 
+    function withdraw() external onlyRole(GOVERNOR_ROLE) {
         require(msg.sender == governor,"Only contract governor can withdraw funds.");
         governor.transfer(address(this).balance);
     }
@@ -181,18 +238,18 @@ contract ProjectJ is
         public
         view
         virtual
-        override(AccessControlEnumerableUpgradeable, ERC721Upgradeable, ERC721EnumerableUpgradeable)
+        override(AccessControlEnumerableUpgradeable, ERC721Upgradeable)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
     }
 
-    // This hook has to be here for compatability
+    /// @dev Hook required for standards compatability
     function _beforeTokenTransfer(
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override(ERC721Upgradeable, ERC721EnumerableUpgradeable, ERC721PausableUpgradeable) {
+    ) internal virtual override(ERC721Upgradeable, ERC721PausableUpgradeable) {
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
