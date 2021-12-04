@@ -1,16 +1,18 @@
 const { ethers } = require("hardhat");
-const { keccak256 } = require("keccak256");
+const keccak256 = require("keccak256");
 const { MerkleTree } = require("merkletreejs");
 
 const main = async () => {
 
-    const [addr1,addr2] = await hre.ethers.getSigners();
+    const [addr1,addr2,addr3,addr4] = await hre.ethers.getSigners();
 
     // Map tokenID to wallets
     // e.g.
     const tokens = {
         1: addr1.address,
-        2: addr2.address
+        2: addr2.address,
+        3: addr3.address,
+        4: addr4.address
     }
 
     function hashToken(tokenId, account) {
@@ -21,7 +23,10 @@ const main = async () => {
         const merkleTree = new MerkleTree(
             Object.entries(tokens).map((token) => hashToken(...token)),
             keccak256,
-            { sortPairs: true }
+            { 
+                sortPairs: true,
+                sortLeaves: true
+            }
         );
         return [merkleTree,merkleTree.getHexRoot()];
     }
@@ -52,11 +57,11 @@ const main = async () => {
     txn = await merkleTest._verify(leaf2,proof2);
     console.log(txn);
 
-    // txn = await merkleTest.verify(addr1.address,1,proof2);
-    // console.log(txn);
+    txn = await merkleTest.verify(addr1.address,1,proof1);
+    console.log(txn);
 
-    // txn = await merkleTest.verify(addr2.address,2,proof1);
-    // console.log(txn);
+    txn = await merkleTest.verify(addr2.address,2,proof2);
+    console.log(txn);
 
 }
 
