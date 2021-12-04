@@ -6,22 +6,20 @@ const main = async () => {
 
     const [addr1,addr2,addr3,addr4] = await hre.ethers.getSigners();
 
-    // Map tokenID to wallets
-    // e.g.
-    const tokens = {
-        1: addr1.address,
-        2: addr2.address,
-        3: addr3.address,
-        4: addr4.address
-    }
+    const whitelist = [
+        addr1.address,
+        addr2.address,
+        addr3.address,
+        addr4.address
+    ]
 
-    function hashToken(tokenId, account) {
-        return Buffer.from(ethers.utils.solidityKeccak256(["uint256", "address"], [tokenId, account]).slice(2), "hex");
+    function hashAddress(account) {
+        return Buffer.from(ethers.utils.solidityKeccak256(['address'],[account]).slice(2),'hex');
     }
 
     function generateMerkleTree() {
         const merkleTree = new MerkleTree(
-            Object.entries(tokens).map((token) => hashToken(...token)),
+            whitelist.map(hashAddress),
             keccak256,
             { 
                 sortPairs: true,
@@ -34,9 +32,9 @@ const main = async () => {
     const [merkleTree,deploymentRoot] = generateMerkleTree();
     console.log('Root: ',deploymentRoot)
     console.log('Tree:\n',merkleTree.toString())
-    const proof1 = merkleTree.getHexProof(hashToken(1,addr1.address));
+    const proof1 = merkleTree.getHexProof(hashAddress(addr1.address));
     console.log('Proof1: ',proof1)
-    const proof2 = merkleTree.getHexProof(hashToken(2,addr2.address));
+    const proof2 = merkleTree.getHexProof(hashAddress(addr2.address));
     console.log('Proof2: ',proof2)
 
     // Deploy tester contract
@@ -45,22 +43,22 @@ const main = async () => {
     console.log('Deployed to: ',merkleTest.address);
 
     // leaves visibly match generated proof aside from the 0x, and are swapped in order for some infernal reason
-    const leaf1 = await merkleTest._leaf(addr1.address,1)
+    const leaf1 = await merkleTest._leaf(addr1.address)
     console.log('Leaf1: ',leaf1)
-    const leaf2 = await merkleTest._leaf(addr2.address,2)
+    const leaf2 = await merkleTest._leaf(addr2.address)
     console.log('Leaf2: ',leaf2)
 
-    // Doesn't verify successfully yet
+    // Verify
     var txn = await merkleTest._verify(leaf1,proof1);
     console.log(txn);
 
     txn = await merkleTest._verify(leaf2,proof2);
     console.log(txn);
 
-    txn = await merkleTest.verify(addr1.address,1,proof1);
+    txn = await merkleTest.verify(addr1.address,proof1);
     console.log(txn);
 
-    txn = await merkleTest.verify(addr2.address,2,proof2);
+    txn = await merkleTest.verify(addr2.address,proof2);
     console.log(txn);
 
 }
