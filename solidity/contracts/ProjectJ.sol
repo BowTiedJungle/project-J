@@ -7,6 +7,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721Burnab
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
+import "@openzeppelin/contracts-upgradeable/utils/cryptography/MerkleProofUpgradeable.sol";
 
 contract ProjectJ is 
     ERC721Upgradeable,
@@ -18,6 +19,9 @@ contract ProjectJ is
     using Counters for Counters.Counter;
 
     Counters.Counter private _tokenIdTracker;
+
+    // Merkle root storage
+    bytes32 private merkleRoot;
 
     // Declare roles for AccessControl
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
@@ -33,8 +37,8 @@ contract ProjectJ is
     // Mint price for paid mint
     uint256 public constant mintPrice = 0.1 ether;
 
-    // Maps address to the ability to mint for free
-    mapping(address => bool) public freeMintEligible;
+    // Maps address to whether the free mint has been claimed
+    mapping(address => bool) public freeMintClaimed;
 
     /**
      * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern. 
@@ -43,14 +47,14 @@ contract ProjectJ is
      * @param _pausers array of addresses to give PAUSER_ROLE
      * @param baseTokenURI string to use as base URI for URI autogeneration
      * @param _governor address to give GOVERNOR_ROLE
-     * @param _freeMintEligibleList array of addresses to map TRUE in freeMintEligible mapping
+     * @param _merkleRoot root of the whitelisted addresses merkle tree
      */
     function initialize(
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
         address payable _governor,
-        address[] memory _freeMintEligibleList
+        bytes32 _merkleRoot
     ) initializer public payable {
 
         __ERC721_init("ProjectJ","PRJ");
@@ -62,6 +66,9 @@ contract ProjectJ is
 
         // Set base token URI
         _baseTokenURI = baseTokenURI;
+
+        // Set root of whitelist merkle tree
+        merkleRoot = _merkleRoot;
 
         // Initialize default admin role
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
@@ -75,11 +82,6 @@ contract ProjectJ is
         // Initialize pausers
         for (i = 0;i < _pausers.length; i++) {
             _setupRole(PAUSER_ROLE,_pausers[i]);
-        }
-
-        // Initialize free mint eligible addresses
-        for (i = 0;i < _freeMintEligibleList.length; i++) {
-            freeMintEligible[_freeMintEligibleList[i]] = true;
         }
 
         // Increment counter so first mint starts at token #1
@@ -114,10 +116,27 @@ contract ProjectJ is
         _;
     }
 
-    /// @dev Requires msg.sender to map TRUE in freeMintEligible
+        /// @dev Requires msg.sender to map false in freeMintClaimed
     modifier onlyEligible() {
-        require(freeMintEligible[msg.sender],"Not eligible for free mint");
+        require(!freeMintClaimed[msg.sender],"ProjectJ: Free mint already claimed");
         _;
+    }
+
+    /**
+     * @dev Returns the leaf hash for given input data
+     * @param account address to hash
+     */
+    function _leaf(address account) internal pure returns (bytes32) {
+        return keccak256(abi.encodePacked(account));
+    }
+
+    /**
+     * @dev Verifies that a given leaf is in the whitelist merkle tree
+     * @param _leafNode Leaf hash to verify
+     * @param proof Array of hashes proving leaf
+     */
+    function _verify(bytes32 _leafNode, bytes32[] memory proof) internal view returns (bool) {
+        return MerkleProofUpgradeable.verify(proof, merkleRoot, _leafNode);
     }
 
     /**
@@ -207,15 +226,17 @@ contract ProjectJ is
 
     /**
      * @dev Mint NFT without mint cost. 
+     * @param proof array of hashes proving msg.sender is in the whitelist tree
      * Requirements:
      * - Requires good standing
      * - Requires 0 wallet balance of ProjectJ NFTs
-     * - Requires msg.sender to be eligible for free mint
+     * - Requires a valid proof that msg.sender is in the whitelist tree
      */ 
-    function mintFree() external inGoodStanding onePerWallet onlyEligible {
-        freeMintEligible[msg.sender] = false;
+    function mintFree(bytes32[] calldata proof) external inGoodStanding onePerWallet onlyEligible {
+        require(_verify(_leaf(msg.sender),proof),'ProjectJ: Invalid proof provided.');
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
+        freeMintClaimed[msg.sender] = true;
         emit MintedFree(msg.sender, currentId);
         _safeMint(msg.sender, currentId);
     }

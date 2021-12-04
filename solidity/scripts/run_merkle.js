@@ -17,9 +17,9 @@ const main = async () => {
         return Buffer.from(ethers.utils.solidityKeccak256(['address'],[account]).slice(2),'hex');
     }
 
-    function generateMerkleTree() {
+    function generateMerkleTree(wl) {
         const merkleTree = new MerkleTree(
-            whitelist.map(hashAddress),
+            wl.map(hashAddress),
             keccak256,
             { 
                 sortPairs: true,
@@ -29,7 +29,7 @@ const main = async () => {
         return [merkleTree,merkleTree.getHexRoot()];
     }
 
-    const [merkleTree,deploymentRoot] = generateMerkleTree();
+    const [merkleTree,deploymentRoot] = generateMerkleTree(whitelist);
     console.log('Root: ',deploymentRoot)
     console.log('Tree:\n',merkleTree.toString())
     const proof1 = merkleTree.getHexProof(hashAddress(addr1.address));
