@@ -187,9 +187,10 @@ const proofs = []
 for (i=0;i<degens.length;i++) {
     proofs[i] = merkleTree.getHexProof(hashAddress(degens[i]))
 }
-console.log('Root: ',deploymentRoot)
-console.log('Tree:\n',merkleTree.toString())
-console.log('Proofs:\n',proofs)
+
+// console.log('Root: ',deploymentRoot)
+// console.log('Tree:\n',merkleTree.toString())
+// console.log('Proofs:\n',proofs)
 
 const badWhitelist = degens
 badWhitelist.push(citizen1.address);

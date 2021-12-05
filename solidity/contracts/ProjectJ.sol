@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.4;
 
 import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721BurnableUpgradeable.sol";
@@ -39,6 +39,9 @@ contract ProjectJ is
 
     // Maps address to whether the free mint has been claimed
     mapping(address => bool) public freeMintClaimed;
+
+    // Mapping of blacklisted accounts
+    mapping(address => bool) public blacklist;
 
     /**
      * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern. 
@@ -88,9 +91,6 @@ contract ProjectJ is
         _tokenIdTracker.increment();
     }
 
-    // Mapping of blacklisted accounts
-    mapping(address => bool) public blacklist;
-
     /** @dev Emit on modification of blacklist standing.
      * @return target address
      * @return target's new standing
@@ -106,19 +106,13 @@ contract ProjectJ is
 
     /// @dev Requires msg.sender to be in good standing
     modifier inGoodStanding() {
-        require(!blacklist[msg.sender],"Account is blacklisted.");
+        require(!blacklist[msg.sender],"ProjectJ: Account is blacklisted.");
         _;
     }
 
     /// @dev Requires msg.sender to have 0 balance of Project J NFTs
     modifier onePerWallet() {
-        require(balanceOf(msg.sender) == 0,"One per customer ser");
-        _;
-    }
-
-        /// @dev Requires msg.sender to map false in freeMintClaimed
-    modifier onlyEligible() {
-        require(!freeMintClaimed[msg.sender],"ProjectJ: Free mint already claimed");
+        require(balanceOf(msg.sender) == 0,"ProjectJ: Account has >0 PRJ NFTs");
         _;
     }
 
@@ -167,7 +161,7 @@ contract ProjectJ is
      * - the caller must have the `PAUSER_ROLE`.
      */
     function pause() external virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to pause");
+        require(hasRole(PAUSER_ROLE, _msgSender()), "ProjectJ: Must have pauser role to pause");
         _pause();
     }
 
@@ -181,7 +175,7 @@ contract ProjectJ is
      * - the caller must have the `PAUSER_ROLE`.
      */
     function unpause() external virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to unpause");
+        require(hasRole(PAUSER_ROLE, _msgSender()), "ProjectJ: Must have pauser role to unpause");
         _unpause();
     }
 
@@ -195,7 +189,7 @@ contract ProjectJ is
      * @param newStanding standing to change to
      */ 
     function modifyStanding(address target, bool newStanding) inGoodStanding onlyRole(MODERATOR_ROLE) external {
-        require(target != msg.sender,"User cannot modify their own standing.");
+        require(target != msg.sender,"ProjectJ: User cannot modify their own standing.");
         blacklist[target] = newStanding;
         emit StandingModified(target, newStanding, msg.sender);
     }
@@ -217,7 +211,7 @@ contract ProjectJ is
      * - Requires msg.value >= mintPrice
      */ 
     function mint() external payable inGoodStanding onePerWallet {
-        require(msg.value >= mintPrice,"Mint price not correct");
+        require(msg.value >= mintPrice,"ProjectJ: Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
         emit Minted(msg.sender, currentId);
@@ -232,8 +226,9 @@ contract ProjectJ is
      * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires a valid proof that msg.sender is in the whitelist tree
      */ 
-    function mintFree(bytes32[] calldata proof) external inGoodStanding onePerWallet onlyEligible {
+    function mintFree(bytes32[] calldata proof) external inGoodStanding onePerWallet {
         require(_verify(_leaf(msg.sender),proof),'ProjectJ: Invalid proof provided.');
+        require(!freeMintClaimed[msg.sender],"ProjectJ: Free mint already claimed.");
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
         freeMintClaimed[msg.sender] = true;
@@ -248,7 +243,7 @@ contract ProjectJ is
      * - May only be called by governor address
      */ 
     function withdraw() external onlyRole(GOVERNOR_ROLE) {
-        require(msg.sender == governor,"Only contract governor can withdraw funds.");
+        require(msg.sender == governor,"ProjectJ: Only governor can withdraw.");
         governor.transfer(address(this).balance);
     }
 
