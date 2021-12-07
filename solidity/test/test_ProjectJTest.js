@@ -1,6 +1,5 @@
 const { expect } = require("chai");
 const { ethers, waffle } = require("hardhat");
-const { isCallTrace } = require("hardhat/internal/hardhat-network/stack-traces/message-trace");
 const { solidity } = waffle;
 
 // Set up the test addresses used, uses waffle syntax vs. ethers.getSigners as hardhat testing uses waffle under the hood

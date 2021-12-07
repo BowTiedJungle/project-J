@@ -8,7 +8,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721Pausab
 import "@openzeppelin/contracts-upgradeable/access/AccessControlEnumerableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/CountersUpgradeable.sol";
 
-contract ProjectJ is 
+contract ProjectJTest is 
     ERC721Upgradeable,
     ERC721BurnableUpgradeable,
     ERC721PausableUpgradeable,
@@ -251,6 +251,11 @@ contract ProjectJ is
         uint256 tokenId
     ) internal virtual override(ERC721Upgradeable, ERC721PausableUpgradeable) {
         super._beforeTokenTransfer(from, to, tokenId);
+    }
+
+    /// @dev Adds a test function to be called after proxy upgrade.
+    function proxyTest() external pure returns (uint256) {
+        return 42;
     }
 
 }
