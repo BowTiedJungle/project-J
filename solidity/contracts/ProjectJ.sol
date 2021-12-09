@@ -147,8 +147,7 @@ contract ProjectJ is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function pause() external virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to pause");
+    function pause() external virtual onlyRole(PAUSER_ROLE) {
         _pause();
     }
 
@@ -161,8 +160,7 @@ contract ProjectJ is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function unpause() external virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to unpause");
+    function unpause() external virtual onlyRole(PAUSER_ROLE) {
         _unpause();
     }
 
