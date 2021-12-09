@@ -170,6 +170,18 @@ describe("ProjectJ", function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
             await expect(upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,hre.ethers.constants.AddressZero,degens])).to.be.revertedWith("ProjectJ: Cannot set admin to zero address");
         });
+
+        it("Should correctly stack roles on addresses.", async function () {
+            ProjectJ = await ethers.getContractFactory("ProjectJ");
+            projectJ = await upgrades.deployProxy(ProjectJ,[[governor.address],[governor.address],baseURI,governor.address,degens]);
+            moderatorRole = hre.ethers.utils.id("MODERATOR_ROLE");
+            pauserRole = hre.ethers.utils.id("PAUSER_ROLE");
+            governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
+            expect(await projectJ.hasRole(moderatorRole,governor.address)).to.equal(true);
+            expect(await projectJ.hasRole(pauserRole,governor.address)).to.equal(true);
+            expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
+        });
+
     });
 
     describe("Initialization", function () {
@@ -184,7 +196,6 @@ describe("ProjectJ", function () {
             // Check for correct deployment state
             expect(await projectJ.hasRole(moderatorRole,moderators[0])).to.equal(true);
             expect(await projectJ.hasRole(moderatorRole,moderators[1])).to.equal(true);
-
         });
 
         it("Should grant PAUSER_ROLE to all members of the pausers argument", async function () {
@@ -206,7 +217,30 @@ describe("ProjectJ", function () {
             governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
             // Check for correct deployment state
             expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
+        });
 
+        it("Should ONLY grant GOVERNOR_ROLE to the governor address", async function () {
+            governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
+            // Check for correct deployment state
+            expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
+            expect(await projectJ.getRoleMemberCount(governorRole)).to.equal(1);
+            expect(await projectJ.getRoleMember(governorRole,0)).to.equal(governor.address);
+        });
+
+        it("Should ONLY grant PAUSER_ROLE to all members of the pausers argument", async function () {
+            pauserRole = hre.ethers.utils.id("PAUSER_ROLE");
+            // Check for correct deployment state
+            expect(await projectJ.getRoleMemberCount(pauserRole)).to.equal(2);
+            expect(await projectJ.getRoleMember(pauserRole,0)).to.equal(pauser1.address);
+            expect(await projectJ.getRoleMember(pauserRole,1)).to.equal(pauser2.address);
+        });
+
+        it("Should ONLY grant MODERATOR_ROLE to all members of the moderators argument", async function () {
+            moderatorRole = hre.ethers.utils.id("MODERATOR_ROLE");
+            // Check for correct deployment state
+            expect(await projectJ.getRoleMemberCount(moderatorRole)).to.equal(2);
+            expect(await projectJ.getRoleMember(moderatorRole,0)).to.equal(mod1.address);
+            expect(await projectJ.getRoleMember(moderatorRole,1)).to.equal(mod2.address);
         });
 
         it("Should start tokenId as 1", async function () {
