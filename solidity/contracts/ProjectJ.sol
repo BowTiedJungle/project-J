@@ -114,12 +114,6 @@ contract ProjectJ is
         _;
     }
 
-    /// @dev Requires msg.sender to map TRUE in freeMintEligible
-    modifier onlyEligible() {
-        require(freeMintEligible[msg.sender],"Not eligible for free mint");
-        _;
-    }
-
     /**
      * @dev Overrides OZ ERC721 _baseURI as per design intent of the library function
      * @return _baseTokenURI the base string used in autogeneration of token URIs
@@ -210,7 +204,8 @@ contract ProjectJ is
      * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires msg.sender to be eligible for free mint
      */ 
-    function mintFree() external inGoodStanding onePerWallet onlyEligible {
+    function mintFree() external inGoodStanding onePerWallet {
+        require(freeMintEligible[msg.sender],"Not eligible for free mint");
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
