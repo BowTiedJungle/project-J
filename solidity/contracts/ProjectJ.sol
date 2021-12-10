@@ -22,7 +22,6 @@ contract ProjectJ is
     // Declare roles for AccessControl
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    bytes32 public constant GOVERNOR_ROLE = keccak256("GOVERNOR_ROLE");
 
     // Base string used in token URI generation
     string private _baseTokenURI;
@@ -42,7 +41,7 @@ contract ProjectJ is
      * @param _moderators array of addresses to give MODERATOR_ROLE
      * @param _pausers array of addresses to give PAUSER_ROLE
      * @param baseTokenURI string to use as base URI for URI autogeneration
-     * @param _governor address to give GOVERNOR_ROLE
+     * @param _governor address to use as contract admin
      * @param _freeMintEligibleList array of addresses to map TRUE in freeMintEligible mapping
      */
     function initialize(
@@ -58,12 +57,11 @@ contract ProjectJ is
         // Set contract governor
         require(_governor != address(0),'ProjectJ: Cannot set admin to zero address');
         governor = _governor;
-        _setupRole(GOVERNOR_ROLE, _governor);
 
         // Set base token URI
         _baseTokenURI = baseTokenURI;
 
-        // Initialize default admin role
+        // Initialize default admin role to dev wallet
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
 
         // Initialize moderators
@@ -110,7 +108,13 @@ contract ProjectJ is
 
     /// @dev Requires msg.sender to have 0 balance of Project J NFTs
     modifier onePerWallet() {
-        require(balanceOf(msg.sender) == 0,"One per customer ser");
+        require(balanceOf(msg.sender) == 0,"One per customer");
+        _;
+    }
+
+    /// @dev requires sender to be the governor address
+    modifier onlyGovernor() {
+        require(msg.sender == governor,"Only contract governor may call");
         _;
     }
 
@@ -128,7 +132,7 @@ contract ProjectJ is
      * Requirements: 
      * - the caller must have the 'GOVERNOR_ROLE'
      */
-    function updateBaseURI(string memory _newURI) external onlyRole(GOVERNOR_ROLE) {
+    function updateBaseURI(string memory _newURI) external onlyGovernor {
         _baseTokenURI = _newURI;
     }
 
@@ -219,8 +223,7 @@ contract ProjectJ is
      * - Requires GOVERNOR_ROLE
      * - May only be called by governor address
      */ 
-    function withdraw() external onlyRole(GOVERNOR_ROLE) {
-        require(msg.sender == governor,"Only contract governor can withdraw funds.");
+    function withdraw() external onlyGovernor {
         governor.transfer(address(this).balance);
     }
 

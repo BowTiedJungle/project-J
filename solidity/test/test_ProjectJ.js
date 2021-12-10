@@ -176,10 +176,8 @@ describe("ProjectJ", function () {
             projectJ = await upgrades.deployProxy(ProjectJ,[[governor.address],[governor.address],baseURI,governor.address,degens]);
             moderatorRole = hre.ethers.utils.id("MODERATOR_ROLE");
             pauserRole = hre.ethers.utils.id("PAUSER_ROLE");
-            governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
             expect(await projectJ.hasRole(moderatorRole,governor.address)).to.equal(true);
             expect(await projectJ.hasRole(pauserRole,governor.address)).to.equal(true);
-            expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
         });
 
     });
@@ -217,18 +215,9 @@ describe("ProjectJ", function () {
 
         });
 
-        it("Should grant GOVERNOR_ROLE to the governor address argument", async function () {
-            governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
+        it("Should set contract governor as the governor address argument", async function () {
             // Check for correct deployment state
-            expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
-        });
-
-        it("Should ONLY grant GOVERNOR_ROLE to the governor address", async function () {
-            governorRole = hre.ethers.utils.id("GOVERNOR_ROLE");
-            // Check for correct deployment state
-            expect(await projectJ.hasRole(governorRole,governor.address)).to.equal(true);
-            expect(await projectJ.getRoleMemberCount(governorRole)).to.equal(1);
-            expect(await projectJ.getRoleMember(governorRole,0)).to.equal(governor.address);
+            expect(await projectJ.governor()).to.equal(governor.address);
         });
 
         it("Should ONLY grant PAUSER_ROLE to all members of the pausers argument", async function () {
@@ -648,7 +637,7 @@ describe("ProjectJ", function () {
 
         });
 
-        it("Should withdraw the contract ETH balance when called with GOVERNOR_ROLE", async function () {
+        it("Should withdraw the contract ETH balance when called by governor address", async function () {
 
             // Check inital contract balance
             expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0'));
@@ -667,7 +656,7 @@ describe("ProjectJ", function () {
 
         });
 
-        it("Should NOT withdraw the contract ETH balance when called without GOVERNOR_ROLE", async function () {
+        it("Should NOT withdraw the contract ETH balance when called by address other than governor", async function () {
 
             // Check inital contract balance
             expect(await provider.getBalance(projectJ.address)).to.equal(hre.ethers.utils.parseEther('0'));
@@ -695,7 +684,7 @@ describe("ProjectJ", function () {
             projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
         });
 
-        it("Should update _baseTokenURI when called with GOVERNOR_ROLE", async function () {
+        it("Should update _baseTokenURI when called by governor address", async function () {
 
             // Setup
             await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
@@ -710,7 +699,7 @@ describe("ProjectJ", function () {
             expect(await projectJ.tokenURI(1)).to.equal('xyz/'+'1');
         });
 
-        it("Should NOT update _baseTokenURI when called without GOVERNOR_ROLE", async function () {
+        it("Should NOT update _baseTokenURI when called by other accounts", async function () {
 
             // Setup
             await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
