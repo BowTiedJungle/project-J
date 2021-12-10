@@ -191,6 +191,10 @@ describe("ProjectJ", function () {
             projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
         });
 
+        it("Should not allow calling initializer twice", async function () {
+            await expect( projectJ.initialize(moderators,pausers,baseURI,governor.address,degens)).to.be.reverted;
+        });
+
         it("Should grant MODERATOR_ROLE to all members of the moderators argument", async function () {
             moderatorRole = hre.ethers.utils.id("MODERATOR_ROLE");
             // Check for correct deployment state
