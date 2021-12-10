@@ -7,6 +7,26 @@ Project J is a jungle-native project seeking to allow NFT-verified proof of jung
 ## Technical details
 Building for Ethereum mainnet. Uses hardhat development environment. Uses OpenZeppelin proxy pattern for upgradeable smart contracts. Will use Gnosis safe for multisig.
 
+### Hardhat config
+```
+cd ./solidity
+npx hardhat
+```
+
+In the `hardhat.config.js` file, add the following lines:
+```
+require("@nomiclabs/hardhat-waffle");
+require('@openzeppelin/hardhat-upgrades');
+require("hardhat-gas-reporter");
+```
+
+The lines
+```
+require("@nomiclabs/hardhat-solhint");
+require("hardhat-docgen")
+```
+may be added for extra checking and documentation generation and are accessible by `npx hardhat check` and `npx hardhat docgen` respectively.
+
 ### Commands (execute from solidity directory)
 Running scripts:
 `npx hardhat run scripts/deploy.js`
