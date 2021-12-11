@@ -63,8 +63,8 @@ contract ProjectJTest is
         // Set base token URI
         _baseTokenURI = baseTokenURI;
 
-        // Initialize default admin role
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
+        // Initialize default admin role to governor
+        _setupRole(DEFAULT_ADMIN_ROLE, governor);
 
         // Initialize moderators
         uint256 i;

@@ -208,10 +208,10 @@ describe("ProjectJ", function () {
 
         });
 
-        it("Should grant DEFAULT_ADMIN_ROLE to the deploying address", async function () {
+        it("Should grant DEFAULT_ADMIN_ROLE to the governor address", async function () {
             defaultAdminRole = hre.ethers.utils.formatBytes32String('');
             // Check for correct deployment state
-            expect(await projectJ.hasRole(defaultAdminRole,dev.address)).to.equal(true);
+            expect(await projectJ.hasRole(defaultAdminRole,governor.address)).to.equal(true);
 
         });
 
@@ -236,11 +236,11 @@ describe("ProjectJ", function () {
             expect(await projectJ.getRoleMember(moderatorRole,1)).to.equal(mod2.address);
         });
 
-        it("Should ONLY grant DEFAULT_ADMIN_ROLE to the deploying address", async function () {
+        it("Should ONLY grant DEFAULT_ADMIN_ROLE to the governor address", async function () {
             defaultAdminRole = hre.ethers.utils.formatBytes32String('');
             // Check for correct deployment state
             expect(await projectJ.getRoleMemberCount(defaultAdminRole)).to.equal(1);
-            expect(await projectJ.getRoleMember(defaultAdminRole,0)).to.equal(dev.address);
+            expect(await projectJ.getRoleMember(defaultAdminRole,0)).to.equal(governor.address);
         });
 
         it("Should start tokenId as 1", async function () {
