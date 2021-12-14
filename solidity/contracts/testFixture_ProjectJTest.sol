@@ -22,13 +22,13 @@ contract ProjectJTest is
     // Declare roles for AccessControl
     bytes32 public constant MODERATOR_ROLE = keccak256("MODERATOR_ROLE");
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
-    bytes32 public constant GOVERNOR_ROLE = keccak256("GOVERNOR_ROLE");
 
     // Base string used in token URI generation
     string private _baseTokenURI;
 
     // Contract governor address
-    address payable public governor;
+    // LOCAL TESTING ONLY!! DO NOT FORGET TO CHANGE BEFORE DEPLOYMENT!!
+    address payable public constant governor = payable(0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc);
 
     // Mint price for paid mint
     uint256 public constant mintPrice = 0.1 ether;
@@ -42,23 +42,16 @@ contract ProjectJTest is
      * @param _moderators array of addresses to give MODERATOR_ROLE
      * @param _pausers array of addresses to give PAUSER_ROLE
      * @param baseTokenURI string to use as base URI for URI autogeneration
-     * @param _governor address to give GOVERNOR_ROLE
      * @param _freeMintEligibleList array of addresses to map TRUE in freeMintEligible mapping
      */
     function initialize(
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
-        address payable _governor,
         address[] memory _freeMintEligibleList
     ) initializer public payable {
 
         __ERC721_init("ProjectJ","PRJ");
-
-        // Set contract governor
-        require(_governor != address(0),'ProjectJ: Cannot set admin to zero address');
-        governor = _governor;
-        _setupRole(GOVERNOR_ROLE, _governor);
 
         // Set base token URI
         _baseTokenURI = baseTokenURI;
@@ -110,13 +103,13 @@ contract ProjectJTest is
 
     /// @dev Requires msg.sender to have 0 balance of Project J NFTs
     modifier onePerWallet() {
-        require(balanceOf(msg.sender) == 0,"One per customer ser");
+        require(balanceOf(msg.sender) == 0,"One per customer");
         _;
     }
 
-    /// @dev Requires msg.sender to map TRUE in freeMintEligible
-    modifier onlyEligible() {
-        require(freeMintEligible[msg.sender],"Not eligible for free mint");
+    /// @dev requires sender to be the governor address
+    modifier onlyGovernor() {
+        require(msg.sender == governor,"Only contract governor may call");
         _;
     }
 
@@ -134,7 +127,7 @@ contract ProjectJTest is
      * Requirements: 
      * - the caller must have the 'GOVERNOR_ROLE'
      */
-    function updateBaseURI(string memory _newURI) external onlyRole(GOVERNOR_ROLE) {
+    function updateBaseURI(string memory _newURI) external onlyGovernor {
         _baseTokenURI = _newURI;
     }
 
@@ -147,8 +140,7 @@ contract ProjectJTest is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function pause() external virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to pause");
+    function pause() external virtual onlyRole(PAUSER_ROLE) {
         _pause();
     }
 
@@ -161,8 +153,7 @@ contract ProjectJTest is
      *
      * - the caller must have the `PAUSER_ROLE`.
      */
-    function unpause() external virtual {
-        require(hasRole(PAUSER_ROLE, _msgSender()), "Must have pauser role to unpause");
+    function unpause() external virtual onlyRole(PAUSER_ROLE) {
         _unpause();
     }
 
@@ -212,7 +203,8 @@ contract ProjectJTest is
      * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires msg.sender to be eligible for free mint
      */ 
-    function mintFree() external inGoodStanding onePerWallet onlyEligible {
+    function mintFree() external inGoodStanding onePerWallet {
+        require(freeMintEligible[msg.sender],"Not eligible for free mint");
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
@@ -226,8 +218,7 @@ contract ProjectJTest is
      * - Requires GOVERNOR_ROLE
      * - May only be called by governor address
      */ 
-    function withdraw() external onlyRole(GOVERNOR_ROLE) {
-        require(msg.sender == governor,"Only contract governor can withdraw funds.");
+    function withdraw() external onlyGovernor {
         governor.transfer(address(this).balance);
     }
 
@@ -253,7 +244,7 @@ contract ProjectJTest is
         super._beforeTokenTransfer(from, to, tokenId);
     }
 
-    /// @dev Adds a test function to be called after proxy upgrade.
+        /// @dev Adds a test function to be called after proxy upgrade.
     function proxyTest() external pure returns (uint256) {
         return 42;
     }

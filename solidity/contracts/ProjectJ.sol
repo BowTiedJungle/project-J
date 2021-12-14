@@ -27,7 +27,8 @@ contract ProjectJ is
     string private _baseTokenURI;
 
     // Contract governor address
-    address payable public governor;
+    // LOCAL TESTING ONLY!! DO NOT FORGET TO CHANGE BEFORE DEPLOYMENT!!
+    address payable public constant governor = payable(0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc);
 
     // Mint price for paid mint
     uint256 public constant mintPrice = 0.1 ether;
@@ -41,22 +42,16 @@ contract ProjectJ is
      * @param _moderators array of addresses to give MODERATOR_ROLE
      * @param _pausers array of addresses to give PAUSER_ROLE
      * @param baseTokenURI string to use as base URI for URI autogeneration
-     * @param _governor address to use as contract admin
      * @param _freeMintEligibleList array of addresses to map TRUE in freeMintEligible mapping
      */
     function initialize(
         address[] memory _moderators,
         address[] memory _pausers,
         string memory baseTokenURI,
-        address payable _governor,
         address[] memory _freeMintEligibleList
     ) initializer public payable {
 
         __ERC721_init("ProjectJ","PRJ");
-
-        // Set contract governor
-        require(_governor != address(0),'ProjectJ: Cannot set admin to zero address');
-        governor = _governor;
 
         // Set base token URI
         _baseTokenURI = baseTokenURI;

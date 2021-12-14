@@ -15,6 +15,7 @@ var moderators = [mod1.address,mod2.address];   //The .address syntax is used to
 var pausers = [pauser1.address,pauser2.address];
 var degens = [free1.address,free2.address]
 const baseURI = "testURI";
+console.log(governor.address)
 
 const whitelist = [
     '0xf730341f6b15f97f6f925c63218dd51654b390e6',
@@ -166,14 +167,9 @@ describe("ProjectJ", function () {
 
     describe("Checks w/ Special Initialization", function () {
 
-        it("Should NOT initialize if governor is set to zero address.", async function () {
-            ProjectJ = await ethers.getContractFactory("ProjectJ");
-            await expect(upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,hre.ethers.constants.AddressZero,degens])).to.be.revertedWith("ProjectJ: Cannot set admin to zero address");
-        });
-
         it("Should correctly stack roles on addresses.", async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[[governor.address],[governor.address],baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[[governor.address],[governor.address],baseURI,degens]);
             moderatorRole = hre.ethers.utils.id("MODERATOR_ROLE");
             pauserRole = hre.ethers.utils.id("PAUSER_ROLE");
             expect(await projectJ.hasRole(moderatorRole,governor.address)).to.equal(true);
@@ -186,11 +182,11 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should not allow calling initializer twice", async function () {
-            await expect( projectJ.initialize(moderators,pausers,baseURI,governor.address,degens)).to.be.reverted;
+            await expect( projectJ.initialize(moderators,pausers,baseURI,degens)).to.be.reverted;
         });
 
         it("Should grant MODERATOR_ROLE to all members of the moderators argument", async function () {
@@ -213,11 +209,6 @@ describe("ProjectJ", function () {
             // Check for correct deployment state
             expect(await projectJ.hasRole(defaultAdminRole,governor.address)).to.equal(true);
 
-        });
-
-        it("Should set contract governor as the governor address argument", async function () {
-            // Check for correct deployment state
-            expect(await projectJ.governor()).to.equal(governor.address);
         });
 
         it("Should ONLY grant PAUSER_ROLE to all members of the pausers argument", async function () {
@@ -279,7 +270,7 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should change the blacklist status of an address when modifyStanding is called by a moderator", async function () {
@@ -357,7 +348,7 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should pause the contract when called with PAUSER_ROLE", async function () {
@@ -484,7 +475,7 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should mint NFT", async function () {
@@ -616,7 +607,7 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should increase the contract ETH balance when NFT is minted", async function () {
@@ -681,7 +672,7 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should update _baseTokenURI when called by governor address", async function () {
@@ -720,7 +711,7 @@ describe("ProjectJ", function () {
 
         beforeEach(async function () {
             ProjectJ = await ethers.getContractFactory("ProjectJ");
-            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+            projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         });
 
         it("Should allow free mint to eligible address and remove free eligiblity after minting", async function () {

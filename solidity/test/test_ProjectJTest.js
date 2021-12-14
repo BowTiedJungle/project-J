@@ -17,7 +17,7 @@ describe("ProjectJ Upgrade Test", function () {
         ProjectJ = await ethers.getContractFactory("ProjectJ");
         ProjectJTest = await ethers.getContractFactory("ProjectJTest");
 
-        projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,governor.address,degens]);
+        projectJ = await upgrades.deployProxy(ProjectJ,[moderators,pausers,baseURI,degens]);
         projectJTest = await upgrades.upgradeProxy(projectJ.address,ProjectJTest);
     });
 
