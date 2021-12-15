@@ -54,7 +54,7 @@ contract ProjectJTest is
 
     /**
      * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern. 
-     * @dev Initializes msg.sender as DEFAULT_ROLE_ADMIN
+     * @dev Initializes hardcoded governor address as DEFAULT_ROLE_ADMIN
      * @param _moderators array of addresses to give MODERATOR_ROLE
      * @param _pausers array of addresses to give PAUSER_ROLE
      * @param baseTokenURI string to use as base URI for URI autogeneration
