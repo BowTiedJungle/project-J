@@ -508,22 +508,6 @@ describe("ProjectJ", function () {
 
         });
 
-        it("Should not allow minting more than 1 NFT", async function () {
-
-            // Check for expected initial state
-            expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
-
-            // Call contract once to setup
-            await projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')});
-
-            // Call contract expecting reversion
-            await expect(projectJ.connect(citizen1).mint({value: hre.ethers.utils.parseEther('0.1')})).to.be.reverted;
-
-            // Check for expected final state
-            expect(await projectJ.balanceOf(citizen1.address)).to.equal(1);
-
-        });
-
         it("Should NOT mint NFT with low mint price", async function () {
 
             // Check for expected initial state
@@ -741,22 +725,6 @@ describe("ProjectJ", function () {
             // Check for expected final state
             expect(await projectJ.balanceOf(citizen1.address)).to.equal(0);
             expect(await projectJ.freeMintEligible(citizen1.address)).to.equal(false);
-
-        });
-
-        it("Should NOT allow free mint if wallet has PRJ balance >0", async function () {
-
-            // Check for expected initial states
-            await projectJ.connect(free1).mint({value: hre.ethers.utils.parseEther('0.1')});
-            expect(await projectJ.balanceOf(free1.address)).to.equal(1);
-            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
-
-            // Call contract, expecting reversion
-            await expect(projectJ.connect(free1).mintFree()).to.be.reverted;
-
-            // Check for expected final state
-            expect(await projectJ.balanceOf(free1.address)).to.equal(1);
-            expect(await projectJ.freeMintEligible(free1.address)).to.equal(true);
 
         });
 

@@ -35,6 +35,22 @@ contract ProjectJTest is
 
     // Maps address to the ability to mint for free
     mapping(address => bool) public freeMintEligible;
+    
+    // Mapping of blacklisted accounts
+    mapping(address => bool) public blacklist;
+
+    /** @dev Emit on modification of blacklist standing.
+     * @return target address
+     * @return target's new standing
+     * @return address changing the standing
+    */
+    event StandingModified(address target, bool newStanding, address changedBy);
+
+    /// @dev Emit on minting
+    event Minted(address to, uint256 tokenId);
+
+    /// @dev Emit on free minting
+    event MintedFree(address to, uint256 tokenId);
 
     /**
      * @dev Initializer function for OpenZeppelin Upgradeable proxy pattern. 
@@ -79,31 +95,9 @@ contract ProjectJTest is
         _tokenIdTracker.increment();
     }
 
-    // Mapping of blacklisted accounts
-    mapping(address => bool) public blacklist;
-
-    /** @dev Emit on modification of blacklist standing.
-     * @return target address
-     * @return target's new standing
-     * @return address changing the standing
-    */
-    event StandingModified(address target, bool newStanding, address changedBy);
-
-    /// @dev Emit on minting
-    event Minted(address to, uint256 tokenId);
-
-    /// @dev Emit on free minting
-    event MintedFree(address to, uint256 tokenId);
-
     /// @dev Requires msg.sender to be in good standing
     modifier inGoodStanding() {
         require(!blacklist[msg.sender],"Account is blacklisted.");
-        _;
-    }
-
-    /// @dev Requires msg.sender to have 0 balance of Project J NFTs
-    modifier onePerWallet() {
-        require(balanceOf(msg.sender) == 0,"One per customer");
         _;
     }
 
@@ -125,7 +119,7 @@ contract ProjectJTest is
      * @dev Updates the base URI string
      * @param _newURI string to use as the new _baseTokenURI
      * Requirements: 
-     * - the caller must be the governor address
+     * - caller must be governor address
      */
     function updateBaseURI(string memory _newURI) external onlyGovernor {
         _baseTokenURI = _newURI;
@@ -185,10 +179,9 @@ contract ProjectJTest is
      * @dev Mint NFT. 
      * Requirements:
      * - Requires good standing
-     * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires msg.value >= mintPrice
      */ 
-    function mint() external payable inGoodStanding onePerWallet {
+    function mint() external payable inGoodStanding {
         require(msg.value >= mintPrice,"Mint price not correct");
         uint256 currentId = _tokenIdTracker.current();
         _tokenIdTracker.increment();
@@ -200,10 +193,9 @@ contract ProjectJTest is
      * @dev Mint NFT without mint cost. 
      * Requirements:
      * - Requires good standing
-     * - Requires 0 wallet balance of ProjectJ NFTs
      * - Requires msg.sender to be eligible for free mint
      */ 
-    function mintFree() external inGoodStanding onePerWallet {
+    function mintFree() external inGoodStanding {
         require(freeMintEligible[msg.sender],"Not eligible for free mint");
         freeMintEligible[msg.sender] = false;
         uint256 currentId = _tokenIdTracker.current();
