@@ -65,7 +65,7 @@ contract ProjectJTest is
         address[] memory _pausers,
         string memory baseTokenURI,
         address[] memory _freeMintEligibleList
-    ) initializer public payable {
+    ) initializer external payable {
 
         __ERC721_init("ProjectJ","PRJ");
 
