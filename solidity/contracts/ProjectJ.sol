@@ -125,7 +125,7 @@ contract ProjectJ is
      * @dev Updates the base URI string
      * @param _newURI string to use as the new _baseTokenURI
      * Requirements: 
-     * - the caller must have the 'GOVERNOR_ROLE'
+     * - caller must be governor address
      */
     function updateBaseURI(string memory _newURI) external onlyGovernor {
         _baseTokenURI = _newURI;
@@ -215,7 +215,6 @@ contract ProjectJ is
     /**
      * @dev Withdraw contract balance
      * Requirements:
-     * - Requires GOVERNOR_ROLE
      * - May only be called by governor address
      */ 
     function withdraw() external onlyGovernor {
