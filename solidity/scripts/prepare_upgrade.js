@@ -1,5 +1,5 @@
 const { upgrades } = require("hardhat");
-const proxyAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0'
+const proxyAddress = '0xe3B72c01DC44d0C6925E776471bFdFd4A1CD7112'
 
 const main = async () => {
     const TestContract = await hre.ethers.getContractFactory("ProjectJTest");

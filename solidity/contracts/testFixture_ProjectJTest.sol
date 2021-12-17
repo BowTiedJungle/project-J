@@ -27,11 +27,11 @@ contract ProjectJTest is
     string private _baseTokenURI;
 
     // Contract governor address
-    // LOCAL TESTING ONLY!! DO NOT FORGET TO CHANGE BEFORE DEPLOYMENT!!
-    address payable public constant governor = payable(0x9965507D1a55bcC2695C58ba16FB37d819B0A4dc);
+    // RINKEBY TESTING ONLY!! DO NOT FORGET TO CHANGE BEFORE DEPLOYMENT!!
+    address payable public constant governor = payable(0x09657c51c466E78e2a2BaF0232EA78BB9C5DAb3d);
 
     // Mint price for paid mint
-    uint256 public constant mintPrice = 0.1 ether;
+    uint256 public constant mintPrice = 0.01 ether;
 
     // Maps address to the ability to mint for free
     mapping(address => bool) public freeMintEligible;

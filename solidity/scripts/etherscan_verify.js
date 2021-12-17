@@ -1,6 +1,6 @@
 const main = async () => {
 
-    const contractAddress = '0x776B79526490E7Ecc848Ca38dC7cAb0882517797';
+    const contractAddress = '0x73c02580bc7A16276Be5d2bA4afD14022312221B';
 
     await hre.run("verify:verify", {
         address: contractAddress
