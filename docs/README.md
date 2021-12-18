@@ -139,6 +139,12 @@ Use `npx hardhat run scripts/run.js --network rinkeby` after modifying the conte
 
 ---
 
+## Calling Functions from Gnosis Safe
+
+Since we use a proxy setup, this has to be done a little awkwardly. Go to the appropriate file in `solidity\artifacts\contracts`. For Rinkeby testnet instance it is `solidity\artifacts\contracts\testFixture_ProjectJTest.sol\ProjectJTest.json`. Copy ONLY the ABI section in that, from [ to ], inclusive. Gnosis Safe -> New Transation -> Contract interaction. Enter the proxy address. Delete the ABI autodetected by the safe and replace it with the ABI you copied from the json file. Now you should be able to use the methods of the contract.
+
+---
+
 ## To-do
 A very unexhaustive list of things needing attention.
 
