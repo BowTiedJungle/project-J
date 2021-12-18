@@ -8,7 +8,11 @@ const main = async () => {
     
     let txn;
     // Change this function to change the payload sent to contract
-    txn = await projectJ.mint({value: hre.ethers.utils.parseEther('0.01')});
+    // Comment out any functions you don't want to run
+    // txn = await projectJ.mint({value: hre.ethers.utils.parseEther('0.01')});
+    // console.log(txn)
+
+    txn = await projectJ.governor();
     console.log(txn)
 
 };
