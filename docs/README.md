@@ -131,6 +131,14 @@ Testnet Gnosis Safe Owners:
 
 Safe Transaction Threshold: 2/4
 
+---
+
+## Programmatically Interacting With the Contract
+
+Use `npx hardhat run scripts/run.js --network rinkeby` after modifying the contents to call the desired function. You must attach the proxy address to the contract ABI to be able to call.
+
+---
+
 ## To-do
 A very unexhaustive list of things needing attention.
 
