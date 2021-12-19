@@ -39,7 +39,7 @@ Running unit tests:
 `npx hardhat test`
 
 Running local dev node:
-`npx hardhat node` then start a second terminal, and run scripts from that one. This can be used to verify correct performance of the upgradeable infrastructure for instance.
+`npx hardhat node` then start a second terminal, and run scripts from that one using `--network localhost`. This can be used to verify correct performance of the upgradeable infrastructure for instance.
 
 ### Running Slither security analysis tool
 Thanks to @BowTiedFireFox for help with this part. Install docker, then:
@@ -61,7 +61,7 @@ There are many printer options available via slither also for other analysis.
 
 Your networks section of `hardhat.config.js` must be set up with an appropriate alchemy or infura API URL (or your local node URL if you're a tryhard) and the private key for your interacting account. ***WARNING: DO NOT PUSH THIS FILE TO GITHUB!***
 
-You must also obtain an etherscan API key and add `require("@nomiclabs/hardhat-etherscan");` to your `hardhat.config.js` to verify on etherscan.
+You must also obtain an etherscan API key, add `require("@nomiclabs/hardhat-etherscan");` to your `hardhat.config.js`, and add `etherscan: { apiKey: YOUR_KEY_HERE }` to your `module.exports` to allow verifying on etherscan. This is not required if you are not verifying.
 
 ### Deploy Gnosis Safe
 
@@ -74,7 +74,7 @@ This is done through https://gnosis-safe.io/app/welcome. Keep track of this addr
 The mint price must also be hardcoded. Ensure it is correct!
 ### Deploy
 
-Final checks. Ensure that the desired addresses are set for the whitelist, initial pausers, and initial moderators. Check that the base URI is correct
+Final checks. Ensure that the desired addresses are set in the deployment script for the whitelist, initial pausers, and initial moderators. Check that the base URI is correct, and the correct contract factories are loaded in the script.
 
 `npx hardhat run scripts/deploy.js --network rinkeby`
 
@@ -90,11 +90,13 @@ The deployment structure and addresses may be seen at the `solidity\.openzeppeli
 
 ### Etherscan Verify
 
-Run `npx hardhat run scripts/etherscan_verify.js --network rinkeby` to verify the implementation on Etherscan. The proxies should autoverify as they match deployed bytecode known to be proxy contracts.
+Update the contract address in the `etherscan_verify.js` script to the deployed implementation contract.
+
+Run `npx hardhat run scripts/etherscan_verify.js --network rinkeby` to verify the implementation on Etherscan. The proxies should autoverify without any interaction from you, as their bytecode matches known, verified proxy contracts.
 
 ### Transfer ProxyAdmin Ownership
 
-***CRITICAL: Set Gnosis Safe address in this script to the deployed safe instance before running***
+***CRITICAL: Set Gnosis Safe address in this script to the deployed safe instance before running, or you will lose the ability to upgrade the system!***
 
 Run `npx hardhat run scripts/transfer_admin.js --network rinkeby` to transfer ownership of the ProxyAdmin contract to the Gnosis safe.
 
@@ -141,7 +143,7 @@ Use `npx hardhat run scripts/run.js --network rinkeby` after modifying the conte
 
 ## Calling Functions from Gnosis Safe
 
-Since we use a proxy setup, this has to be done a little awkwardly. Go to the appropriate file in `solidity\artifacts\contracts`. For Rinkeby testnet instance it is `solidity\artifacts\contracts\testFixture_ProjectJTest.sol\ProjectJTest.json`. Copy ONLY the ABI section in that, from [ to ], inclusive. Gnosis Safe -> New Transation -> Contract interaction. Enter the proxy address. Delete the ABI autodetected by the safe and replace it with the ABI you copied from the json file. Now you should be able to use the methods of the contract.
+Since we use a proxy setup, this has to be done a little awkwardly. Go to the appropriate file in `solidity\artifacts\contracts`. For Rinkeby testnet instance it is `solidity\artifacts\contracts\testFixture_ProjectJTest.sol\ProjectJTest.json`. Copy ONLY the ABI section in that, from [ to ], inclusive. Gnosis Safe -> New Transation -> Contract interaction. Enter the proxy address. Delete the proxy contract's ABI autodetected by the safe and replace it with the ABI you copied from the json file. Now you should be able to use the methods of the contract.
 
 ---
 
